@@ -1,0 +1,23 @@
+{
+  "source": "Référentiel grades × attentes transverses fourni par la BU Data & IA (niveaux 1 à 5)",
+  "echelle": { "min": 1, "max": 5 },
+  "axes": [
+    { "id": "gestion-projet", "libelle": "Gestion de projet" },
+    { "id": "leadership", "libelle": "Leadership" },
+    { "id": "management", "libelle": "Management" },
+    { "id": "relation-client", "libelle": "Relation client" },
+    { "id": "developpement-commercial", "libelle": "Développement commercial" }
+  ],
+  "grades": [
+    { "id": "analyste", "libelle": "Analyste", "ordre": 1,
+      "niveaux": { "gestion-projet": 1, "leadership": 1, "management": 1, "relation-client": 2, "developpement-commercial": 1 } },
+    { "id": "consultant", "libelle": "Consultant", "ordre": 2,
+      "niveaux": { "gestion-projet": 2, "leadership": 1, "management": 2, "relation-client": 3, "developpement-commercial": 2 } },
+    { "id": "consultant-senior", "libelle": "Consultant Senior", "ordre": 3,
+      "niveaux": { "gestion-projet": 4, "leadership": 3, "management": 3, "relation-client": 4, "developpement-commercial": 3 } },
+    { "id": "manager", "libelle": "Manager", "ordre": 4,
+      "niveaux": { "gestion-projet": 5, "leadership": 4, "management": 4, "relation-client": 5, "developpement-commercial": 4 } },
+    { "id": "senior-manager", "libelle": "Senior Manager", "ordre": 5,
+      "niveaux": { "gestion-projet": 5, "leadership": 5, "management": 5, "relation-client": 5, "developpement-commercial": 5 } }
+  ]
+}

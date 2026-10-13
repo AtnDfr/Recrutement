@@ -1,0 +1,909 @@
+[
+  {
+    "metierId": "ai-transformation-adoption-consultant-manager",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 5,
+      "part": 1
+    },
+    "vivierSecondaire": null,
+    "entreprisesCoeur": [
+      "Accenture France",
+      "Artefact",
+      "Artemys",
+      "Inetum Consulting",
+      "Square Management"
+    ],
+    "entreprisesSecondaires": [],
+    "approche": "Concurrent-first",
+    "pointsAVerifier": [
+      "Posture conseil",
+      "exposition COMEX/métiers",
+      "cadrage",
+      "delivery",
+      "développement commercial selon séniorité"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "agentic-ai-engineer",
+    "nbEmployeurs": 9,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 4,
+      "part": 0.4444444444444444
+    },
+    "vivierSecondaire": {
+      "libelle": "Grand groupe / client final",
+      "nb": 2,
+      "part": 0.2222222222222222
+    },
+    "entreprisesCoeur": [
+      "Accenture France",
+      "Converteo",
+      "Scalian",
+      "Sopra Steria"
+    ],
+    "entreprisesSecondaires": [
+      "ASI",
+      "BNP Paribas"
+    ],
+    "approche": "Multi-viviers",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "applied-ai-engineer",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Éditeur / scale-up / entreprise tech",
+      "nb": 2,
+      "part": 0.4
+    },
+    "vivierSecondaire": {
+      "libelle": "Organisme public / international",
+      "nb": 1,
+      "part": 0.2
+    },
+    "entreprisesCoeur": [
+      "Criteo",
+      "Beamy"
+    ],
+    "entreprisesSecondaires": [
+      "OECD-OCDE"
+    ],
+    "approche": "Multi-viviers",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Prudente"
+  },
+  {
+    "metierId": "applied-scientist-ai-scientist",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Éditeur / scale-up / entreprise tech",
+      "nb": 4,
+      "part": 0.8
+    },
+    "vivierSecondaire": {
+      "libelle": "Grand groupe / client final",
+      "nb": 1,
+      "part": 0.2
+    },
+    "entreprisesCoeur": [
+      "Damae Medical",
+      "Pigment",
+      "Mistral AI",
+      "Datadog"
+    ],
+    "entreprisesSecondaires": [
+      "Pierre Fabre"
+    ],
+    "approche": "Tech / product-first",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "data-ai-architect",
+    "nbEmployeurs": 7,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 3,
+      "part": 0.42857142857142855
+    },
+    "vivierSecondaire": {
+      "libelle": "Grand groupe / client final",
+      "nb": 3,
+      "part": 0.42857142857142855
+    },
+    "entreprisesCoeur": [
+      "Atos",
+      "Keyrus",
+      "Talan"
+    ],
+    "entreprisesSecondaires": [
+      "Crédit Agricole GIP",
+      "Safran Aerosystems",
+      "Viridien"
+    ],
+    "approche": "Multi-viviers",
+    "pointsAVerifier": [
+      "Architecture transverse",
+      "arbitrages",
+      "sécurité/gouvernance",
+      "relation client",
+      "capacité à passer de la cible au delivery"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "data-ai-governance-consultant-manager",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 5,
+      "part": 1
+    },
+    "vivierSecondaire": null,
+    "entreprisesCoeur": [
+      "Capgemini Invent",
+      "Talan",
+      "WEnvision",
+      "ASTRELYA",
+      "Deloitte"
+    ],
+    "entreprisesSecondaires": [],
+    "approche": "Concurrent-first",
+    "pointsAVerifier": [
+      "Posture conseil",
+      "exposition COMEX/métiers",
+      "cadrage",
+      "delivery",
+      "développement commercial selon séniorité"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "data-ai-product-strategy-consultant",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 5,
+      "part": 1
+    },
+    "vivierSecondaire": null,
+    "entreprisesCoeur": [
+      "KPMG France",
+      "Galadrim",
+      "Theodo Data & AI",
+      "Singulier by OMMAX",
+      "Capgemini Invent"
+    ],
+    "entreprisesSecondaires": [],
+    "approche": "Concurrent-first",
+    "pointsAVerifier": [
+      "Posture conseil",
+      "exposition COMEX/métiers",
+      "cadrage",
+      "delivery",
+      "développement commercial selon séniorité"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "data-ai-strategy-consultant-manager",
+    "nbEmployeurs": 7,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 5,
+      "part": 0.7142857142857143
+    },
+    "vivierSecondaire": {
+      "libelle": "Grand groupe / client final",
+      "nb": 2,
+      "part": 0.2857142857142857
+    },
+    "entreprisesCoeur": [
+      "Artefact",
+      "Capgemini Invent",
+      "Nagarro",
+      "Saegus",
+      "Singulier by OMMAX"
+    ],
+    "entreprisesSecondaires": [
+      "Crédit Mutuel Arkéa",
+      "Geopost"
+    ],
+    "approche": "Concurrent-first",
+    "pointsAVerifier": [
+      "Posture conseil",
+      "exposition COMEX/métiers",
+      "cadrage",
+      "delivery",
+      "développement commercial selon séniorité"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "data-ai-platform-product-manager",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Éditeur / scale-up / entreprise tech",
+      "nb": 3,
+      "part": 0.6
+    },
+    "vivierSecondaire": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 1,
+      "part": 0.2
+    },
+    "entreprisesCoeur": [
+      "Splio",
+      "Comet",
+      "ENOVIA"
+    ],
+    "entreprisesSecondaires": [
+      "CBTW"
+    ],
+    "approche": "Tech / product-first",
+    "pointsAVerifier": [
+      "Ownership produit",
+      "valeur/KPI",
+      "interface business-tech",
+      "adoption",
+      "expérience Data/IA explicite"
+    ],
+    "confiance": "Moyenne"
+  },
+  {
+    "metierId": "data-platform-architect",
+    "nbEmployeurs": 6,
+    "vivierCoeur": {
+      "libelle": "Grand groupe / client final",
+      "nb": 3,
+      "part": 0.5
+    },
+    "vivierSecondaire": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 3,
+      "part": 0.5
+    },
+    "entreprisesCoeur": [
+      "AXA France",
+      "Rexel",
+      "Société Générale"
+    ],
+    "entreprisesSecondaires": [
+      "Niji",
+      "Onepoint",
+      "Sopra Steria Next"
+    ],
+    "approche": "Client-final-first",
+    "pointsAVerifier": [
+      "Architecture transverse",
+      "arbitrages",
+      "sécurité/gouvernance",
+      "relation client",
+      "capacité à passer de la cible au delivery"
+    ],
+    "confiance": "Moyenne"
+  },
+  {
+    "metierId": "data-platform-engineer",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Éditeur / scale-up / entreprise tech",
+      "nb": 4,
+      "part": 0.8
+    },
+    "vivierSecondaire": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 1,
+      "part": 0.2
+    },
+    "entreprisesCoeur": [
+      "Swile",
+      "TheFork",
+      "Hublo",
+      "Deezer"
+    ],
+    "entreprisesSecondaires": [
+      "NEXTON"
+    ],
+    "approche": "Tech / product-first",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "data-product-manager",
+    "nbEmployeurs": 7,
+    "vivierCoeur": {
+      "libelle": "Grand groupe / client final",
+      "nb": 4,
+      "part": 0.5714285714285714
+    },
+    "vivierSecondaire": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 2,
+      "part": 0.2857142857142857
+    },
+    "entreprisesCoeur": [
+      "Accor",
+      "Decathlon Digital",
+      "Hermès",
+      "Icade"
+    ],
+    "entreprisesSecondaires": [
+      "Hubvisory",
+      "Kanbios"
+    ],
+    "approche": "Client-final-first",
+    "pointsAVerifier": [
+      "Ownership produit",
+      "valeur/KPI",
+      "interface business-tech",
+      "adoption",
+      "expérience Data/IA explicite"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "data-product-owner",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 4,
+      "part": 0.8
+    },
+    "vivierSecondaire": {
+      "libelle": "Grand groupe / client final",
+      "nb": 1,
+      "part": 0.2
+    },
+    "entreprisesCoeur": [
+      "Devoteam",
+      "EY",
+      "NEXTON",
+      "Talan"
+    ],
+    "entreprisesSecondaires": [
+      "Natixis"
+    ],
+    "approche": "Conseil / intégrateurs-first",
+    "pointsAVerifier": [
+      "Ownership produit",
+      "valeur/KPI",
+      "interface business-tech",
+      "adoption",
+      "expérience Data/IA explicite"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "data-solution-architect",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 4,
+      "part": 0.8
+    },
+    "vivierSecondaire": {
+      "libelle": "Grand groupe / client final",
+      "nb": 1,
+      "part": 0.2
+    },
+    "entreprisesCoeur": [
+      "KPMG France",
+      "Aubay",
+      "Exakis Nelite",
+      "Capgemini Invent"
+    ],
+    "entreprisesSecondaires": [
+      "Ipsen"
+    ],
+    "approche": "Conseil / intégrateurs-first",
+    "pointsAVerifier": [
+      "Architecture transverse",
+      "arbitrages",
+      "sécurité/gouvernance",
+      "relation client",
+      "capacité à passer de la cible au delivery"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "databricks-platform-architect",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 4,
+      "part": 0.8
+    },
+    "vivierSecondaire": {
+      "libelle": "Éditeur / scale-up / entreprise tech",
+      "nb": 1,
+      "part": 0.2
+    },
+    "entreprisesCoeur": [
+      "Atos",
+      "EPAM Systems",
+      "Savane Consulting",
+      "Smartpoint Group"
+    ],
+    "entreprisesSecondaires": [
+      "Databricks"
+    ],
+    "approche": "Conseil / intégrateurs-first",
+    "pointsAVerifier": [
+      "Architecture transverse",
+      "arbitrages",
+      "sécurité/gouvernance",
+      "relation client",
+      "capacité à passer de la cible au delivery"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "databricks-tech-lead-expert-engineer",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 5,
+      "part": 1
+    },
+    "vivierSecondaire": null,
+    "entreprisesCoeur": [
+      "CGI",
+      "Nexton",
+      "Onepoint",
+      "Sopra Steria",
+      "Capgemini"
+    ],
+    "entreprisesSecondaires": [],
+    "approche": "Conseil / intégrateurs-first",
+    "pointsAVerifier": [
+      "Leadership réel",
+      "mentoring",
+      "standards",
+      "ownership transverse",
+      "relation produit/métier"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "gcp-ai-ml-engineer",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 4,
+      "part": 0.8
+    },
+    "vivierSecondaire": {
+      "libelle": "Grand groupe / client final",
+      "nb": 1,
+      "part": 0.2
+    },
+    "entreprisesCoeur": [
+      "Onepoint",
+      "Talan",
+      "SFEIR",
+      "ALTEN"
+    ],
+    "entreprisesSecondaires": [
+      "Devoteam | Google Cloud Partner"
+    ],
+    "approche": "Conseil / intégrateurs-first",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "gcp-data-ai-architect",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 5,
+      "part": 1
+    },
+    "vivierSecondaire": null,
+    "entreprisesCoeur": [
+      "Devoteam",
+      "Onepoint",
+      "SFEIR",
+      "ALTEN",
+      "VISEO"
+    ],
+    "entreprisesSecondaires": [],
+    "approche": "Conseil / intégrateurs-first",
+    "pointsAVerifier": [
+      "Architecture transverse",
+      "arbitrages",
+      "sécurité/gouvernance",
+      "relation client",
+      "capacité à passer de la cible au delivery"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "gcp-data-engineer",
+    "nbEmployeurs": 8,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 6,
+      "part": 0.75
+    },
+    "vivierSecondaire": {
+      "libelle": "Grand groupe / client final",
+      "nb": 2,
+      "part": 0.25
+    },
+    "entreprisesCoeur": [
+      "ALTEN",
+      "Devoteam",
+      "Meritis",
+      "Sopra Steria",
+      "Talan",
+      "VISIAN"
+    ],
+    "entreprisesSecondaires": [
+      "DATAMED RESEARCH",
+      "Valeo"
+    ],
+    "approche": "Conseil / intégrateurs-first",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "genai-llm-engineer",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Grand groupe / client final",
+      "nb": 3,
+      "part": 0.6
+    },
+    "vivierSecondaire": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 1,
+      "part": 0.2
+    },
+    "entreprisesCoeur": [
+      "EDF / Cyclife",
+      "LCL",
+      "Malakoff Humanis"
+    ],
+    "entreprisesSecondaires": [
+      "Talan"
+    ],
+    "approche": "Client-final-first",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Moyenne"
+  },
+  {
+    "metierId": "llmops-genai-platform-engineer",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Intermédiaire / employeur non identifié",
+      "nb": 2,
+      "part": 0.4
+    },
+    "vivierSecondaire": {
+      "libelle": "Éditeur / scale-up / entreprise tech",
+      "nb": 1,
+      "part": 0.2
+    },
+    "entreprisesCoeur": [
+      "FYND Recrutement / client",
+      "QuickSort / client"
+    ],
+    "entreprisesSecondaires": [
+      "Alice & Bob"
+    ],
+    "approche": "Multi-viviers",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Prudente"
+  },
+  {
+    "metierId": "lead-principal-data-engineer",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Grand groupe / client final",
+      "nb": 3,
+      "part": 0.6
+    },
+    "vivierSecondaire": {
+      "libelle": "Éditeur / scale-up / entreprise tech",
+      "nb": 1,
+      "part": 0.2
+    },
+    "entreprisesCoeur": [
+      "Brother France",
+      "Hermès",
+      "Paprec Group"
+    ],
+    "entreprisesSecondaires": [
+      "TheFork"
+    ],
+    "approche": "Client-final-first",
+    "pointsAVerifier": [
+      "Leadership réel",
+      "mentoring",
+      "standards",
+      "ownership transverse",
+      "relation produit/métier"
+    ],
+    "confiance": "Moyenne"
+  },
+  {
+    "metierId": "lead-principal-data-scientist",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Grand groupe / client final",
+      "nb": 2,
+      "part": 0.4
+    },
+    "vivierSecondaire": {
+      "libelle": "Éditeur / scale-up / entreprise tech",
+      "nb": 2,
+      "part": 0.4
+    },
+    "entreprisesCoeur": [
+      "Accor",
+      "Celio"
+    ],
+    "entreprisesSecondaires": [
+      "TheFork",
+      "Voodoo"
+    ],
+    "approche": "Multi-viviers",
+    "pointsAVerifier": [
+      "Leadership réel",
+      "mentoring",
+      "standards",
+      "ownership transverse",
+      "relation produit/métier"
+    ],
+    "confiance": "Prudente"
+  },
+  {
+    "metierId": "ml-ai-platform-engineer",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 2,
+      "part": 0.4
+    },
+    "vivierSecondaire": {
+      "libelle": "Grand groupe / client final",
+      "nb": 2,
+      "part": 0.4
+    },
+    "entreprisesCoeur": [
+      "Bluethink",
+      "LTR Consulting"
+    ],
+    "entreprisesSecondaires": [
+      "Hublot",
+      "Capital Fund Management"
+    ],
+    "approche": "Multi-viviers",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Prudente"
+  },
+  {
+    "metierId": "mlops-engineer",
+    "nbEmployeurs": 7,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 4,
+      "part": 0.5714285714285714
+    },
+    "vivierSecondaire": {
+      "libelle": "Éditeur / scale-up / entreprise tech",
+      "nb": 1,
+      "part": 0.14285714285714285
+    },
+    "entreprisesCoeur": [
+      "Devoteam France",
+      "Ippon Technologies",
+      "Sopra Steria",
+      "Talan"
+    ],
+    "entreprisesSecondaires": [
+      "Doctolib"
+    ],
+    "approche": "Conseil / intégrateurs-first",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "machine-learning-engineer",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 3,
+      "part": 0.6
+    },
+    "vivierSecondaire": {
+      "libelle": "Éditeur / scale-up / entreprise tech",
+      "nb": 2,
+      "part": 0.4
+    },
+    "entreprisesCoeur": [
+      "Talan",
+      "NEXTON",
+      "Sia"
+    ],
+    "entreprisesSecondaires": [
+      "Criteo",
+      "Doctolib"
+    ],
+    "approche": "Conseil / intégrateurs-first",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Moyenne"
+  },
+  {
+    "metierId": "senior-data-engineer",
+    "nbEmployeurs": 9,
+    "vivierCoeur": {
+      "libelle": "Éditeur / scale-up / entreprise tech",
+      "nb": 6,
+      "part": 0.6666666666666666
+    },
+    "vivierSecondaire": {
+      "libelle": "Grand groupe / client final",
+      "nb": 2,
+      "part": 0.2222222222222222
+    },
+    "entreprisesCoeur": [
+      "DeepHealth",
+      "GitGuardian",
+      "Leetchi / Donora",
+      "Omaha Insights",
+      "Sancare",
+      "WeeFin"
+    ],
+    "entreprisesSecondaires": [
+      "Amo",
+      "PUR"
+    ],
+    "approche": "Tech / product-first",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Forte"
+  },
+  {
+    "metierId": "senior-data-scientist",
+    "nbEmployeurs": 5,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 3,
+      "part": 0.6
+    },
+    "vivierSecondaire": {
+      "libelle": "Grand groupe / client final",
+      "nb": 2,
+      "part": 0.4
+    },
+    "entreprisesCoeur": [
+      "Artefact",
+      "Capgemini Sogeti",
+      "Sopra Steria Next"
+    ],
+    "entreprisesSecondaires": [
+      "CHANEL",
+      "Decathlon Digital"
+    ],
+    "approche": "Conseil / intégrateurs-first",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Moyenne"
+  },
+  {
+    "metierId": "senior-databricks-data-engineer",
+    "nbEmployeurs": 6,
+    "vivierCoeur": {
+      "libelle": "Cabinet de conseil / ESN / intégrateur",
+      "nb": 5,
+      "part": 0.8333333333333334
+    },
+    "vivierSecondaire": {
+      "libelle": "Grand groupe / client final",
+      "nb": 1,
+      "part": 0.16666666666666666
+    },
+    "entreprisesCoeur": [
+      "DGTL Performance",
+      "Devoteam France",
+      "Innova Solutions",
+      "T-T CONSULTING",
+      "Talan"
+    ],
+    "entreprisesSecondaires": [
+      "Groupement Mousquetaires"
+    ],
+    "approche": "Conseil / intégrateurs-first",
+    "pointsAVerifier": [
+      "Production réelle",
+      "profondeur technique",
+      "autonomie",
+      "communication client",
+      "capacité à expliquer et arbitrer"
+    ],
+    "confiance": "Forte"
+  }
+]

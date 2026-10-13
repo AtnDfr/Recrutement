@@ -1,0 +1,2717 @@
+[
+  {
+    "forme": ".NET",
+    "competenceIds": [
+      "C099"
+    ]
+  },
+  {
+    "forme": "A/B tests",
+    "competenceIds": [
+      "C034"
+    ]
+  },
+  {
+    "forme": "A2A",
+    "competenceIds": [
+      "C076"
+    ]
+  },
+  {
+    "forme": "access control",
+    "competenceIds": [
+      "C138"
+    ]
+  },
+  {
+    "forme": "accompagnement équipes",
+    "competenceIds": [
+      "C106"
+    ]
+  },
+  {
+    "forme": "account growth",
+    "competenceIds": [
+      "C050"
+    ]
+  },
+  {
+    "forme": "acquisition de données",
+    "competenceIds": [
+      "C023"
+    ]
+  },
+  {
+    "forme": "adaptation de modèles",
+    "competenceIds": [
+      "C068"
+    ]
+  },
+  {
+    "forme": "adoption",
+    "competenceIds": [
+      "C130"
+    ]
+  },
+  {
+    "forme": "adoption utilisateurs",
+    "competenceIds": [
+      "C119"
+    ]
+  },
+  {
+    "forme": "advisory",
+    "competenceIds": [
+      "C055"
+    ]
+  },
+  {
+    "forme": "agent memory",
+    "competenceIds": [
+      "C073"
+    ]
+  },
+  {
+    "forme": "agent orchestration",
+    "competenceIds": [
+      "C074"
+    ]
+  },
+  {
+    "forme": "Agent2Agent",
+    "competenceIds": [
+      "C076"
+    ]
+  },
+  {
+    "forme": "agentic systems",
+    "competenceIds": [
+      "C065"
+    ]
+  },
+  {
+    "forme": "agents",
+    "competenceIds": [
+      "C065"
+    ]
+  },
+  {
+    "forme": "agents IA",
+    "competenceIds": [
+      "C065"
+    ]
+  },
+  {
+    "forme": "Agile",
+    "competenceIds": [
+      "C047"
+    ]
+  },
+  {
+    "forme": "AI agents",
+    "competenceIds": [
+      "C065"
+    ]
+  },
+  {
+    "forme": "AI governance",
+    "competenceIds": [
+      "C093"
+    ]
+  },
+  {
+    "forme": "AI strategy",
+    "competenceIds": [
+      "C133"
+    ]
+  },
+  {
+    "forme": "AI transformation",
+    "competenceIds": [
+      "C135"
+    ]
+  },
+  {
+    "forme": "AI/ML architecture",
+    "competenceIds": [
+      "C001"
+    ]
+  },
+  {
+    "forme": "Airflow",
+    "competenceIds": [
+      "C019"
+    ]
+  },
+  {
+    "forme": "Airflow/Composer",
+    "competenceIds": [
+      "C084"
+    ]
+  },
+  {
+    "forme": "AKS",
+    "competenceIds": [
+      "C016"
+    ]
+  },
+  {
+    "forme": "Amazon Web Services",
+    "competenceIds": [
+      "C011"
+    ]
+  },
+  {
+    "forme": "animation guilde",
+    "competenceIds": [
+      "C105"
+    ]
+  },
+  {
+    "forme": "Apache Airflow",
+    "competenceIds": [
+      "C019"
+    ]
+  },
+  {
+    "forme": "Apache Kafka",
+    "competenceIds": [
+      "C024"
+    ]
+  },
+  {
+    "forme": "Apache Spark",
+    "competenceIds": [
+      "C020"
+    ]
+  },
+  {
+    "forme": "API",
+    "competenceIds": [
+      "C010"
+    ]
+  },
+  {
+    "forme": "API integration",
+    "competenceIds": [
+      "C010"
+    ]
+  },
+  {
+    "forme": "APIs",
+    "competenceIds": [
+      "C010"
+    ]
+  },
+  {
+    "forme": "applied research",
+    "competenceIds": [
+      "C038"
+    ]
+  },
+  {
+    "forme": "apprentissage automatique",
+    "competenceIds": [
+      "C035"
+    ]
+  },
+  {
+    "forme": "arbitrage produit",
+    "competenceIds": [
+      "C124"
+    ]
+  },
+  {
+    "forme": "architecture cible",
+    "competenceIds": [
+      "C003"
+    ]
+  },
+  {
+    "forme": "architecture cloud",
+    "competenceIds": [
+      "C004"
+    ]
+  },
+  {
+    "forme": "architecture Data & IA",
+    "competenceIds": [
+      "C001"
+    ]
+  },
+  {
+    "forme": "architecture de solution",
+    "competenceIds": [
+      "C006"
+    ]
+  },
+  {
+    "forme": "architecture lakehouse",
+    "competenceIds": [
+      "C002"
+    ]
+  },
+  {
+    "forme": "architecture patterns",
+    "competenceIds": [
+      "C009"
+    ]
+  },
+  {
+    "forme": "architecture plateforme Data",
+    "competenceIds": [
+      "C005"
+    ]
+  },
+  {
+    "forme": "architecture target",
+    "competenceIds": [
+      "C003"
+    ]
+  },
+  {
+    "forme": "Asset Bundles",
+    "competenceIds": [
+      "C042"
+    ]
+  },
+  {
+    "forme": "ateliers",
+    "competenceIds": [
+      "C048"
+    ]
+  },
+  {
+    "forme": "ateliers de cadrage",
+    "competenceIds": [
+      "C048"
+    ]
+  },
+  {
+    "forme": "avant-vente",
+    "competenceIds": [
+      "C049"
+    ]
+  },
+  {
+    "forme": "AWS",
+    "competenceIds": [
+      "C011"
+    ]
+  },
+  {
+    "forme": "Azure",
+    "competenceIds": [
+      "C017"
+    ]
+  },
+  {
+    "forme": "Azure Databricks",
+    "competenceIds": [
+      "C041"
+    ]
+  },
+  {
+    "forme": "backlog",
+    "competenceIds": [
+      "C121"
+    ]
+  },
+  {
+    "forme": "backlog management",
+    "competenceIds": [
+      "C121"
+    ]
+  },
+  {
+    "forme": "base vectorielle",
+    "competenceIds": [
+      "C066"
+    ]
+  },
+  {
+    "forme": "batch",
+    "competenceIds": [
+      "C028"
+    ]
+  },
+  {
+    "forme": "batch processing",
+    "competenceIds": [
+      "C028"
+    ]
+  },
+  {
+    "forme": "benchmarking scientifique",
+    "competenceIds": [
+      "C038"
+    ]
+  },
+  {
+    "forme": "Bicep",
+    "competenceIds": [
+      "C015"
+    ]
+  },
+  {
+    "forme": "Big Query",
+    "competenceIds": [
+      "C082"
+    ]
+  },
+  {
+    "forme": "BigQuery",
+    "competenceIds": [
+      "C082"
+    ]
+  },
+  {
+    "forme": "build to run",
+    "competenceIds": [
+      "C062"
+    ]
+  },
+  {
+    "forme": "business case",
+    "competenceIds": [
+      "C129"
+    ]
+  },
+  {
+    "forme": "business development",
+    "competenceIds": [
+      "C050"
+    ]
+  },
+  {
+    "forme": "business impact",
+    "competenceIds": [
+      "C123"
+    ]
+  },
+  {
+    "forme": "C#",
+    "competenceIds": [
+      "C099"
+    ]
+  },
+  {
+    "forme": "C-level communication",
+    "competenceIds": [
+      "C052"
+    ]
+  },
+  {
+    "forme": "cadrage use cases",
+    "competenceIds": [
+      "C051"
+    ]
+  },
+  {
+    "forme": "catalogage",
+    "competenceIds": [
+      "C091"
+    ]
+  },
+  {
+    "forme": "catalogue de données",
+    "competenceIds": [
+      "C091"
+    ]
+  },
+  {
+    "forme": "catalogues Databricks",
+    "competenceIds": [
+      "C046"
+    ]
+  },
+  {
+    "forme": "change",
+    "competenceIds": [
+      "C130"
+    ]
+  },
+  {
+    "forme": "change & adoption",
+    "competenceIds": [
+      "C119"
+    ]
+  },
+  {
+    "forme": "change management",
+    "competenceIds": [
+      "C130"
+    ]
+  },
+  {
+    "forme": "CI/CD",
+    "competenceIds": [
+      "C095"
+    ]
+  },
+  {
+    "forme": "client-facing",
+    "competenceIds": [
+      "C055"
+    ]
+  },
+  {
+    "forme": "cloud",
+    "competenceIds": [
+      "C012"
+    ]
+  },
+  {
+    "forme": "cloud architecture",
+    "competenceIds": [
+      "C004"
+    ]
+  },
+  {
+    "forme": "Cloud Build",
+    "competenceIds": [
+      "C083"
+    ]
+  },
+  {
+    "forme": "Cloud Composer",
+    "competenceIds": [
+      "C084"
+    ]
+  },
+  {
+    "forme": "cloud native",
+    "competenceIds": [
+      "C012"
+    ]
+  },
+  {
+    "forme": "Cloud Storage",
+    "competenceIds": [
+      "C085"
+    ]
+  },
+  {
+    "forme": "cloud-native",
+    "competenceIds": [
+      "C012"
+    ]
+  },
+  {
+    "forme": "cloud-native architecture",
+    "competenceIds": [
+      "C004"
+    ]
+  },
+  {
+    "forme": "coaching",
+    "competenceIds": [
+      "C109"
+    ]
+  },
+  {
+    "forme": "code production",
+    "competenceIds": [
+      "C097"
+    ]
+  },
+  {
+    "forme": "code review",
+    "competenceIds": [
+      "C096"
+    ]
+  },
+  {
+    "forme": "CODIR",
+    "competenceIds": [
+      "C052"
+    ]
+  },
+  {
+    "forme": "communauté de pratique",
+    "competenceIds": [
+      "C105"
+    ]
+  },
+  {
+    "forme": "community leadership",
+    "competenceIds": [
+      "C105"
+    ]
+  },
+  {
+    "forme": "compliance",
+    "competenceIds": [
+      "C137"
+    ]
+  },
+  {
+    "forme": "Composer",
+    "competenceIds": [
+      "C084"
+    ]
+  },
+  {
+    "forme": "computer vision",
+    "competenceIds": [
+      "C032"
+    ]
+  },
+  {
+    "forme": "conception de prompts",
+    "competenceIds": [
+      "C075"
+    ]
+  },
+  {
+    "forme": "confidentialité",
+    "competenceIds": [
+      "C139"
+    ]
+  },
+  {
+    "forme": "conformité",
+    "competenceIds": [
+      "C137"
+    ]
+  },
+  {
+    "forme": "containers",
+    "competenceIds": [
+      "C013"
+    ]
+  },
+  {
+    "forme": "conteneurs",
+    "competenceIds": [
+      "C013"
+    ]
+  },
+  {
+    "forme": "continuous delivery",
+    "competenceIds": [
+      "C095"
+    ]
+  },
+  {
+    "forme": "continuous deployment",
+    "competenceIds": [
+      "C095"
+    ]
+  },
+  {
+    "forme": "continuous integration",
+    "competenceIds": [
+      "C095"
+    ]
+  },
+  {
+    "forme": "contrôle d’accès",
+    "competenceIds": [
+      "C138"
+    ]
+  },
+  {
+    "forme": "cost management",
+    "competenceIds": [
+      "C057"
+    ]
+  },
+  {
+    "forme": "cost optimization",
+    "competenceIds": [
+      "C057"
+    ]
+  },
+  {
+    "forme": "CV",
+    "competenceIds": [
+      "C032"
+    ]
+  },
+  {
+    "forme": "CxO",
+    "competenceIds": [
+      "C052"
+    ]
+  },
+  {
+    "forme": "cybersecurity",
+    "competenceIds": [
+      "C140"
+    ]
+  },
+  {
+    "forme": "cybersécurité",
+    "competenceIds": [
+      "C140"
+    ]
+  },
+  {
+    "forme": "cycle de vie",
+    "competenceIds": [
+      "C122"
+    ]
+  },
+  {
+    "forme": "cycle de vie modèle",
+    "competenceIds": [
+      "C110"
+    ]
+  },
+  {
+    "forme": "cérémonies agiles",
+    "competenceIds": [
+      "C047"
+    ]
+  },
+  {
+    "forme": "DAB",
+    "competenceIds": [
+      "C042"
+    ]
+  },
+  {
+    "forme": "Data & AI architecture",
+    "competenceIds": [
+      "C001"
+    ]
+  },
+  {
+    "forme": "Data & AI strategy",
+    "competenceIds": [
+      "C133"
+    ]
+  },
+  {
+    "forme": "data catalog",
+    "competenceIds": [
+      "C091"
+    ]
+  },
+  {
+    "forme": "data drift",
+    "competenceIds": [
+      "C112"
+    ]
+  },
+  {
+    "forme": "data governance",
+    "competenceIds": [
+      "C093"
+    ]
+  },
+  {
+    "forme": "data ingestion",
+    "competenceIds": [
+      "C023"
+    ]
+  },
+  {
+    "forme": "data integration",
+    "competenceIds": [
+      "C022"
+    ]
+  },
+  {
+    "forme": "data lake",
+    "competenceIds": [
+      "C007"
+    ]
+  },
+  {
+    "forme": "Data Lake / Lakehouse",
+    "competenceIds": [
+      "C002"
+    ]
+  },
+  {
+    "forme": "data lakehouse",
+    "competenceIds": [
+      "C002"
+    ]
+  },
+  {
+    "forme": "data lineage",
+    "competenceIds": [
+      "C092"
+    ]
+  },
+  {
+    "forme": "data modeling",
+    "competenceIds": [
+      "C025"
+    ]
+  },
+  {
+    "forme": "data modelling",
+    "competenceIds": [
+      "C025"
+    ]
+  },
+  {
+    "forme": "data pipelines",
+    "competenceIds": [
+      "C021"
+    ]
+  },
+  {
+    "forme": "data platform architecture",
+    "competenceIds": [
+      "C005"
+    ]
+  },
+  {
+    "forme": "data quality",
+    "competenceIds": [
+      "C094"
+    ]
+  },
+  {
+    "forme": "Data strategy",
+    "competenceIds": [
+      "C133"
+    ]
+  },
+  {
+    "forme": "data tests",
+    "competenceIds": [
+      "C098"
+    ]
+  },
+  {
+    "forme": "data transformation",
+    "competenceIds": [
+      "C030",
+      "C135"
+    ]
+  },
+  {
+    "forme": "data warehouse",
+    "competenceIds": [
+      "C008"
+    ]
+  },
+  {
+    "forme": "Databricks",
+    "competenceIds": [
+      "C041"
+    ]
+  },
+  {
+    "forme": "Databricks Asset Bundles",
+    "competenceIds": [
+      "C042"
+    ]
+  },
+  {
+    "forme": "Databricks Workflows",
+    "competenceIds": [
+      "C043"
+    ]
+  },
+  {
+    "forme": "Dataflow",
+    "competenceIds": [
+      "C086"
+    ]
+  },
+  {
+    "forme": "Dataplex",
+    "competenceIds": [
+      "C087"
+    ]
+  },
+  {
+    "forme": "Dataproc",
+    "competenceIds": [
+      "C088"
+    ]
+  },
+  {
+    "forme": "dbt",
+    "competenceIds": [
+      "C031"
+    ]
+  },
+  {
+    "forme": "dbt Core",
+    "competenceIds": [
+      "C031"
+    ]
+  },
+  {
+    "forme": "Deep Learning",
+    "competenceIds": [
+      "C033"
+    ]
+  },
+  {
+    "forme": "Delta Lake",
+    "competenceIds": [
+      "C044"
+    ]
+  },
+  {
+    "forme": "Delta Live Tables",
+    "competenceIds": [
+      "C045"
+    ]
+  },
+  {
+    "forme": "design authority",
+    "competenceIds": [
+      "C107"
+    ]
+  },
+  {
+    "forme": "design patterns",
+    "competenceIds": [
+      "C009"
+    ]
+  },
+  {
+    "forme": "developer platform",
+    "competenceIds": [
+      "C018"
+    ]
+  },
+  {
+    "forme": "diagnostic de maturité",
+    "competenceIds": [
+      "C131"
+    ]
+  },
+  {
+    "forme": "discovery",
+    "competenceIds": [
+      "C125"
+    ]
+  },
+  {
+    "forme": "DL",
+    "competenceIds": [
+      "C033"
+    ]
+  },
+  {
+    "forme": "DLT",
+    "competenceIds": [
+      "C045"
+    ]
+  },
+  {
+    "forme": "Docker",
+    "competenceIds": [
+      "C013"
+    ]
+  },
+  {
+    "forme": "documentation",
+    "competenceIds": [
+      "C053"
+    ]
+  },
+  {
+    "forme": "documentation d’architecture",
+    "competenceIds": [
+      "C053"
+    ]
+  },
+  {
+    "forme": "données sensibles",
+    "competenceIds": [
+      "C139"
+    ]
+  },
+  {
+    "forme": "DQ",
+    "competenceIds": [
+      "C094"
+    ]
+  },
+  {
+    "forme": "drift monitoring",
+    "competenceIds": [
+      "C112"
+    ]
+  },
+  {
+    "forme": "dérive",
+    "competenceIds": [
+      "C112"
+    ]
+  },
+  {
+    "forme": "développement commercial",
+    "competenceIds": [
+      "C050"
+    ]
+  },
+  {
+    "forme": "EDW",
+    "competenceIds": [
+      "C008"
+    ]
+  },
+  {
+    "forme": "ELT",
+    "competenceIds": [
+      "C022"
+    ]
+  },
+  {
+    "forme": "embeddings",
+    "competenceIds": [
+      "C067"
+    ]
+  },
+  {
+    "forme": "enablement",
+    "competenceIds": [
+      "C106"
+    ]
+  },
+  {
+    "forme": "enabling team",
+    "competenceIds": [
+      "C106"
+    ]
+  },
+  {
+    "forme": "entrepôt de données",
+    "competenceIds": [
+      "C008"
+    ]
+  },
+  {
+    "forme": "ETL",
+    "competenceIds": [
+      "C022"
+    ]
+  },
+  {
+    "forme": "ETL/ELT",
+    "competenceIds": [
+      "C022"
+    ]
+  },
+  {
+    "forme": "evals",
+    "competenceIds": [
+      "C081"
+    ]
+  },
+  {
+    "forme": "event streaming",
+    "competenceIds": [
+      "C029"
+    ]
+  },
+  {
+    "forme": "executive communication",
+    "competenceIds": [
+      "C052"
+    ]
+  },
+  {
+    "forme": "experimentation",
+    "competenceIds": [
+      "C034"
+    ]
+  },
+  {
+    "forme": "experiments",
+    "competenceIds": [
+      "C034"
+    ]
+  },
+  {
+    "forme": "exploitation",
+    "competenceIds": [
+      "C062"
+    ]
+  },
+  {
+    "forme": "exploration produit",
+    "competenceIds": [
+      "C125"
+    ]
+  },
+  {
+    "forme": "expérimentation",
+    "competenceIds": [
+      "C034"
+    ]
+  },
+  {
+    "forme": "facilitation",
+    "competenceIds": [
+      "C048"
+    ]
+  },
+  {
+    "forme": "feuille de route",
+    "competenceIds": [
+      "C132"
+    ]
+  },
+  {
+    "forme": "fiabilité",
+    "competenceIds": [
+      "C056"
+    ]
+  },
+  {
+    "forme": "fine tuning",
+    "competenceIds": [
+      "C068"
+    ]
+  },
+  {
+    "forme": "fine-tuning",
+    "competenceIds": [
+      "C068"
+    ]
+  },
+  {
+    "forme": "FinOps",
+    "competenceIds": [
+      "C057"
+    ]
+  },
+  {
+    "forme": "forecasting",
+    "competenceIds": [
+      "C036"
+    ]
+  },
+  {
+    "forme": "foundation models",
+    "competenceIds": [
+      "C070"
+    ]
+  },
+  {
+    "forme": "function calling",
+    "competenceIds": [
+      "C080"
+    ]
+  },
+  {
+    "forme": "garde-fous",
+    "competenceIds": [
+      "C069"
+    ]
+  },
+  {
+    "forme": "GCP",
+    "competenceIds": [
+      "C014"
+    ]
+  },
+  {
+    "forme": "GCS",
+    "competenceIds": [
+      "C085"
+    ]
+  },
+  {
+    "forme": "GenAI evaluation",
+    "competenceIds": [
+      "C081"
+    ]
+  },
+  {
+    "forme": "gestion du backlog",
+    "competenceIds": [
+      "C121"
+    ]
+  },
+  {
+    "forme": "GKE",
+    "competenceIds": [
+      "C016"
+    ]
+  },
+  {
+    "forme": "Google Cloud",
+    "competenceIds": [
+      "C014"
+    ]
+  },
+  {
+    "forme": "Google Cloud Build",
+    "competenceIds": [
+      "C083"
+    ]
+  },
+  {
+    "forme": "Google Cloud Dataflow",
+    "competenceIds": [
+      "C086"
+    ]
+  },
+  {
+    "forme": "Google Cloud Dataproc",
+    "competenceIds": [
+      "C088"
+    ]
+  },
+  {
+    "forme": "Google Cloud Platform",
+    "competenceIds": [
+      "C014"
+    ]
+  },
+  {
+    "forme": "Google Cloud Storage",
+    "competenceIds": [
+      "C085"
+    ]
+  },
+  {
+    "forme": "Google Pub/Sub",
+    "competenceIds": [
+      "C089"
+    ]
+  },
+  {
+    "forme": "gouvernance",
+    "competenceIds": [
+      "C093"
+    ]
+  },
+  {
+    "forme": "gouvernance Data/IA",
+    "competenceIds": [
+      "C093"
+    ]
+  },
+  {
+    "forme": "governance",
+    "competenceIds": [
+      "C093"
+    ]
+  },
+  {
+    "forme": "guardrails",
+    "competenceIds": [
+      "C069"
+    ]
+  },
+  {
+    "forme": "IaC",
+    "competenceIds": [
+      "C015"
+    ]
+  },
+  {
+    "forme": "IAM",
+    "competenceIds": [
+      "C138"
+    ]
+  },
+  {
+    "forme": "identity management",
+    "competenceIds": [
+      "C138"
+    ]
+  },
+  {
+    "forme": "incident management",
+    "competenceIds": [
+      "C058"
+    ]
+  },
+  {
+    "forme": "incidents",
+    "competenceIds": [
+      "C058"
+    ]
+  },
+  {
+    "forme": "indicateurs de performance",
+    "competenceIds": [
+      "C120"
+    ]
+  },
+  {
+    "forme": "inference deployment",
+    "competenceIds": [
+      "C111"
+    ]
+  },
+  {
+    "forme": "Infrastructure as Code",
+    "competenceIds": [
+      "C015"
+    ]
+  },
+  {
+    "forme": "ingestion",
+    "competenceIds": [
+      "C023"
+    ]
+  },
+  {
+    "forme": "interaction client",
+    "competenceIds": [
+      "C055"
+    ]
+  },
+  {
+    "forme": "intégration API",
+    "competenceIds": [
+      "C010"
+    ]
+  },
+  {
+    "forme": "Java",
+    "competenceIds": [
+      "C100"
+    ]
+  },
+  {
+    "forme": "JavaScript",
+    "competenceIds": [
+      "C101"
+    ]
+  },
+  {
+    "forme": "K8s",
+    "competenceIds": [
+      "C016"
+    ]
+  },
+  {
+    "forme": "Kafka",
+    "competenceIds": [
+      "C024"
+    ]
+  },
+  {
+    "forme": "KPI",
+    "competenceIds": [
+      "C120"
+    ]
+  },
+  {
+    "forme": "Kubernetes",
+    "competenceIds": [
+      "C016"
+    ]
+  },
+  {
+    "forme": "lac de données",
+    "competenceIds": [
+      "C007"
+    ]
+  },
+  {
+    "forme": "lake",
+    "competenceIds": [
+      "C007"
+    ]
+  },
+  {
+    "forme": "lakehouse",
+    "competenceIds": [
+      "C002"
+    ]
+  },
+  {
+    "forme": "LangChain",
+    "competenceIds": [
+      "C071"
+    ]
+  },
+  {
+    "forme": "LangGraph",
+    "competenceIds": [
+      "C072"
+    ]
+  },
+  {
+    "forme": "large language models",
+    "competenceIds": [
+      "C070"
+    ]
+  },
+  {
+    "forme": "leadership technique",
+    "competenceIds": [
+      "C107"
+    ]
+  },
+  {
+    "forme": "lifecycle management",
+    "competenceIds": [
+      "C122"
+    ]
+  },
+  {
+    "forme": "lineage",
+    "competenceIds": [
+      "C092"
+    ]
+  },
+  {
+    "forme": "LLM",
+    "competenceIds": [
+      "C070"
+    ]
+  },
+  {
+    "forme": "LLM evaluation",
+    "competenceIds": [
+      "C081"
+    ]
+  },
+  {
+    "forme": "logs",
+    "competenceIds": [
+      "C060"
+    ]
+  },
+  {
+    "forme": "Machine Learning",
+    "competenceIds": [
+      "C035"
+    ]
+  },
+  {
+    "forme": "management",
+    "competenceIds": [
+      "C108"
+    ]
+  },
+  {
+    "forme": "maturity assessment",
+    "competenceIds": [
+      "C131"
+    ]
+  },
+  {
+    "forme": "MCO",
+    "competenceIds": [
+      "C062"
+    ]
+  },
+  {
+    "forme": "MCP",
+    "competenceIds": [
+      "C076"
+    ]
+  },
+  {
+    "forme": "memory",
+    "competenceIds": [
+      "C073"
+    ]
+  },
+  {
+    "forme": "mentorat",
+    "competenceIds": [
+      "C109"
+    ]
+  },
+  {
+    "forme": "mentoring",
+    "competenceIds": [
+      "C109"
+    ]
+  },
+  {
+    "forme": "mesure d’impact",
+    "competenceIds": [
+      "C123"
+    ]
+  },
+  {
+    "forme": "metastore",
+    "competenceIds": [
+      "C046"
+    ]
+  },
+  {
+    "forme": "Microsoft Azure",
+    "competenceIds": [
+      "C017"
+    ]
+  },
+  {
+    "forme": "mise à l’échelle",
+    "competenceIds": [
+      "C064"
+    ]
+  },
+  {
+    "forme": "ML",
+    "competenceIds": [
+      "C035"
+    ]
+  },
+  {
+    "forme": "ML lifecycle",
+    "competenceIds": [
+      "C110"
+    ]
+  },
+  {
+    "forme": "ML pipelines",
+    "competenceIds": [
+      "C115"
+    ]
+  },
+  {
+    "forme": "MLflow",
+    "competenceIds": [
+      "C113"
+    ]
+  },
+  {
+    "forme": "Model Context Protocol",
+    "competenceIds": [
+      "C076"
+    ]
+  },
+  {
+    "forme": "model deployment",
+    "competenceIds": [
+      "C111"
+    ]
+  },
+  {
+    "forme": "model drift",
+    "competenceIds": [
+      "C112"
+    ]
+  },
+  {
+    "forme": "model evaluation",
+    "competenceIds": [
+      "C040"
+    ]
+  },
+  {
+    "forme": "model lifecycle",
+    "competenceIds": [
+      "C110"
+    ]
+  },
+  {
+    "forme": "model pipelines",
+    "competenceIds": [
+      "C115"
+    ]
+  },
+  {
+    "forme": "model quality",
+    "competenceIds": [
+      "C040"
+    ]
+  },
+  {
+    "forme": "model registry",
+    "competenceIds": [
+      "C114"
+    ]
+  },
+  {
+    "forme": "model serving",
+    "competenceIds": [
+      "C111"
+    ]
+  },
+  {
+    "forme": "model versioning",
+    "competenceIds": [
+      "C118"
+    ]
+  },
+  {
+    "forme": "modèle opérationnel cible",
+    "competenceIds": [
+      "C134"
+    ]
+  },
+  {
+    "forme": "modèles de données",
+    "competenceIds": [
+      "C025"
+    ]
+  },
+  {
+    "forme": "modèles de fondation",
+    "competenceIds": [
+      "C070"
+    ]
+  },
+  {
+    "forme": "modélisation",
+    "competenceIds": [
+      "C025"
+    ]
+  },
+  {
+    "forme": "modélisation prédictive",
+    "competenceIds": [
+      "C036"
+    ]
+  },
+  {
+    "forme": "modélisation statistique",
+    "competenceIds": [
+      "C039"
+    ]
+  },
+  {
+    "forme": "monitoring",
+    "competenceIds": [
+      "C059",
+      "C060"
+    ]
+  },
+  {
+    "forme": "montée en compétences",
+    "competenceIds": [
+      "C109"
+    ]
+  },
+  {
+    "forme": "multi agent systems",
+    "competenceIds": [
+      "C079"
+    ]
+  },
+  {
+    "forme": "multi-agent",
+    "competenceIds": [
+      "C079"
+    ]
+  },
+  {
+    "forme": "multi-agents",
+    "competenceIds": [
+      "C079"
+    ]
+  },
+  {
+    "forme": "multi-cloud",
+    "competenceIds": [
+      "C012"
+    ]
+  },
+  {
+    "forme": "mémoire agentique",
+    "competenceIds": [
+      "C073"
+    ]
+  },
+  {
+    "forme": "natural language processing",
+    "competenceIds": [
+      "C037"
+    ]
+  },
+  {
+    "forme": "near real-time",
+    "competenceIds": [
+      "C029"
+    ]
+  },
+  {
+    "forme": "neural networks",
+    "competenceIds": [
+      "C033"
+    ]
+  },
+  {
+    "forme": "NLP",
+    "competenceIds": [
+      "C037"
+    ]
+  },
+  {
+    "forme": "Node",
+    "competenceIds": [
+      "C101"
+    ]
+  },
+  {
+    "forme": "Node.js",
+    "competenceIds": [
+      "C101"
+    ]
+  },
+  {
+    "forme": "observability",
+    "competenceIds": [
+      "C060"
+    ]
+  },
+  {
+    "forme": "observabilité",
+    "competenceIds": [
+      "C060"
+    ]
+  },
+  {
+    "forme": "OKR",
+    "competenceIds": [
+      "C120"
+    ]
+  },
+  {
+    "forme": "operating model",
+    "competenceIds": [
+      "C134"
+    ]
+  },
+  {
+    "forme": "operations",
+    "competenceIds": [
+      "C062"
+    ]
+  },
+  {
+    "forme": "optimisation",
+    "competenceIds": [
+      "C061"
+    ]
+  },
+  {
+    "forme": "optimisation des coûts",
+    "competenceIds": [
+      "C057"
+    ]
+  },
+  {
+    "forme": "orchestration",
+    "competenceIds": [
+      "C026"
+    ]
+  },
+  {
+    "forme": "orchestration agentique",
+    "competenceIds": [
+      "C074"
+    ]
+  },
+  {
+    "forme": "orchestration des traitements",
+    "competenceIds": [
+      "C026"
+    ]
+  },
+  {
+    "forme": "patterns techniques",
+    "competenceIds": [
+      "C009"
+    ]
+  },
+  {
+    "forme": "people management",
+    "competenceIds": [
+      "C108"
+    ]
+  },
+  {
+    "forme": "performance indicators",
+    "competenceIds": [
+      "C120"
+    ]
+  },
+  {
+    "forme": "performance optimization",
+    "competenceIds": [
+      "C061"
+    ]
+  },
+  {
+    "forme": "pilotage programme",
+    "competenceIds": [
+      "C054"
+    ]
+  },
+  {
+    "forme": "pilotage transformation",
+    "competenceIds": [
+      "C054"
+    ]
+  },
+  {
+    "forme": "pipeline engineering",
+    "competenceIds": [
+      "C021"
+    ]
+  },
+  {
+    "forme": "pipelines",
+    "competenceIds": [
+      "C021"
+    ]
+  },
+  {
+    "forme": "pipelines de données",
+    "competenceIds": [
+      "C021"
+    ]
+  },
+  {
+    "forme": "pipelines modèles",
+    "competenceIds": [
+      "C115"
+    ]
+  },
+  {
+    "forme": "plateforme self-service",
+    "competenceIds": [
+      "C018"
+    ]
+  },
+  {
+    "forme": "platform architecture",
+    "competenceIds": [
+      "C005"
+    ]
+  },
+  {
+    "forme": "pre-sales",
+    "competenceIds": [
+      "C049"
+    ]
+  },
+  {
+    "forme": "prediction",
+    "competenceIds": [
+      "C036"
+    ]
+  },
+  {
+    "forme": "predictive modeling",
+    "competenceIds": [
+      "C036"
+    ]
+  },
+  {
+    "forme": "priorisation",
+    "competenceIds": [
+      "C124"
+    ]
+  },
+  {
+    "forme": "priorisation cas d’usage",
+    "competenceIds": [
+      "C051"
+    ]
+  },
+  {
+    "forme": "prioritisation",
+    "competenceIds": [
+      "C124"
+    ]
+  },
+  {
+    "forme": "privacy",
+    "competenceIds": [
+      "C139"
+    ]
+  },
+  {
+    "forme": "privacy by design",
+    "competenceIds": [
+      "C139"
+    ]
+  },
+  {
+    "forme": "process excellence",
+    "competenceIds": [
+      "C136"
+    ]
+  },
+  {
+    "forme": "process redesign",
+    "competenceIds": [
+      "C136"
+    ]
+  },
+  {
+    "forme": "process transformation",
+    "competenceIds": [
+      "C136"
+    ]
+  },
+  {
+    "forme": "processing",
+    "competenceIds": [
+      "C030"
+    ]
+  },
+  {
+    "forme": "product adoption",
+    "competenceIds": [
+      "C119"
+    ]
+  },
+  {
+    "forme": "product discovery",
+    "competenceIds": [
+      "C125"
+    ]
+  },
+  {
+    "forme": "product lifecycle",
+    "competenceIds": [
+      "C122"
+    ]
+  },
+  {
+    "forme": "product roadmap",
+    "competenceIds": [
+      "C126"
+    ]
+  },
+  {
+    "forme": "product vision",
+    "competenceIds": [
+      "C128"
+    ]
+  },
+  {
+    "forme": "production",
+    "competenceIds": [
+      "C062"
+    ]
+  },
+  {
+    "forme": "production-grade engineering",
+    "competenceIds": [
+      "C097"
+    ]
+  },
+  {
+    "forme": "program management",
+    "competenceIds": [
+      "C054"
+    ]
+  },
+  {
+    "forme": "programme delivery",
+    "competenceIds": [
+      "C054"
+    ]
+  },
+  {
+    "forme": "prompt engineering",
+    "competenceIds": [
+      "C075"
+    ]
+  },
+  {
+    "forme": "prompting",
+    "competenceIds": [
+      "C075"
+    ]
+  },
+  {
+    "forme": "propositions commerciales",
+    "competenceIds": [
+      "C049"
+    ]
+  },
+  {
+    "forme": "prévision",
+    "competenceIds": [
+      "C036"
+    ]
+  },
+  {
+    "forme": "Pub/Sub",
+    "competenceIds": [
+      "C089"
+    ]
+  },
+  {
+    "forme": "PySpark",
+    "competenceIds": [
+      "C020"
+    ]
+  },
+  {
+    "forme": "Python",
+    "competenceIds": [
+      "C102"
+    ]
+  },
+  {
+    "forme": "qualité Data",
+    "competenceIds": [
+      "C094"
+    ]
+  },
+  {
+    "forme": "qualité des données",
+    "competenceIds": [
+      "C094"
+    ]
+  },
+  {
+    "forme": "query optimization",
+    "competenceIds": [
+      "C061"
+    ]
+  },
+  {
+    "forme": "RAG",
+    "competenceIds": [
+      "C077"
+    ]
+  },
+  {
+    "forme": "RBAC",
+    "competenceIds": [
+      "C138"
+    ]
+  },
+  {
+    "forme": "real-time",
+    "competenceIds": [
+      "C029"
+    ]
+  },
+  {
+    "forme": "recherche appliquée",
+    "competenceIds": [
+      "C038"
+    ]
+  },
+  {
+    "forme": "recherche augmentée",
+    "competenceIds": [
+      "C077"
+    ]
+  },
+  {
+    "forme": "registre de modèles",
+    "competenceIds": [
+      "C114"
+    ]
+  },
+  {
+    "forme": "registry",
+    "competenceIds": [
+      "C114"
+    ]
+  },
+  {
+    "forme": "regulatory compliance",
+    "competenceIds": [
+      "C137"
+    ]
+  },
+  {
+    "forme": "relation C-level",
+    "competenceIds": [
+      "C052"
+    ]
+  },
+  {
+    "forme": "relation client",
+    "competenceIds": [
+      "C055"
+    ]
+  },
+  {
+    "forme": "reliability",
+    "competenceIds": [
+      "C056"
+    ]
+  },
+  {
+    "forme": "repeatability",
+    "competenceIds": [
+      "C116"
+    ]
+  },
+  {
+    "forme": "reproducibility",
+    "competenceIds": [
+      "C116"
+    ]
+  },
+  {
+    "forme": "reproductibilité",
+    "competenceIds": [
+      "C116"
+    ]
+  },
+  {
+    "forme": "représentations vectorielles",
+    "competenceIds": [
+      "C067"
+    ]
+  },
+  {
+    "forme": "requirements backlog",
+    "competenceIds": [
+      "C127"
+    ]
+  },
+  {
+    "forme": "retour arrière",
+    "competenceIds": [
+      "C117"
+    ]
+  },
+  {
+    "forme": "retrieval",
+    "competenceIds": [
+      "C077"
+    ]
+  },
+  {
+    "forme": "retrieval augmented generation",
+    "competenceIds": [
+      "C077"
+    ]
+  },
+  {
+    "forme": "revue de code",
+    "competenceIds": [
+      "C096"
+    ]
+  },
+  {
+    "forme": "risk",
+    "competenceIds": [
+      "C137"
+    ]
+  },
+  {
+    "forme": "roadmap",
+    "competenceIds": [
+      "C132"
+    ]
+  },
+  {
+    "forme": "roadmap plateforme",
+    "competenceIds": [
+      "C126"
+    ]
+  },
+  {
+    "forme": "roadmap produit",
+    "competenceIds": [
+      "C126"
+    ]
+  },
+  {
+    "forme": "robustesse",
+    "competenceIds": [
+      "C056"
+    ]
+  },
+  {
+    "forme": "robustness",
+    "competenceIds": [
+      "C056"
+    ]
+  },
+  {
+    "forme": "ROI",
+    "competenceIds": [
+      "C123"
+    ]
+  },
+  {
+    "forme": "ROI case",
+    "competenceIds": [
+      "C129"
+    ]
+  },
+  {
+    "forme": "rollback",
+    "competenceIds": [
+      "C117"
+    ]
+  },
+  {
+    "forme": "root cause analysis",
+    "competenceIds": [
+      "C058"
+    ]
+  },
+  {
+    "forme": "run",
+    "competenceIds": [
+      "C062"
+    ]
+  },
+  {
+    "forme": "récits utilisateurs",
+    "competenceIds": [
+      "C127"
+    ]
+  },
+  {
+    "forme": "référent technique",
+    "competenceIds": [
+      "C107"
+    ]
+  },
+  {
+    "forme": "réseaux de neurones",
+    "competenceIds": [
+      "C033"
+    ]
+  },
+  {
+    "forme": "SAFe",
+    "competenceIds": [
+      "C047"
+    ]
+  },
+  {
+    "forme": "safety rails",
+    "competenceIds": [
+      "C069"
+    ]
+  },
+  {
+    "forme": "Scala",
+    "competenceIds": [
+      "C104"
+    ]
+  },
+  {
+    "forme": "scalability",
+    "competenceIds": [
+      "C064"
+    ]
+  },
+  {
+    "forme": "scalabilité",
+    "competenceIds": [
+      "C064"
+    ]
+  },
+  {
+    "forme": "scale",
+    "competenceIds": [
+      "C064"
+    ]
+  },
+  {
+    "forme": "scoring",
+    "competenceIds": [
+      "C124"
+    ]
+  },
+  {
+    "forme": "Scrum",
+    "competenceIds": [
+      "C047"
+    ]
+  },
+  {
+    "forme": "security",
+    "competenceIds": [
+      "C140"
+    ]
+  },
+  {
+    "forme": "self-service platform",
+    "competenceIds": [
+      "C018"
+    ]
+  },
+  {
+    "forme": "Semantic Kernel",
+    "competenceIds": [
+      "C078"
+    ]
+  },
+  {
+    "forme": "service level agreements",
+    "competenceIds": [
+      "C063"
+    ]
+  },
+  {
+    "forme": "service level objectives",
+    "competenceIds": [
+      "C063"
+    ]
+  },
+  {
+    "forme": "serving",
+    "competenceIds": [
+      "C111"
+    ]
+  },
+  {
+    "forme": "SLA",
+    "competenceIds": [
+      "C063"
+    ]
+  },
+  {
+    "forme": "SLO",
+    "competenceIds": [
+      "C063"
+    ]
+  },
+  {
+    "forme": "Snowflake",
+    "competenceIds": [
+      "C027"
+    ]
+  },
+  {
+    "forme": "software engineering",
+    "competenceIds": [
+      "C097"
+    ]
+  },
+  {
+    "forme": "solution architecture",
+    "competenceIds": [
+      "C006"
+    ]
+  },
+  {
+    "forme": "solution design",
+    "competenceIds": [
+      "C006"
+    ]
+  },
+  {
+    "forme": "Spark",
+    "competenceIds": [
+      "C020"
+    ]
+  },
+  {
+    "forme": "Spark SQL",
+    "competenceIds": [
+      "C020",
+      "C103"
+    ]
+  },
+  {
+    "forme": "SQL",
+    "competenceIds": [
+      "C103"
+    ]
+  },
+  {
+    "forme": "SQL analytics",
+    "competenceIds": [
+      "C103"
+    ]
+  },
+  {
+    "forme": "staffing",
+    "competenceIds": [
+      "C108"
+    ]
+  },
+  {
+    "forme": "statistical modeling",
+    "competenceIds": [
+      "C039"
+    ]
+  },
+  {
+    "forme": "statistics",
+    "competenceIds": [
+      "C039"
+    ]
+  },
+  {
+    "forme": "statistiques",
+    "competenceIds": [
+      "C039"
+    ]
+  },
+  {
+    "forme": "strategic roadmap",
+    "competenceIds": [
+      "C132"
+    ]
+  },
+  {
+    "forme": "stratégie Data/IA",
+    "competenceIds": [
+      "C133"
+    ]
+  },
+  {
+    "forme": "streaming",
+    "competenceIds": [
+      "C029"
+    ]
+  },
+  {
+    "forme": "supervision",
+    "competenceIds": [
+      "C059"
+    ]
+  },
+  {
+    "forme": "support N3",
+    "competenceIds": [
+      "C058"
+    ]
+  },
+  {
+    "forme": "surveillance",
+    "competenceIds": [
+      "C059"
+    ]
+  },
+  {
+    "forme": "sécurité",
+    "competenceIds": [
+      "C140"
+    ]
+  },
+  {
+    "forme": "target architecture",
+    "competenceIds": [
+      "C003"
+    ]
+  },
+  {
+    "forme": "target operating model",
+    "competenceIds": [
+      "C134"
+    ]
+  },
+  {
+    "forme": "team enablement",
+    "competenceIds": [
+      "C106"
+    ]
+  },
+  {
+    "forme": "team management",
+    "competenceIds": [
+      "C108"
+    ]
+  },
+  {
+    "forme": "technical documentation",
+    "competenceIds": [
+      "C053"
+    ]
+  },
+  {
+    "forme": "technical leadership",
+    "competenceIds": [
+      "C107"
+    ]
+  },
+  {
+    "forme": "temps réel",
+    "competenceIds": [
+      "C029"
+    ]
+  },
+  {
+    "forme": "Terraform",
+    "competenceIds": [
+      "C015"
+    ]
+  },
+  {
+    "forme": "testing",
+    "competenceIds": [
+      "C098"
+    ]
+  },
+  {
+    "forme": "tests",
+    "competenceIds": [
+      "C098"
+    ]
+  },
+  {
+    "forme": "tests automatisés",
+    "competenceIds": [
+      "C098"
+    ]
+  },
+  {
+    "forme": "TOM",
+    "competenceIds": [
+      "C134"
+    ]
+  },
+  {
+    "forme": "tool calling",
+    "competenceIds": [
+      "C080"
+    ]
+  },
+  {
+    "forme": "tool use",
+    "competenceIds": [
+      "C080"
+    ]
+  },
+  {
+    "forme": "tracing",
+    "competenceIds": [
+      "C060"
+    ]
+  },
+  {
+    "forme": "traitement du langage naturel",
+    "competenceIds": [
+      "C037"
+    ]
+  },
+  {
+    "forme": "traitements batch",
+    "competenceIds": [
+      "C028"
+    ]
+  },
+  {
+    "forme": "trajectoire",
+    "competenceIds": [
+      "C132"
+    ]
+  },
+  {
+    "forme": "transformation",
+    "competenceIds": [
+      "C030"
+    ]
+  },
+  {
+    "forme": "transformation Data/IA",
+    "competenceIds": [
+      "C135"
+    ]
+  },
+  {
+    "forme": "transformation humaine",
+    "competenceIds": [
+      "C130"
+    ]
+  },
+  {
+    "forme": "transformation IA",
+    "competenceIds": [
+      "C135"
+    ]
+  },
+  {
+    "forme": "transformation processus",
+    "competenceIds": [
+      "C136"
+    ]
+  },
+  {
+    "forme": "traçabilité des données",
+    "competenceIds": [
+      "C092"
+    ]
+  },
+  {
+    "forme": "tuning",
+    "competenceIds": [
+      "C061"
+    ]
+  },
+  {
+    "forme": "TypeScript",
+    "competenceIds": [
+      "C101"
+    ]
+  },
+  {
+    "forme": "unit tests",
+    "competenceIds": [
+      "C098"
+    ]
+  },
+  {
+    "forme": "Unity Catalog",
+    "competenceIds": [
+      "C046"
+    ]
+  },
+  {
+    "forme": "use-case framing",
+    "competenceIds": [
+      "C051"
+    ]
+  },
+  {
+    "forme": "user discovery",
+    "competenceIds": [
+      "C125"
+    ]
+  },
+  {
+    "forme": "user stories",
+    "competenceIds": [
+      "C127"
+    ]
+  },
+  {
+    "forme": "utilisation d’outils",
+    "competenceIds": [
+      "C080"
+    ]
+  },
+  {
+    "forme": "valeur",
+    "competenceIds": [
+      "C123"
+    ]
+  },
+  {
+    "forme": "value case",
+    "competenceIds": [
+      "C129"
+    ]
+  },
+  {
+    "forme": "value measurement",
+    "competenceIds": [
+      "C123"
+    ]
+  },
+  {
+    "forme": "vector database",
+    "competenceIds": [
+      "C066"
+    ]
+  },
+  {
+    "forme": "vector DB",
+    "competenceIds": [
+      "C066"
+    ]
+  },
+  {
+    "forme": "vector embeddings",
+    "competenceIds": [
+      "C067"
+    ]
+  },
+  {
+    "forme": "vente complexe",
+    "competenceIds": [
+      "C050"
+    ]
+  },
+  {
+    "forme": "versioning",
+    "competenceIds": [
+      "C118"
+    ]
+  },
+  {
+    "forme": "versionnement des modèles",
+    "competenceIds": [
+      "C118"
+    ]
+  },
+  {
+    "forme": "Vertex AI",
+    "competenceIds": [
+      "C090"
+    ]
+  },
+  {
+    "forme": "VertexAI",
+    "competenceIds": [
+      "C090"
+    ]
+  },
+  {
+    "forme": "vision par ordinateur",
+    "competenceIds": [
+      "C032"
+    ]
+  },
+  {
+    "forme": "vision plateforme",
+    "competenceIds": [
+      "C128"
+    ]
+  },
+  {
+    "forme": "vision produit",
+    "competenceIds": [
+      "C128"
+    ]
+  },
+  {
+    "forme": "warehouse",
+    "competenceIds": [
+      "C008"
+    ]
+  },
+  {
+    "forme": "workflow agents",
+    "competenceIds": [
+      "C074"
+    ]
+  },
+  {
+    "forme": "workflow orchestration",
+    "competenceIds": [
+      "C026"
+    ]
+  },
+  {
+    "forme": "Workflows",
+    "competenceIds": [
+      "C043"
+    ]
+  },
+  {
+    "forme": "workshops",
+    "competenceIds": [
+      "C048"
+    ]
+  },
+  {
+    "forme": "étude d’opportunité",
+    "competenceIds": [
+      "C129"
+    ]
+  },
+  {
+    "forme": "évaluation de maturité",
+    "competenceIds": [
+      "C131"
+    ]
+  },
+  {
+    "forme": "évaluation de modèles",
+    "competenceIds": [
+      "C040"
+    ]
+  },
+  {
+    "forme": "évaluation LLM",
+    "competenceIds": [
+      "C081"
+    ]
+  },
+  {
+    "forme": "évaluation précision",
+    "competenceIds": [
+      "C040"
+    ]
+  }
+]

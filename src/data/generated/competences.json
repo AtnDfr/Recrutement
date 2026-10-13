@@ -1,0 +1,2347 @@
+[
+  {
+    "id": "C001",
+    "nom": "Architecture Data & IA",
+    "bloc": "Architecture",
+    "type": "Capacité",
+    "synonymes": [
+      "AI/ML architecture",
+      "architecture Data & IA",
+      "Data & AI architecture"
+    ],
+    "etudes": [
+      "Data & AI Architecture"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C002",
+    "nom": "Architecture Lakehouse",
+    "bloc": "Architecture",
+    "type": "Capacité",
+    "synonymes": [
+      "architecture lakehouse",
+      "Data Lake / Lakehouse",
+      "data lakehouse",
+      "lakehouse"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Databricks"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C003",
+    "nom": "Architecture cible",
+    "bloc": "Architecture",
+    "type": "Capacité",
+    "synonymes": [
+      "architecture cible",
+      "architecture target",
+      "target architecture"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Databricks",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C004",
+    "nom": "Architecture cloud",
+    "bloc": "Architecture",
+    "type": "Capacité",
+    "synonymes": [
+      "architecture cloud",
+      "cloud architecture",
+      "cloud-native architecture"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C005",
+    "nom": "Architecture de plateforme Data",
+    "bloc": "Architecture",
+    "type": "Capacité",
+    "synonymes": [
+      "architecture plateforme Data",
+      "data platform architecture",
+      "platform architecture"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C006",
+    "nom": "Architecture de solution",
+    "bloc": "Architecture",
+    "type": "Capacité",
+    "synonymes": [
+      "architecture de solution",
+      "solution architecture",
+      "solution design"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Databricks"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C007",
+    "nom": "Data Lake",
+    "bloc": "Architecture",
+    "type": "Capacité",
+    "synonymes": [
+      "data lake",
+      "lac de données",
+      "lake"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C008",
+    "nom": "Data Warehouse",
+    "bloc": "Architecture",
+    "type": "Capacité",
+    "synonymes": [
+      "data warehouse",
+      "EDW",
+      "entrepôt de données",
+      "warehouse"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C009",
+    "nom": "Design patterns",
+    "bloc": "Architecture",
+    "type": "Méthode",
+    "synonymes": [
+      "architecture patterns",
+      "design patterns",
+      "patterns techniques"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C010",
+    "nom": "Intégration API",
+    "bloc": "Architecture",
+    "type": "Capacité",
+    "synonymes": [
+      "API",
+      "API integration",
+      "APIs",
+      "intégration API"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Product Management",
+      "GenAI & Agentic",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C011",
+    "nom": "AWS",
+    "bloc": "Cloud & plateforme",
+    "type": "Technologie",
+    "synonymes": [
+      "Amazon Web Services",
+      "AWS"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Databricks",
+      "GenAI & Agentic",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C012",
+    "nom": "Cloud computing",
+    "bloc": "Cloud & plateforme",
+    "type": "Écosystème",
+    "synonymes": [
+      "cloud",
+      "cloud native",
+      "cloud-native",
+      "multi-cloud"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Data Science",
+      "Databricks",
+      "GenAI & Agentic",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C013",
+    "nom": "Docker",
+    "bloc": "Cloud & plateforme",
+    "type": "Technologie",
+    "synonymes": [
+      "containers",
+      "conteneurs",
+      "Docker"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "GenAI & Agentic",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C014",
+    "nom": "Google Cloud Platform",
+    "bloc": "Cloud & plateforme",
+    "type": "Technologie",
+    "synonymes": [
+      "GCP",
+      "Google Cloud",
+      "Google Cloud Platform"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Data Science",
+      "Databricks",
+      "Google Cloud",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C015",
+    "nom": "Infrastructure as Code",
+    "bloc": "Cloud & plateforme",
+    "type": "Capacité",
+    "synonymes": [
+      "Bicep",
+      "IaC",
+      "Infrastructure as Code",
+      "Terraform"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C016",
+    "nom": "Kubernetes",
+    "bloc": "Cloud & plateforme",
+    "type": "Technologie",
+    "synonymes": [
+      "AKS",
+      "GKE",
+      "K8s",
+      "Kubernetes"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C017",
+    "nom": "Microsoft Azure",
+    "bloc": "Cloud & plateforme",
+    "type": "Technologie",
+    "synonymes": [
+      "Azure",
+      "Microsoft Azure"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Databricks",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C018",
+    "nom": "Plateforme self-service",
+    "bloc": "Cloud & plateforme",
+    "type": "Capacité",
+    "synonymes": [
+      "developer platform",
+      "plateforme self-service",
+      "self-service platform"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Data Product Management",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C019",
+    "nom": "Airflow",
+    "bloc": "Data engineering",
+    "type": "Technologie",
+    "synonymes": [
+      "Airflow",
+      "Apache Airflow"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C020",
+    "nom": "Apache Spark / PySpark",
+    "bloc": "Data engineering",
+    "type": "Technologie",
+    "synonymes": [
+      "Apache Spark",
+      "PySpark",
+      "Spark",
+      "Spark SQL"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Data Science",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C021",
+    "nom": "Conception de pipelines de données",
+    "bloc": "Data engineering",
+    "type": "Capacité",
+    "synonymes": [
+      "data pipelines",
+      "pipeline engineering",
+      "pipelines",
+      "pipelines de données"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C022",
+    "nom": "ETL / ELT",
+    "bloc": "Data engineering",
+    "type": "Capacité",
+    "synonymes": [
+      "data integration",
+      "ELT",
+      "ETL",
+      "ETL/ELT"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C023",
+    "nom": "Ingestion de données",
+    "bloc": "Data engineering",
+    "type": "Capacité",
+    "synonymes": [
+      "acquisition de données",
+      "data ingestion",
+      "ingestion"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Google Cloud",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C024",
+    "nom": "Kafka",
+    "bloc": "Data engineering",
+    "type": "Technologie",
+    "synonymes": [
+      "Apache Kafka",
+      "Kafka"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C025",
+    "nom": "Modélisation de données",
+    "bloc": "Data engineering",
+    "type": "Capacité",
+    "synonymes": [
+      "data modeling",
+      "data modelling",
+      "modèles de données",
+      "modélisation"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C026",
+    "nom": "Orchestration de workflows",
+    "bloc": "Data engineering",
+    "type": "Capacité",
+    "synonymes": [
+      "orchestration",
+      "orchestration des traitements",
+      "workflow orchestration"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "GenAI & Agentic",
+      "Google Cloud",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C027",
+    "nom": "Snowflake",
+    "bloc": "Data engineering",
+    "type": "Technologie",
+    "synonymes": [
+      "Snowflake"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C028",
+    "nom": "Traitements batch",
+    "bloc": "Data engineering",
+    "type": "Capacité",
+    "synonymes": [
+      "batch",
+      "batch processing",
+      "traitements batch"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C029",
+    "nom": "Traitements streaming",
+    "bloc": "Data engineering",
+    "type": "Capacité",
+    "synonymes": [
+      "event streaming",
+      "near real-time",
+      "real-time",
+      "streaming",
+      "temps réel"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C030",
+    "nom": "Transformation de données",
+    "bloc": "Data engineering",
+    "type": "Capacité",
+    "synonymes": [
+      "data transformation",
+      "processing",
+      "transformation"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C031",
+    "nom": "dbt",
+    "bloc": "Data engineering",
+    "type": "Technologie",
+    "synonymes": [
+      "dbt",
+      "dbt Core"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C032",
+    "nom": "Computer Vision",
+    "bloc": "Data science & ML",
+    "type": "Capacité",
+    "synonymes": [
+      "computer vision",
+      "CV",
+      "vision par ordinateur"
+    ],
+    "etudes": [
+      "Data Science"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C033",
+    "nom": "Deep Learning",
+    "bloc": "Data science & ML",
+    "type": "Capacité",
+    "synonymes": [
+      "Deep Learning",
+      "DL",
+      "neural networks",
+      "réseaux de neurones"
+    ],
+    "etudes": [
+      "Data Science"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C034",
+    "nom": "Expérimentation",
+    "bloc": "Data science & ML",
+    "type": "Méthode",
+    "synonymes": [
+      "A/B tests",
+      "experimentation",
+      "experiments",
+      "expérimentation"
+    ],
+    "etudes": [
+      "Data Science",
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C035",
+    "nom": "Machine Learning",
+    "bloc": "Data science & ML",
+    "type": "Capacité",
+    "synonymes": [
+      "apprentissage automatique",
+      "Machine Learning",
+      "ML"
+    ],
+    "etudes": [
+      "Data Science",
+      "GenAI & Agentic",
+      "Google Cloud",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C036",
+    "nom": "Modélisation prédictive",
+    "bloc": "Data science & ML",
+    "type": "Capacité",
+    "synonymes": [
+      "forecasting",
+      "modélisation prédictive",
+      "prediction",
+      "predictive modeling",
+      "prévision"
+    ],
+    "etudes": [
+      "Data Science"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C037",
+    "nom": "NLP",
+    "bloc": "Data science & ML",
+    "type": "Capacité",
+    "synonymes": [
+      "natural language processing",
+      "NLP",
+      "traitement du langage naturel"
+    ],
+    "etudes": [
+      "Data Science",
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C038",
+    "nom": "Recherche appliquée",
+    "bloc": "Data science & ML",
+    "type": "Capacité",
+    "synonymes": [
+      "applied research",
+      "benchmarking scientifique",
+      "recherche appliquée"
+    ],
+    "etudes": [
+      "Data Science"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C039",
+    "nom": "Statistiques",
+    "bloc": "Data science & ML",
+    "type": "Capacité",
+    "synonymes": [
+      "modélisation statistique",
+      "statistical modeling",
+      "statistics",
+      "statistiques"
+    ],
+    "etudes": [
+      "Data Science"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C040",
+    "nom": "Évaluation de modèles ML",
+    "bloc": "Data science & ML",
+    "type": "Capacité",
+    "synonymes": [
+      "model evaluation",
+      "model quality",
+      "évaluation de modèles",
+      "évaluation précision"
+    ],
+    "etudes": [
+      "Data Science",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C041",
+    "nom": "Databricks",
+    "bloc": "Databricks",
+    "type": "Technologie",
+    "synonymes": [
+      "Azure Databricks",
+      "Databricks"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Databricks",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C042",
+    "nom": "Databricks Asset Bundles",
+    "bloc": "Databricks",
+    "type": "Technologie",
+    "synonymes": [
+      "Asset Bundles",
+      "DAB",
+      "Databricks Asset Bundles"
+    ],
+    "etudes": [
+      "Databricks"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C043",
+    "nom": "Databricks Workflows",
+    "bloc": "Databricks",
+    "type": "Technologie",
+    "synonymes": [
+      "Databricks Workflows",
+      "Workflows"
+    ],
+    "etudes": [
+      "Databricks"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C044",
+    "nom": "Delta Lake",
+    "bloc": "Databricks",
+    "type": "Technologie",
+    "synonymes": [
+      "Delta Lake"
+    ],
+    "etudes": [
+      "Databricks"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C045",
+    "nom": "Delta Live Tables",
+    "bloc": "Databricks",
+    "type": "Technologie",
+    "synonymes": [
+      "Delta Live Tables",
+      "DLT"
+    ],
+    "etudes": [
+      "Databricks"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C046",
+    "nom": "Unity Catalog",
+    "bloc": "Databricks",
+    "type": "Technologie",
+    "synonymes": [
+      "catalogues Databricks",
+      "metastore",
+      "Unity Catalog"
+    ],
+    "etudes": [
+      "Databricks"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C047",
+    "nom": "Agile",
+    "bloc": "Delivery & conseil",
+    "type": "Méthode",
+    "synonymes": [
+      "Agile",
+      "cérémonies agiles",
+      "SAFe",
+      "Scrum"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Data Product Management"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C048",
+    "nom": "Animation d’ateliers",
+    "bloc": "Delivery & conseil",
+    "type": "Capacité",
+    "synonymes": [
+      "ateliers",
+      "ateliers de cadrage",
+      "facilitation",
+      "workshops"
+    ],
+    "etudes": [
+      "Data Product Management",
+      "Databricks",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C049",
+    "nom": "Avant-vente",
+    "bloc": "Delivery & conseil",
+    "type": "Capacité",
+    "synonymes": [
+      "avant-vente",
+      "pre-sales",
+      "propositions commerciales"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Science",
+      "Databricks",
+      "GenAI & Agentic",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C050",
+    "nom": "Business development",
+    "bloc": "Delivery & conseil",
+    "type": "Capacité",
+    "synonymes": [
+      "account growth",
+      "business development",
+      "développement commercial",
+      "vente complexe"
+    ],
+    "etudes": [
+      "Data Product Management",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C051",
+    "nom": "Cadrage de cas d’usage",
+    "bloc": "Delivery & conseil",
+    "type": "Capacité",
+    "synonymes": [
+      "cadrage use cases",
+      "priorisation cas d’usage",
+      "use-case framing"
+    ],
+    "etudes": [
+      "Data Science",
+      "GenAI & Agentic",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C052",
+    "nom": "Communication exécutive",
+    "bloc": "Delivery & conseil",
+    "type": "Capacité",
+    "synonymes": [
+      "C-level communication",
+      "CODIR",
+      "CxO",
+      "executive communication",
+      "relation C-level"
+    ],
+    "etudes": [
+      "Data Product Management",
+      "Data Science",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C053",
+    "nom": "Documentation technique",
+    "bloc": "Delivery & conseil",
+    "type": "Capacité",
+    "synonymes": [
+      "documentation",
+      "documentation d’architecture",
+      "technical documentation"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C054",
+    "nom": "Pilotage de programme",
+    "bloc": "Delivery & conseil",
+    "type": "Capacité",
+    "synonymes": [
+      "pilotage programme",
+      "pilotage transformation",
+      "program management",
+      "programme delivery"
+    ],
+    "etudes": [
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C055",
+    "nom": "Relation client",
+    "bloc": "Delivery & conseil",
+    "type": "Capacité",
+    "synonymes": [
+      "advisory",
+      "client-facing",
+      "interaction client",
+      "relation client"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Product Management",
+      "Data Science",
+      "Databricks",
+      "GenAI & Agentic",
+      "Google Cloud",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C056",
+    "nom": "Fiabilité",
+    "bloc": "Fiabilité & exploitation",
+    "type": "Capacité",
+    "synonymes": [
+      "fiabilité",
+      "reliability",
+      "robustesse",
+      "robustness"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "GenAI & Agentic",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C057",
+    "nom": "FinOps / optimisation des coûts",
+    "bloc": "Fiabilité & exploitation",
+    "type": "Capacité",
+    "synonymes": [
+      "cost management",
+      "cost optimization",
+      "FinOps",
+      "optimisation des coûts"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Databricks",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C058",
+    "nom": "Gestion des incidents",
+    "bloc": "Fiabilité & exploitation",
+    "type": "Capacité",
+    "synonymes": [
+      "incident management",
+      "incidents",
+      "root cause analysis",
+      "support N3"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C059",
+    "nom": "Monitoring",
+    "bloc": "Fiabilité & exploitation",
+    "type": "Capacité",
+    "synonymes": [
+      "monitoring",
+      "supervision",
+      "surveillance"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "GenAI & Agentic",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C060",
+    "nom": "Observabilité",
+    "bloc": "Fiabilité & exploitation",
+    "type": "Capacité",
+    "synonymes": [
+      "logs",
+      "monitoring",
+      "observability",
+      "observabilité",
+      "tracing"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "GenAI & Agentic",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C061",
+    "nom": "Optimisation des performances",
+    "bloc": "Fiabilité & exploitation",
+    "type": "Capacité",
+    "synonymes": [
+      "optimisation",
+      "performance optimization",
+      "query optimization",
+      "tuning"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Data Science",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C062",
+    "nom": "Production / Run",
+    "bloc": "Fiabilité & exploitation",
+    "type": "Capacité",
+    "synonymes": [
+      "build to run",
+      "exploitation",
+      "MCO",
+      "operations",
+      "production",
+      "run"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Data Product Management",
+      "Data Science",
+      "Databricks",
+      "GenAI & Agentic",
+      "Google Cloud",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C063",
+    "nom": "SLA / SLO",
+    "bloc": "Fiabilité & exploitation",
+    "type": "Méthode",
+    "synonymes": [
+      "service level agreements",
+      "service level objectives",
+      "SLA",
+      "SLO"
+    ],
+    "etudes": [
+      "Data Product Management",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C064",
+    "nom": "Scalabilité",
+    "bloc": "Fiabilité & exploitation",
+    "type": "Capacité",
+    "synonymes": [
+      "mise à l’échelle",
+      "scalability",
+      "scalabilité",
+      "scale"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Data Science",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C065",
+    "nom": "Agents IA",
+    "bloc": "GenAI & agentique",
+    "type": "Capacité",
+    "synonymes": [
+      "agentic systems",
+      "agents",
+      "agents IA",
+      "AI agents"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C066",
+    "nom": "Base de données vectorielle",
+    "bloc": "GenAI & agentique",
+    "type": "Technologie",
+    "synonymes": [
+      "base vectorielle",
+      "vector database",
+      "vector DB"
+    ],
+    "etudes": [
+      "Data Science",
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C067",
+    "nom": "Embeddings",
+    "bloc": "GenAI & agentique",
+    "type": "Capacité",
+    "synonymes": [
+      "embeddings",
+      "représentations vectorielles",
+      "vector embeddings"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C068",
+    "nom": "Fine-tuning",
+    "bloc": "GenAI & agentique",
+    "type": "Capacité",
+    "synonymes": [
+      "adaptation de modèles",
+      "fine tuning",
+      "fine-tuning"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C069",
+    "nom": "Guardrails IA",
+    "bloc": "GenAI & agentique",
+    "type": "Capacité",
+    "synonymes": [
+      "garde-fous",
+      "guardrails",
+      "safety rails"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C070",
+    "nom": "LLM / Foundation Models",
+    "bloc": "GenAI & agentique",
+    "type": "Capacité",
+    "synonymes": [
+      "foundation models",
+      "large language models",
+      "LLM",
+      "modèles de fondation"
+    ],
+    "etudes": [
+      "Data Science",
+      "GenAI & Agentic",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C071",
+    "nom": "LangChain",
+    "bloc": "GenAI & agentique",
+    "type": "Technologie",
+    "synonymes": [
+      "LangChain"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C072",
+    "nom": "LangGraph",
+    "bloc": "GenAI & agentique",
+    "type": "Technologie",
+    "synonymes": [
+      "LangGraph"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C073",
+    "nom": "Mémoire agentique",
+    "bloc": "GenAI & agentique",
+    "type": "Capacité",
+    "synonymes": [
+      "agent memory",
+      "memory",
+      "mémoire agentique"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C074",
+    "nom": "Orchestration agentique",
+    "bloc": "GenAI & agentique",
+    "type": "Capacité",
+    "synonymes": [
+      "agent orchestration",
+      "orchestration agentique",
+      "workflow agents"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C075",
+    "nom": "Prompt engineering",
+    "bloc": "GenAI & agentique",
+    "type": "Capacité",
+    "synonymes": [
+      "conception de prompts",
+      "prompt engineering",
+      "prompting"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C076",
+    "nom": "Protocoles MCP / A2A",
+    "bloc": "GenAI & agentique",
+    "type": "Technologie",
+    "synonymes": [
+      "A2A",
+      "Agent2Agent",
+      "MCP",
+      "Model Context Protocol"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C077",
+    "nom": "Retrieval-Augmented Generation",
+    "bloc": "GenAI & agentique",
+    "type": "Capacité",
+    "synonymes": [
+      "RAG",
+      "recherche augmentée",
+      "retrieval",
+      "retrieval augmented generation"
+    ],
+    "etudes": [
+      "Data Science",
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C078",
+    "nom": "Semantic Kernel",
+    "bloc": "GenAI & agentique",
+    "type": "Technologie",
+    "synonymes": [
+      "Semantic Kernel"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C079",
+    "nom": "Systèmes multi-agents",
+    "bloc": "GenAI & agentique",
+    "type": "Capacité",
+    "synonymes": [
+      "multi agent systems",
+      "multi-agent",
+      "multi-agents"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C080",
+    "nom": "Tool calling",
+    "bloc": "GenAI & agentique",
+    "type": "Capacité",
+    "synonymes": [
+      "function calling",
+      "tool calling",
+      "tool use",
+      "utilisation d’outils"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C081",
+    "nom": "Évaluation LLM",
+    "bloc": "GenAI & agentique",
+    "type": "Capacité",
+    "synonymes": [
+      "evals",
+      "GenAI evaluation",
+      "LLM evaluation",
+      "évaluation LLM"
+    ],
+    "etudes": [
+      "GenAI & Agentic",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C082",
+    "nom": "BigQuery",
+    "bloc": "Google Cloud",
+    "type": "Technologie",
+    "synonymes": [
+      "Big Query",
+      "BigQuery"
+    ],
+    "etudes": [
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C083",
+    "nom": "Cloud Build",
+    "bloc": "Google Cloud",
+    "type": "Technologie",
+    "synonymes": [
+      "Cloud Build",
+      "Google Cloud Build"
+    ],
+    "etudes": [
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C084",
+    "nom": "Cloud Composer",
+    "bloc": "Google Cloud",
+    "type": "Technologie",
+    "synonymes": [
+      "Airflow/Composer",
+      "Cloud Composer",
+      "Composer"
+    ],
+    "etudes": [
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C085",
+    "nom": "Cloud Storage / GCS",
+    "bloc": "Google Cloud",
+    "type": "Technologie",
+    "synonymes": [
+      "Cloud Storage",
+      "GCS",
+      "Google Cloud Storage"
+    ],
+    "etudes": [
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C086",
+    "nom": "Dataflow",
+    "bloc": "Google Cloud",
+    "type": "Technologie",
+    "synonymes": [
+      "Dataflow",
+      "Google Cloud Dataflow"
+    ],
+    "etudes": [
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C087",
+    "nom": "Dataplex",
+    "bloc": "Google Cloud",
+    "type": "Technologie",
+    "synonymes": [
+      "Dataplex"
+    ],
+    "etudes": [
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C088",
+    "nom": "Dataproc",
+    "bloc": "Google Cloud",
+    "type": "Technologie",
+    "synonymes": [
+      "Dataproc",
+      "Google Cloud Dataproc"
+    ],
+    "etudes": [
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C089",
+    "nom": "Pub/Sub",
+    "bloc": "Google Cloud",
+    "type": "Technologie",
+    "synonymes": [
+      "Google Pub/Sub",
+      "Pub/Sub"
+    ],
+    "etudes": [
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C090",
+    "nom": "Vertex AI",
+    "bloc": "Google Cloud",
+    "type": "Technologie",
+    "synonymes": [
+      "Vertex AI",
+      "VertexAI"
+    ],
+    "etudes": [
+      "Google Cloud",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C091",
+    "nom": "Data catalog",
+    "bloc": "Gouvernance & qualité",
+    "type": "Capacité",
+    "synonymes": [
+      "catalogage",
+      "catalogue de données",
+      "data catalog"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C092",
+    "nom": "Data lineage",
+    "bloc": "Gouvernance & qualité",
+    "type": "Capacité",
+    "synonymes": [
+      "data lineage",
+      "lineage",
+      "traçabilité des données"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Databricks"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C093",
+    "nom": "Gouvernance Data / IA",
+    "bloc": "Gouvernance & qualité",
+    "type": "Capacité",
+    "synonymes": [
+      "AI governance",
+      "data governance",
+      "gouvernance",
+      "gouvernance Data/IA",
+      "governance"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Data Product Management",
+      "Databricks",
+      "Google Cloud",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C094",
+    "nom": "Qualité des données",
+    "bloc": "Gouvernance & qualité",
+    "type": "Capacité",
+    "synonymes": [
+      "data quality",
+      "DQ",
+      "qualité Data",
+      "qualité des données"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Data Product Management",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C095",
+    "nom": "CI/CD",
+    "bloc": "Industrialisation",
+    "type": "Capacité",
+    "synonymes": [
+      "CI/CD",
+      "continuous delivery",
+      "continuous deployment",
+      "continuous integration"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "GenAI & Agentic",
+      "Google Cloud",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C096",
+    "nom": "Code review",
+    "bloc": "Industrialisation",
+    "type": "Capacité",
+    "synonymes": [
+      "code review",
+      "revue de code"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C097",
+    "nom": "Software engineering",
+    "bloc": "Industrialisation",
+    "type": "Capacité",
+    "synonymes": [
+      "code production",
+      "production-grade engineering",
+      "software engineering"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Data Science",
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C098",
+    "nom": "Tests logiciels / données",
+    "bloc": "Industrialisation",
+    "type": "Capacité",
+    "synonymes": [
+      "data tests",
+      "testing",
+      "tests",
+      "tests automatisés",
+      "unit tests"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Data Product Management",
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C099",
+    "nom": "C# / .NET",
+    "bloc": "Langages",
+    "type": "Technologie",
+    "synonymes": [
+      ".NET",
+      "C#"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C100",
+    "nom": "Java",
+    "bloc": "Langages",
+    "type": "Technologie",
+    "synonymes": [
+      "Java"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Data Science",
+      "Databricks",
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C101",
+    "nom": "Node.js / JavaScript",
+    "bloc": "Langages",
+    "type": "Technologie",
+    "synonymes": [
+      "JavaScript",
+      "Node",
+      "Node.js",
+      "TypeScript"
+    ],
+    "etudes": [
+      "GenAI & Agentic"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C102",
+    "nom": "Python",
+    "bloc": "Langages",
+    "type": "Technologie",
+    "synonymes": [
+      "Python"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Data Science",
+      "Databricks",
+      "GenAI & Agentic",
+      "Google Cloud",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C103",
+    "nom": "SQL",
+    "bloc": "Langages",
+    "type": "Technologie",
+    "synonymes": [
+      "Spark SQL",
+      "SQL",
+      "SQL analytics"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Data Science",
+      "Databricks",
+      "Google Cloud",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C104",
+    "nom": "Scala",
+    "bloc": "Langages",
+    "type": "Technologie",
+    "synonymes": [
+      "Scala"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C105",
+    "nom": "Animation de communauté",
+    "bloc": "Leadership & enablement",
+    "type": "Capacité",
+    "synonymes": [
+      "animation guilde",
+      "communauté de pratique",
+      "community leadership"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Databricks"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C106",
+    "nom": "Enablement des équipes",
+    "bloc": "Leadership & enablement",
+    "type": "Capacité",
+    "synonymes": [
+      "accompagnement équipes",
+      "enablement",
+      "enabling team",
+      "team enablement"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "GenAI & Agentic",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C107",
+    "nom": "Leadership technique",
+    "bloc": "Leadership & enablement",
+    "type": "Capacité",
+    "synonymes": [
+      "design authority",
+      "leadership technique",
+      "référent technique",
+      "technical leadership"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Data Science",
+      "Databricks",
+      "GenAI & Agentic",
+      "Google Cloud"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C108",
+    "nom": "Management d’équipe",
+    "bloc": "Leadership & enablement",
+    "type": "Capacité",
+    "synonymes": [
+      "management",
+      "people management",
+      "staffing",
+      "team management"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Data Product Management",
+      "Data Science",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C109",
+    "nom": "Mentorat / coaching",
+    "bloc": "Leadership & enablement",
+    "type": "Capacité",
+    "synonymes": [
+      "coaching",
+      "mentorat",
+      "mentoring",
+      "montée en compétences"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "Data Science",
+      "Databricks",
+      "GenAI & Agentic",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C110",
+    "nom": "Cycle de vie ML",
+    "bloc": "MLOps & LLMOps",
+    "type": "Capacité",
+    "synonymes": [
+      "cycle de vie modèle",
+      "ML lifecycle",
+      "model lifecycle"
+    ],
+    "etudes": [
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C111",
+    "nom": "Déploiement / serving de modèles",
+    "bloc": "MLOps & LLMOps",
+    "type": "Capacité",
+    "synonymes": [
+      "inference deployment",
+      "model deployment",
+      "model serving",
+      "serving"
+    ],
+    "etudes": [
+      "Data Science",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C112",
+    "nom": "Détection de drift",
+    "bloc": "MLOps & LLMOps",
+    "type": "Capacité",
+    "synonymes": [
+      "data drift",
+      "drift monitoring",
+      "dérive",
+      "model drift"
+    ],
+    "etudes": [
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C113",
+    "nom": "MLflow",
+    "bloc": "MLOps & LLMOps",
+    "type": "Technologie",
+    "synonymes": [
+      "MLflow"
+    ],
+    "etudes": [
+      "Data Science",
+      "Databricks",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C114",
+    "nom": "Model registry",
+    "bloc": "MLOps & LLMOps",
+    "type": "Capacité",
+    "synonymes": [
+      "model registry",
+      "registre de modèles",
+      "registry"
+    ],
+    "etudes": [
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C115",
+    "nom": "Pipelines ML",
+    "bloc": "MLOps & LLMOps",
+    "type": "Capacité",
+    "synonymes": [
+      "ML pipelines",
+      "model pipelines",
+      "pipelines modèles"
+    ],
+    "etudes": [
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C116",
+    "nom": "Reproductibilité ML",
+    "bloc": "MLOps & LLMOps",
+    "type": "Capacité",
+    "synonymes": [
+      "repeatability",
+      "reproducibility",
+      "reproductibilité"
+    ],
+    "etudes": [
+      "Data Science",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C117",
+    "nom": "Rollback",
+    "bloc": "MLOps & LLMOps",
+    "type": "Capacité",
+    "synonymes": [
+      "retour arrière",
+      "rollback"
+    ],
+    "etudes": [
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C118",
+    "nom": "Versioning de modèles",
+    "bloc": "MLOps & LLMOps",
+    "type": "Capacité",
+    "synonymes": [
+      "model versioning",
+      "versioning",
+      "versionnement des modèles"
+    ],
+    "etudes": [
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C119",
+    "nom": "Adoption produit",
+    "bloc": "Product management",
+    "type": "Capacité",
+    "synonymes": [
+      "adoption utilisateurs",
+      "change & adoption",
+      "product adoption"
+    ],
+    "etudes": [
+      "Data Product Management",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C120",
+    "nom": "Définition de KPI",
+    "bloc": "Product management",
+    "type": "Capacité",
+    "synonymes": [
+      "indicateurs de performance",
+      "KPI",
+      "OKR",
+      "performance indicators"
+    ],
+    "etudes": [
+      "Data Product Management"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C121",
+    "nom": "Gestion de backlog",
+    "bloc": "Product management",
+    "type": "Capacité",
+    "synonymes": [
+      "backlog",
+      "backlog management",
+      "gestion du backlog"
+    ],
+    "etudes": [
+      "Data Product Management"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C122",
+    "nom": "Gestion du cycle de vie produit",
+    "bloc": "Product management",
+    "type": "Capacité",
+    "synonymes": [
+      "cycle de vie",
+      "lifecycle management",
+      "product lifecycle"
+    ],
+    "etudes": [
+      "Data Product Management"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C123",
+    "nom": "Mesure de la valeur",
+    "bloc": "Product management",
+    "type": "Capacité",
+    "synonymes": [
+      "business impact",
+      "mesure d’impact",
+      "ROI",
+      "valeur",
+      "value measurement"
+    ],
+    "etudes": [
+      "Data Product Management",
+      "Data Science",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C124",
+    "nom": "Priorisation produit",
+    "bloc": "Product management",
+    "type": "Capacité",
+    "synonymes": [
+      "arbitrage produit",
+      "priorisation",
+      "prioritisation",
+      "scoring"
+    ],
+    "etudes": [
+      "Data Product Management",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C125",
+    "nom": "Product discovery",
+    "bloc": "Product management",
+    "type": "Méthode",
+    "synonymes": [
+      "discovery",
+      "exploration produit",
+      "product discovery",
+      "user discovery"
+    ],
+    "etudes": [
+      "Data Product Management"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C126",
+    "nom": "Roadmap produit",
+    "bloc": "Product management",
+    "type": "Livrable",
+    "synonymes": [
+      "product roadmap",
+      "roadmap plateforme",
+      "roadmap produit"
+    ],
+    "etudes": [
+      "Data Product Management"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C127",
+    "nom": "User stories",
+    "bloc": "Product management",
+    "type": "Livrable",
+    "synonymes": [
+      "requirements backlog",
+      "récits utilisateurs",
+      "user stories"
+    ],
+    "etudes": [
+      "Data Product Management"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C128",
+    "nom": "Vision produit",
+    "bloc": "Product management",
+    "type": "Capacité",
+    "synonymes": [
+      "product vision",
+      "vision plateforme",
+      "vision produit"
+    ],
+    "etudes": [
+      "Data Product Management"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C129",
+    "nom": "Business case",
+    "bloc": "Stratégie & transformation",
+    "type": "Livrable",
+    "synonymes": [
+      "business case",
+      "ROI case",
+      "value case",
+      "étude d’opportunité"
+    ],
+    "etudes": [
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C130",
+    "nom": "Conduite du changement",
+    "bloc": "Stratégie & transformation",
+    "type": "Capacité",
+    "synonymes": [
+      "adoption",
+      "change",
+      "change management",
+      "transformation humaine"
+    ],
+    "etudes": [
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C131",
+    "nom": "Diagnostic de maturité",
+    "bloc": "Stratégie & transformation",
+    "type": "Méthode",
+    "synonymes": [
+      "diagnostic de maturité",
+      "maturity assessment",
+      "évaluation de maturité"
+    ],
+    "etudes": [
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C132",
+    "nom": "Roadmap stratégique",
+    "bloc": "Stratégie & transformation",
+    "type": "Livrable",
+    "synonymes": [
+      "feuille de route",
+      "roadmap",
+      "strategic roadmap",
+      "trajectoire"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Product Management",
+      "Databricks",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C133",
+    "nom": "Stratégie Data & IA",
+    "bloc": "Stratégie & transformation",
+    "type": "Capacité",
+    "synonymes": [
+      "AI strategy",
+      "Data & AI strategy",
+      "Data strategy",
+      "stratégie Data/IA"
+    ],
+    "etudes": [
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C134",
+    "nom": "Target Operating Model",
+    "bloc": "Stratégie & transformation",
+    "type": "Méthode",
+    "synonymes": [
+      "modèle opérationnel cible",
+      "operating model",
+      "target operating model",
+      "TOM"
+    ],
+    "etudes": [
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C135",
+    "nom": "Transformation Data & IA",
+    "bloc": "Stratégie & transformation",
+    "type": "Capacité",
+    "synonymes": [
+      "AI transformation",
+      "Data transformation",
+      "transformation Data/IA",
+      "transformation IA"
+    ],
+    "etudes": [
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C136",
+    "nom": "Transformation des processus",
+    "bloc": "Stratégie & transformation",
+    "type": "Capacité",
+    "synonymes": [
+      "process excellence",
+      "process redesign",
+      "process transformation",
+      "transformation processus"
+    ],
+    "etudes": [
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C137",
+    "nom": "Conformité",
+    "bloc": "Sécurité & conformité",
+    "type": "Capacité",
+    "synonymes": [
+      "compliance",
+      "conformité",
+      "regulatory compliance",
+      "risk"
+    ],
+    "etudes": [
+      "Data Product Management",
+      "GenAI & Agentic",
+      "Google Cloud",
+      "Strategy & Transformation"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C138",
+    "nom": "IAM / contrôle d’accès",
+    "bloc": "Sécurité & conformité",
+    "type": "Capacité",
+    "synonymes": [
+      "access control",
+      "contrôle d’accès",
+      "IAM",
+      "identity management",
+      "RBAC"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Databricks",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C139",
+    "nom": "Protection des données",
+    "bloc": "Sécurité & conformité",
+    "type": "Capacité",
+    "synonymes": [
+      "confidentialité",
+      "données sensibles",
+      "privacy",
+      "privacy by design"
+    ],
+    "etudes": [
+      "Data Engineering",
+      "GenAI & Agentic",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  },
+  {
+    "id": "C140",
+    "nom": "Sécurité",
+    "bloc": "Sécurité & conformité",
+    "type": "Capacité",
+    "synonymes": [
+      "cybersecurity",
+      "cybersécurité",
+      "security",
+      "sécurité"
+    ],
+    "etudes": [
+      "Data & AI Architecture",
+      "Data Engineering",
+      "Databricks",
+      "GenAI & Agentic",
+      "Google Cloud",
+      "MLOps/LLMOps"
+    ],
+    "statutReferentiel": "V0 consolidée"
+  }
+]

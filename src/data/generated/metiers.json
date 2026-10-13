@@ -1,0 +1,2008 @@
+[
+  {
+    "id": "ai-transformation-adoption-consultant-manager",
+    "nom": "AI Transformation & Adoption Consultant / Manager",
+    "signature": [
+      {
+        "competenceId": "C133",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C135",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C130",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C132",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C123",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C131",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C055",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Accenture France",
+        "intitule": "AI Transformation & Process Excellence Manager"
+      },
+      {
+        "entreprise": "Sia",
+        "intitule": "Manager AI Transformation"
+      },
+      {
+        "entreprise": "Sopra Steria Next",
+        "intitule": "Manager IA Générative & Transformation"
+      },
+      {
+        "entreprise": "Deloitte",
+        "intitule": "Manager IA & Business Transformation"
+      },
+      {
+        "entreprise": "CGI Business Consulting",
+        "intitule": "Manager Data & (Gen)AI Stratégie"
+      }
+    ]
+  },
+  {
+    "id": "agentic-ai-engineer",
+    "nom": "Agentic AI Engineer",
+    "signature": [
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C097",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C076",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C079",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C081",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C086",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C095",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      },
+      {
+        "competenceId": "C111",
+        "statut": "Spécialisante",
+        "occurrences": 1,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Accenture France",
+        "intitule": "AI Engineer / Agentic AI Engineer"
+      },
+      {
+        "entreprise": "BNP Paribas",
+        "intitule": "AI Engineer Senior - Gen-AI & Agents"
+      },
+      {
+        "entreprise": "Mirakl",
+        "intitule": "AI Agent Engineer"
+      },
+      {
+        "entreprise": "Lectra",
+        "intitule": "AI Agent Engineer"
+      },
+      {
+        "entreprise": "Jus Mundi",
+        "intitule": "Senior AI Engineer - GenAI & Autonomous Agents"
+      }
+    ]
+  },
+  {
+    "id": "applied-ai-engineer",
+    "nom": "Applied AI Engineer",
+    "signature": [
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C097",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C075",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C078",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C040",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C111",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C095",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Mistral AI",
+        "intitule": "Applied AI Engineer, AI For Mistral"
+      },
+      {
+        "entreprise": "Anthropic",
+        "intitule": "Applied AI Engineer, Enterprise"
+      },
+      {
+        "entreprise": "Sia",
+        "intitule": "Applied AI Engineer"
+      },
+      {
+        "entreprise": "OpenAI",
+        "intitule": "Applied AI Engineer, Codex"
+      },
+      {
+        "entreprise": "BNP Paribas",
+        "intitule": "Applied AI Engineer RAG & Agentic AI"
+      }
+    ]
+  },
+  {
+    "id": "applied-scientist-ai-scientist",
+    "nom": "Applied Scientist / AI Scientist",
+    "signature": [
+      {
+        "competenceId": "C035",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C038",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C034",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C040",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C039",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Datadog",
+        "intitule": "Senior Applied Scientist"
+      },
+      {
+        "entreprise": "Aqemia",
+        "intitule": "Applied AI Research Scientist"
+      },
+      {
+        "entreprise": "Mistral AI",
+        "intitule": "Applied Scientist, EMEA"
+      },
+      {
+        "entreprise": "Entrust",
+        "intitule": "Applied Scientist II - Computer Vision"
+      },
+      {
+        "entreprise": "BCG X",
+        "intitule": "Forward Deployed AI Scientist, France"
+      }
+    ]
+  },
+  {
+    "id": "data-ai-architect",
+    "nom": "Data & AI Architect",
+    "signature": [
+      {
+        "competenceId": "C001",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C003",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C004",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C006",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C010",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C140",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C055",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Safran Aerosystems",
+        "intitule": "Data & AI Architect"
+      },
+      {
+        "entreprise": "Kering",
+        "intitule": "Data & AI Architect"
+      },
+      {
+        "entreprise": "Accenture",
+        "intitule": "AI Architect"
+      },
+      {
+        "entreprise": "Reply",
+        "intitule": "Senior AI Architect"
+      },
+      {
+        "entreprise": "Anthropic",
+        "intitule": "Applied AI Architect, Partnerships"
+      }
+    ]
+  },
+  {
+    "id": "data-ai-governance-consultant-manager",
+    "nom": "Data & AI Governance Consultant / Manager",
+    "signature": [
+      {
+        "competenceId": "C133",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C137",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C139",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C053",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C054",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C055",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C132",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Deloitte",
+        "intitule": "Consultant Data Governance"
+      },
+      {
+        "entreprise": "Capgemini Invent",
+        "intitule": "Managing Consultant - Data/AI Strategy & Governance"
+      },
+      {
+        "entreprise": "Talan",
+        "intitule": "Consultant Conseil Data Governance"
+      },
+      {
+        "entreprise": "Sia",
+        "intitule": "Consultant - CIO, Data & AI Advisory"
+      },
+      {
+        "entreprise": "Keyrus France",
+        "intitule": "Data Trust & AI Governance Manager"
+      }
+    ]
+  },
+  {
+    "id": "data-ai-product-strategy-consultant",
+    "nom": "Data & AI Product Strategy Consultant",
+    "signature": [
+      {
+        "competenceId": "C133",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C128",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C126",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C123",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C125",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C129",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C055",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Galadrim",
+        "intitule": "AI Strategy Consultant"
+      },
+      {
+        "entreprise": "Theodo Data & AI",
+        "intitule": "Consultant Senior AI Advisory"
+      },
+      {
+        "entreprise": "Capgemini Invent",
+        "intitule": "Transformation IA & Agentic AI"
+      },
+      {
+        "entreprise": "Singulier by OMMAX",
+        "intitule": "Technology & AI - Senior Consultant"
+      },
+      {
+        "entreprise": "KPMG France",
+        "intitule": "Consultant Manager - Conseil Data et IA"
+      }
+    ]
+  },
+  {
+    "id": "data-ai-strategy-consultant-manager",
+    "nom": "Data & AI Strategy Consultant / Manager",
+    "signature": [
+      {
+        "competenceId": "C133",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C132",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C134",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C129",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C131",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C135",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C055",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Capgemini Invent",
+        "intitule": "Managing Consultant Data/AI Strategy & Governance"
+      },
+      {
+        "entreprise": "Crédit Mutuel Arkéa",
+        "intitule": "Consultant interne Stratégie Data & IA"
+      },
+      {
+        "entreprise": "Artefact",
+        "intitule": "Senior Consultant Strategy & Data"
+      },
+      {
+        "entreprise": "Sia",
+        "intitule": "Consultant CIO, Data & AI Advisory"
+      },
+      {
+        "entreprise": "Deloitte",
+        "intitule": "Consultant Data & IA - Stratégie & Risque"
+      }
+    ]
+  },
+  {
+    "id": "data-ai-platform-product-manager",
+    "nom": "Data / AI Platform Product Manager",
+    "signature": [
+      {
+        "competenceId": "C128",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C126",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C121",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C124",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C123",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C119",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C055",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Safran",
+        "intitule": "Data & IA Product Manager"
+      },
+      {
+        "entreprise": "Comet",
+        "intitule": "Forward Deployed AI Engineer / Product Manager IA"
+      },
+      {
+        "entreprise": "ENOVIA",
+        "intitule": "Product Manager application AI-native"
+      },
+      {
+        "entreprise": "ALTEN",
+        "intitule": "Product Owner IA"
+      },
+      {
+        "entreprise": "Talan",
+        "intitule": "Consultant Product Owner IA Senior"
+      }
+    ]
+  },
+  {
+    "id": "data-platform-architect",
+    "nom": "Data Platform Architect",
+    "signature": [
+      {
+        "competenceId": "C005",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C003",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C004",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C007",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C008",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C015",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C140",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Talan",
+        "intitule": "Architecte Data Platform"
+      },
+      {
+        "entreprise": "CEVA Santé Animale",
+        "intitule": "Architecte Plateforme Data"
+      },
+      {
+        "entreprise": "Rexel",
+        "intitule": "Data Architect"
+      },
+      {
+        "entreprise": "Société Générale",
+        "intitule": "Chief Architect Data"
+      },
+      {
+        "entreprise": "Crédit Agricole Alsace Vosges",
+        "intitule": "Data Architecte"
+      }
+    ]
+  },
+  {
+    "id": "data-platform-engineer",
+    "nom": "Data Platform Engineer",
+    "signature": [
+      {
+        "competenceId": "C021",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C022",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C023",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C026",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C015",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C016",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C097",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      },
+      {
+        "competenceId": "C095",
+        "statut": "Spécialisante",
+        "occurrences": 1,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Deezer",
+        "intitule": "Senior Data Platform Engineer"
+      },
+      {
+        "entreprise": "Qonto",
+        "intitule": "Data Platform Engineer"
+      },
+      {
+        "entreprise": "Hublo",
+        "intitule": "Data & ML Platform Engineer"
+      },
+      {
+        "entreprise": "Kering",
+        "intitule": "Data Platform Engineer"
+      },
+      {
+        "entreprise": "NEXTON",
+        "intitule": "Lead / Senior Data Platform Engineer"
+      }
+    ]
+  },
+  {
+    "id": "data-product-manager",
+    "nom": "Data Product Manager",
+    "signature": [
+      {
+        "competenceId": "C128",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C126",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C124",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C123",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C120",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C119",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C055",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Decathlon Digital",
+        "intitule": "Data Product Manager - Core Data Product"
+      },
+      {
+        "entreprise": "1G-LINK",
+        "intitule": "Data Product Manager"
+      },
+      {
+        "entreprise": "Yield Studio & Advisory",
+        "intitule": "Product Manager Data & IA"
+      },
+      {
+        "entreprise": "Groupe Kanbios",
+        "intitule": "Data Product Manager Senior"
+      },
+      {
+        "entreprise": "Hubvisory",
+        "intitule": "Data Product Manager"
+      }
+    ]
+  },
+  {
+    "id": "data-product-owner",
+    "nom": "Data Product Owner",
+    "signature": [
+      {
+        "competenceId": "C121",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C127",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C124",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C122",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C119",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C055",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C103",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "ALTEN",
+        "intitule": "Product Owner Data"
+      },
+      {
+        "entreprise": "Davidson consulting",
+        "intitule": "Product Owner Data & Analytics"
+      },
+      {
+        "entreprise": "Devoteam",
+        "intitule": "Product Owner Data & IA - Snowflake"
+      },
+      {
+        "entreprise": "Aubay",
+        "intitule": "Product Owner Data"
+      },
+      {
+        "entreprise": "EY",
+        "intitule": "Consultant Data Product Owner"
+      }
+    ]
+  },
+  {
+    "id": "data-solution-architect",
+    "nom": "Data Solution Architect",
+    "signature": [
+      {
+        "competenceId": "C006",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C010",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C004",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C003",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C140",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C055",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Niji",
+        "intitule": "Solution Architect / Data & Integration Architect"
+      },
+      {
+        "entreprise": "KPMG France",
+        "intitule": "Lead Solution Architect - IA, Data & Software"
+      },
+      {
+        "entreprise": "Tencent Cloud",
+        "intitule": "Solution Architect, Big Data"
+      },
+      {
+        "entreprise": "Theodo",
+        "intitule": "Solution Architect - Data & IA"
+      },
+      {
+        "entreprise": "Ipsen",
+        "intitule": "Data & AI Platforms Solution Architect"
+      }
+    ]
+  },
+  {
+    "id": "databricks-platform-architect",
+    "nom": "Databricks Platform Architect",
+    "signature": [
+      {
+        "competenceId": "C041",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C002",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C005",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C004",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C015",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C140",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C046",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Atos",
+        "intitule": "Architecte Data Snowflake / Databricks"
+      },
+      {
+        "entreprise": "Smartpoint",
+        "intitule": "Data Architect Databricks"
+      },
+      {
+        "entreprise": "Capgemini",
+        "intitule": "Architecte Data Databricks"
+      },
+      {
+        "entreprise": "Onepoint",
+        "intitule": "Architecte Data Cloud"
+      },
+      {
+        "entreprise": "Sopra Steria",
+        "intitule": "Architecte Data"
+      }
+    ]
+  },
+  {
+    "id": "databricks-tech-lead-expert-engineer",
+    "nom": "Databricks Tech Lead / Expert Engineer",
+    "signature": [
+      {
+        "competenceId": "C041",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C020",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C103",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C107",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C015",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C097",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Capgemini",
+        "intitule": "Tech Lead Databricks"
+      },
+      {
+        "entreprise": "CGI",
+        "intitule": "Tech Lead Data & AI"
+      },
+      {
+        "entreprise": "Onepoint",
+        "intitule": "Tech Lead Data"
+      },
+      {
+        "entreprise": "Sopra Steria",
+        "intitule": "Tech Lead Data"
+      },
+      {
+        "entreprise": "NEXTON",
+        "intitule": "Lead Data Platform Engineer"
+      }
+    ]
+  },
+  {
+    "id": "gcp-ai-ml-engineer",
+    "nom": "GCP AI / ML Engineer",
+    "signature": [
+      {
+        "competenceId": "C014",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C035",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C111",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C115",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C040",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Devoteam",
+        "intitule": "Data Scientist / AI Engineer GCP"
+      },
+      {
+        "entreprise": "SFEIR",
+        "intitule": "AI Engineer GCP / Vertex AI"
+      },
+      {
+        "entreprise": "Talan",
+        "intitule": "Tech Lead AI GCP"
+      },
+      {
+        "entreprise": "ALTEN",
+        "intitule": "AI / ML Engineer GCP"
+      },
+      {
+        "entreprise": "Onepoint",
+        "intitule": "AI Engineer Google Cloud"
+      }
+    ]
+  },
+  {
+    "id": "gcp-data-ai-architect",
+    "nom": "GCP Data / AI Architect",
+    "signature": [
+      {
+        "competenceId": "C014",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C001",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C004",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C005",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C140",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C015",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "SFEIR",
+        "intitule": "Data Architect GCP"
+      },
+      {
+        "entreprise": "ALTEN",
+        "intitule": "Architecte Cloud GCP"
+      },
+      {
+        "entreprise": "VISEO",
+        "intitule": "Architecte Data & Cloud GCP"
+      },
+      {
+        "entreprise": "Devoteam",
+        "intitule": "Architecte Data Google Cloud"
+      },
+      {
+        "entreprise": "Onepoint",
+        "intitule": "Architecte Data GCP"
+      }
+    ]
+  },
+  {
+    "id": "gcp-data-engineer",
+    "nom": "GCP Data Engineer",
+    "signature": [
+      {
+        "competenceId": "C014",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C021",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C022",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C023",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C103",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C026",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "VISEO",
+        "intitule": "Data Engineer Confirmé Cloud GCP"
+      },
+      {
+        "entreprise": "SFEIR",
+        "intitule": "Data Engineer GCP"
+      },
+      {
+        "entreprise": "Capgemini",
+        "intitule": "Data Engineer GCP"
+      },
+      {
+        "entreprise": "Meritis",
+        "intitule": "Data Engineer GCP"
+      },
+      {
+        "entreprise": "Inetum",
+        "intitule": "Data Engineer GCP"
+      }
+    ]
+  },
+  {
+    "id": "genai-llm-engineer",
+    "nom": "GenAI / LLM Engineer",
+    "signature": [
+      {
+        "competenceId": "C097",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C075",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C078",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C076",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C040",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C111",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Mistral AI",
+        "intitule": "Applied AI Forward Deployed ML Engineer"
+      },
+      {
+        "entreprise": "Talan",
+        "intitule": "GenAI Engineer"
+      },
+      {
+        "entreprise": "SFEIR",
+        "intitule": "GenAI Engineer"
+      },
+      {
+        "entreprise": "Doctolib",
+        "intitule": "Senior ML Engineer Applied AI & LLMs"
+      },
+      {
+        "entreprise": "Converteo",
+        "intitule": "Senior AI Engineer"
+      }
+    ]
+  },
+  {
+    "id": "llmops-genai-platform-engineer",
+    "nom": "LLMOps / GenAI Platform Engineer",
+    "signature": [
+      {
+        "competenceId": "C110",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C111",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C112",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C113",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C114",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C115",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C116",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      },
+      {
+        "competenceId": "C097",
+        "statut": "Spécialisante",
+        "occurrences": 1,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Hublo",
+        "intitule": "Data & ML Platform Engineer"
+      },
+      {
+        "entreprise": "Capital Fund Management",
+        "intitule": "ML Platform Engineer"
+      },
+      {
+        "entreprise": "Doctolib",
+        "intitule": "ML Platform Engineer"
+      },
+      {
+        "entreprise": "Datadog",
+        "intitule": "AI Platform Engineer"
+      },
+      {
+        "entreprise": "Mistral AI",
+        "intitule": "Research Engineer Forge / AI Platform"
+      }
+    ]
+  },
+  {
+    "id": "lead-principal-data-engineer",
+    "nom": "Lead / Principal Data Engineer",
+    "signature": [
+      {
+        "competenceId": "C021",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C022",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C103",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C107",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C109",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C097",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "NEXTON",
+        "intitule": "Lead / Senior Data Platform Engineer"
+      },
+      {
+        "entreprise": "TheFork",
+        "intitule": "Lead Data Engineer"
+      },
+      {
+        "entreprise": "Hermès",
+        "intitule": "Lead Data Engineer"
+      },
+      {
+        "entreprise": "Paprec Group",
+        "intitule": "Lead Data Engineer"
+      },
+      {
+        "entreprise": "Brother France",
+        "intitule": "Lead Data Engineer"
+      }
+    ]
+  },
+  {
+    "id": "lead-principal-data-scientist",
+    "nom": "Lead / Principal Data Scientist",
+    "signature": [
+      {
+        "competenceId": "C035",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C034",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C040",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C107",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C108",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C109",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Accor",
+        "intitule": "Principal AI Data Scientist"
+      },
+      {
+        "entreprise": "Voodoo",
+        "intitule": "Lead Data Scientist"
+      },
+      {
+        "entreprise": "TheFork",
+        "intitule": "Lead Data Scientist"
+      },
+      {
+        "entreprise": "Celio",
+        "intitule": "Lead Data Scientist"
+      },
+      {
+        "entreprise": "Ekimetrics",
+        "intitule": "Lead / Senior Business Data Scientist"
+      }
+    ]
+  },
+  {
+    "id": "ml-ai-platform-engineer",
+    "nom": "ML / AI Platform Engineer",
+    "signature": [
+      {
+        "competenceId": "C110",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C111",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C115",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C116",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C015",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C016",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C097",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Capital Fund Management",
+        "intitule": "ML Platform Engineer"
+      },
+      {
+        "entreprise": "Hublo",
+        "intitule": "Data & ML Platform Engineer"
+      },
+      {
+        "entreprise": "Doctolib",
+        "intitule": "ML Platform Engineer"
+      },
+      {
+        "entreprise": "Datadog",
+        "intitule": "AI Platform Engineer"
+      },
+      {
+        "entreprise": "Kaiman Services",
+        "intitule": "DevOps OpenShift AI - Plateforme IA & MLOps"
+      }
+    ]
+  },
+  {
+    "id": "mlops-engineer",
+    "nom": "MLOps Engineer",
+    "signature": [
+      {
+        "competenceId": "C110",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C111",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C113",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C115",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C116",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C097",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C015",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Safran",
+        "intitule": "MLOps Engineer"
+      },
+      {
+        "entreprise": "Devoteam",
+        "intitule": "MLOps Engineer"
+      },
+      {
+        "entreprise": "Ippon Technologies",
+        "intitule": "MLOps Engineer"
+      },
+      {
+        "entreprise": "Sopra Steria",
+        "intitule": "Senior MLOps Engineer"
+      },
+      {
+        "entreprise": "Talan",
+        "intitule": "Senior MLOps Engineer"
+      }
+    ]
+  },
+  {
+    "id": "machine-learning-engineer",
+    "nom": "Machine Learning Engineer",
+    "signature": [
+      {
+        "competenceId": "C035",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C040",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C111",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C115",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C097",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Doctolib",
+        "intitule": "Senior Machine Learning Engineer - Applied AI & LLMs"
+      },
+      {
+        "entreprise": "Criteo",
+        "intitule": "Senior Machine Learning Engineer - Causality"
+      },
+      {
+        "entreprise": "Talan",
+        "intitule": "Machine Learning Engineer - Expert Dataiku"
+      },
+      {
+        "entreprise": "Sia",
+        "intitule": "Machine Learning Engineer"
+      },
+      {
+        "entreprise": "NEXTON",
+        "intitule": "Machine Learning Engineer"
+      }
+    ]
+  },
+  {
+    "id": "senior-data-engineer",
+    "nom": "Senior Data Engineer",
+    "signature": [
+      {
+        "competenceId": "C021",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C022",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C023",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C103",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C097",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Sancare",
+        "intitule": "Senior Data Engineer"
+      },
+      {
+        "entreprise": "GitGuardian",
+        "intitule": "Senior Data Engineer"
+      },
+      {
+        "entreprise": "Voodoo",
+        "intitule": "Senior Data Engineer"
+      },
+      {
+        "entreprise": "Leetchi",
+        "intitule": "Senior Data Engineer"
+      },
+      {
+        "entreprise": "WeeFin",
+        "intitule": "Senior Data Engineer"
+      }
+    ]
+  },
+  {
+    "id": "senior-data-scientist",
+    "nom": "Senior Data Scientist",
+    "signature": [
+      {
+        "competenceId": "C035",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C039",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C103",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C034",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C040",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Decathlon Digital",
+        "intitule": "Senior Data Scientist - Demand Forecast"
+      },
+      {
+        "entreprise": "Back Market",
+        "intitule": "Senior Data Scientist - Pricing"
+      },
+      {
+        "entreprise": "Criteo",
+        "intitule": "Senior Data Scientist - Product Analytics"
+      },
+      {
+        "entreprise": "Artefact",
+        "intitule": "Senior Data Scientist"
+      },
+      {
+        "entreprise": "Ekimetrics",
+        "intitule": "Senior Business Data Scientist"
+      }
+    ]
+  },
+  {
+    "id": "senior-databricks-data-engineer",
+    "nom": "Senior Databricks Data Engineer",
+    "signature": [
+      {
+        "competenceId": "C041",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C020",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C021",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C102",
+        "statut": "Core",
+        "occurrences": 5,
+        "base": 5
+      },
+      {
+        "competenceId": "C103",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C046",
+        "statut": "Core",
+        "occurrences": 4,
+        "base": 5
+      },
+      {
+        "competenceId": "C097",
+        "statut": "Récurrente",
+        "occurrences": 2,
+        "base": 5
+      }
+    ],
+    "fichesMarche": [
+      {
+        "entreprise": "Devoteam France",
+        "intitule": "Senior Data Engineer Databricks"
+      },
+      {
+        "entreprise": "DGTL Performance",
+        "intitule": "Data Platform Engineer Databricks"
+      },
+      {
+        "entreprise": "Innova Solutions",
+        "intitule": "Senior Data Engineer Databricks"
+      },
+      {
+        "entreprise": "Talan",
+        "intitule": "Senior Data Engineer Databricks"
+      },
+      {
+        "entreprise": "Capgemini",
+        "intitule": "Senior Data Engineer Databricks"
+      }
+    ]
+  }
+]

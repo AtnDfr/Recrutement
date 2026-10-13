@@ -1,0 +1,13 @@
+{
+  "plafondMetiers": 3,
+  "poidsStatut": { "Core": 3, "Récurrente": 2, "Spécialisante": 1 },
+  "competencesTransverses": {
+    "C049": "developpement-commercial",
+    "C050": "developpement-commercial",
+    "C054": "gestion-projet",
+    "C055": "relation-client",
+    "C107": "leadership",
+    "C108": "management",
+    "C109": "management"
+  }
+}
