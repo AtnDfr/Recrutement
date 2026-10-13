@@ -55,6 +55,7 @@ export const DEFAULT_CONFIG: EngineConfig = {
   poidsStatut: { Core: 3, Récurrente: 2, Spécialisante: 1 },
   competencesTransverses: { X90: 'relation-client', X91: 'management' },
   formesAConfirmer: {},
+  formesComposees: {},
 };
 
 export function miniReferentiel(config: Partial<EngineConfig> = {}): Referentiels {

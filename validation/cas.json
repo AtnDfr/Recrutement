@@ -1,0 +1,66 @@
+{
+  "description": "Cas de validation métier. Chaque cas est joué tel quel par `npm run valider`. « selection » = compétences que le SM cocherait (nom canonique ou identifiant exact) ; « termes » = formulations libres saisies ; « texte » = phrase libre. Les sélections sont des hypothèses de travail, à ajuster après discussion avec les SM.",
+  "cas": [
+    {
+      "id": "databricks-encadrement-texte",
+      "titre": "Databricks + encadrement technique — phrase seule",
+      "grade": "consultant-senior",
+      "texte": "Je veux un profil très Databricks capable d'encadrer techniquement l'équipe."
+    },
+    {
+      "id": "databricks-encadrement-selection",
+      "titre": "Databricks + encadrement technique — avec sélection",
+      "grade": "consultant-senior",
+      "selection": ["Databricks", "Leadership technique"],
+      "texte": "Je veux un profil très Databricks capable d'encadrer techniquement l'équipe."
+    },
+    {
+      "id": "python-sql-ml-industrialisation-texte",
+      "titre": "Python + SQL + ML, industrialisation — phrase seule",
+      "grade": "consultant",
+      "texte": "Python + SQL + ML, plutôt quelqu'un qui sait industrialiser."
+    },
+    {
+      "id": "python-sql-ml-industrialisation-selection",
+      "titre": "Python + SQL + ML, industrialisation — avec sélection",
+      "grade": "consultant",
+      "selection": ["Python", "SQL", "Machine Learning", "Déploiement / serving de modèles", "CI/CD"],
+      "texte": "Python + SQL + ML, plutôt quelqu'un qui sait industrialiser.",
+      "hypothese": "« industrialiser » traduit par Déploiement / serving de modèles + CI/CD."
+    },
+    {
+      "id": "agentic-relation-client-texte",
+      "titre": "Agentic AI + relation client — phrase seule",
+      "grade": "consultant-senior",
+      "texte": "Je cherche quelqu'un capable de faire de l'Agentic AI et de gérer la relation client."
+    },
+    {
+      "id": "agentic-relation-client-selection",
+      "titre": "Agentic AI + relation client — avec sélection",
+      "grade": "consultant-senior",
+      "selection": ["Agents IA", "Systèmes multi-agents", "Relation client"],
+      "texte": "Je cherche quelqu'un capable de faire de l'Agentic AI et de gérer la relation client.",
+      "hypothese": "« Agentic AI » traduit par Agents IA + Systèmes multi-agents."
+    },
+    {
+      "id": "kubernetes-mlops-azure-termes",
+      "titre": "Kubernetes, MLOps, Azure, niveau Manager — saisie libre",
+      "grade": "manager",
+      "termes": ["Kubernetes, MLOps, Azure"]
+    },
+    {
+      "id": "kubernetes-mlops-azure-selection",
+      "titre": "Kubernetes, MLOps, Azure, niveau Manager — avec sélection",
+      "grade": "manager",
+      "selection": ["Kubernetes", "Microsoft Azure", "Cycle de vie ML", "Pipelines ML", "Déploiement / serving de modèles"],
+      "hypothese": "« MLOps » traduit par Cycle de vie ML + Pipelines ML + Déploiement / serving de modèles."
+    },
+    {
+      "id": "demande-incoherente",
+      "titre": "Demande volontairement incohérente (trois métiers ou plus)",
+      "grade": "consultant",
+      "selection": ["Stratégie Data & IA", "Business case", "Computer Vision", "Databricks", "Gestion de backlog", "Kubernetes"],
+      "texte": "Un profil qui fait de la stratégie COMEX, du deep learning vision et de l'admin Databricks."
+    }
+  ]
+}

@@ -91,5 +91,21 @@ export function validateReferentiels(ref: Referentiels): string[] {
     if (!formes.has(forme.toLocaleLowerCase('fr'))) errors.push(`Forme à confirmer absente du référentiel : ${forme}`);
   }
 
+  // Une forme composée doit viser exactement les compétences auxquelles le référentiel la rattache.
+  const rattachements = new Map<string, Set<string>>();
+  const rattacher = (forme: string, id: string) => {
+    const k = forme.toLocaleLowerCase('fr');
+    rattachements.set(k, (rattachements.get(k) ?? new Set()).add(id));
+  };
+  for (const c of ref.competences) for (const f of [c.nom, ...c.synonymes]) rattacher(f, c.id);
+  for (const s of ref.synonymes) for (const id of s.competenceIds) rattacher(s.forme, id);
+  for (const [forme, ids] of Object.entries(config.formesComposees ?? {})) {
+    const attendus = rattachements.get(forme.toLocaleLowerCase('fr'));
+    if (!attendus) errors.push(`Forme composée absente du référentiel : ${forme}`);
+    else if (ids.length < 2 || ids.length !== attendus.size || !ids.every((id) => attendus.has(id))) {
+      errors.push(`Forme composée « ${forme} » : compétences ${ids.join(', ')} ≠ référentiel ${[...attendus].join(', ')}`);
+    }
+  }
+
   return errors;
 }

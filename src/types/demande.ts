@@ -117,6 +117,27 @@ export interface TransverseDemandee {
   renvoyeeAuGrade: boolean;
 }
 
+/**
+ * Provenance d'une compétence transmise au moteur, par priorité décroissante :
+ * sélection explicite > nom canonique / identifiant > synonyme sûr (ou forme composée) > détection sûre.
+ */
+export type OrigineCompetence =
+  | 'selection'
+  | 'terme-identifiant'
+  | 'terme-nom-canonique'
+  | 'terme-synonyme'
+  | 'terme-compose'
+  | 'texte'
+  | 'transcription';
+
+export interface CompetenceAnalysee {
+  competenceId: CompetenceId;
+  /** Source la plus prioritaire ayant apporté la compétence. */
+  origine: OrigineCompetence;
+  /** Formulation d'origine (null pour une sélection explicite). */
+  formulation: string | null;
+}
+
 export interface IntituleMarche {
   intitule: string;
   entreprises: string[];
@@ -125,15 +146,15 @@ export interface IntituleMarche {
 export interface FicheRecruteur {
   demande: DemandeInput;
   gradeLibelle: string;
-  /** Compétences effectivement transmises au moteur (sélection directe + termes reconnus). */
-  competencesAnalysees: CompetenceId[];
+  /** Compétences effectivement transmises au moteur, avec leur provenance. */
+  competencesAnalysees: CompetenceAnalysee[];
   resultat: ResultatCouverture;
   echelle: { min: number; max: number };
   attentesTransverses: AttenteTransverse[];
   transverses: TransverseDemandee[];
   /** Trace de normalisation des formulations libres (`demande.termes`), null si aucune. */
   normalisation: ResultatNormalisation | null;
-  /** Compétences repérées dans le texte et la transcription : suggestions, jamais envoyées au moteur. */
+  /** Compétences repérées dans le texte et la transcription ; seules les détections sûres sont envoyées au moteur. */
   detectionsTexte: { texte: DetectionTexte[]; transcription: DetectionTexte[] };
   sourcingParMetier: Record<MetierId, Sourcing | null>;
   intitulesMarche: Record<MetierId, IntituleMarche[]>;

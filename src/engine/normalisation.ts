@@ -7,7 +7,12 @@
  * - la correspondance est exacte après une mise en forme purement typographique (casse, accents,
  *   ligatures, apostrophes, tirets, espaces) : ni correspondance approchée, ni racinisation,
  *   ni correspondance partielle pour une formulation saisie ;
- * - une forme rattachée à plusieurs compétences est ambiguë et n'est jamais résolue automatiquement ;
+ * - une saisie est découpée sur « , », « ; » et les retours à la ligne, jamais sur « / », « + »,
+ *   « & » ou « et » ; chaque fragment est normalisé indépendamment ;
+ * - priorité : nom canonique > synonyme. Une formulation saisie qui est le nom canonique d'une
+ *   compétence et le synonyme d'une autre est rattachée au nom canonique (concurrents tracés) ;
+ * - une forme listée dans `config.formesComposees` vise toutes ses compétences (« Spark SQL ») ;
+ * - les autres formes rattachées à plusieurs compétences sont ambiguës, jamais résolues ;
  * - une forme listée dans `config.formesAConfirmer` (rattachement susceptible de changer le sens
  *   métier) est signalée « à confirmer » et n'est jamais appliquée automatiquement ;
  * - une formulation inconnue est signalée telle quelle ;
@@ -21,6 +26,7 @@ import type {
   ResultatNormalisation,
   TermeAConfirmer,
   TermeAmbigu,
+  TermeCompose,
   TermeNonReconnu,
   TermeNormalise,
 } from '../types';
@@ -77,11 +83,15 @@ export function cleDeCorrespondance(s: string): string {
 interface Dictionnaire {
   /** clé → correspondances (une par compétence). */
   formes: Map<string, Correspondance[]>;
+  /** clé → graphies exactes des formes du référentiel (pour la casse des formes courtes). */
+  graphies: Map<string, Set<string>>;
   /** Clés triées par longueur décroissante, pour la détection dans un texte. */
   clesParLongueur: string[];
   ids: Set<CompetenceId>;
   /** clé → raison, pour les formes à confirmer. */
   aConfirmer: Map<string, string>;
+  /** clé → compétences visées, pour les formes composées. */
+  composees: Map<string, CompetenceId[]>;
 }
 
 const cache = new WeakMap<Referentiels, Dictionnaire>();
@@ -91,9 +101,11 @@ function dictionnaire(ref: Referentiels): Dictionnaire {
   if (cached) return cached;
 
   const formes = new Map<string, Correspondance[]>();
+  const graphies = new Map<string, Set<string>>();
   const ajouter = (forme: string, competenceId: CompetenceId, via: Correspondance['via']): void => {
     const cle = cleDeCorrespondance(forme);
     if (!cle) return;
+    graphies.set(cle, (graphies.get(cle) ?? new Set()).add(forme.trim()));
     const liste = formes.get(cle) ?? [];
     const existante = liste.find((c) => c.competenceId === competenceId);
     // Pour une même compétence, le nom canonique prime sur un synonyme.
@@ -112,45 +124,85 @@ function dictionnaire(ref: Referentiels): Dictionnaire {
 
   const dico: Dictionnaire = {
     formes,
+    graphies,
     clesParLongueur: [...formes.keys()].sort((a, b) => b.length - a.length || a.localeCompare(b)),
     ids: new Set(ref.competences.map((c) => c.id)),
     aConfirmer: new Map(Object.entries(ref.config.formesAConfirmer).map(([f, r]) => [cleDeCorrespondance(f), r])),
+    composees: new Map(Object.entries(ref.config.formesComposees).map(([f, ids]) => [cleDeCorrespondance(f), ids])),
   };
   cache.set(ref, dico);
   return dico;
 }
 
-/** Normalise une formulation unique. Renvoie null pour une saisie vide. */
-export function normaliserTerme(original: string, ref: Referentiels): TermeNormalise | null {
+const copie = (liste: readonly Correspondance[]): Correspondance[] => liste.map((c) => ({ ...c }));
+
+/**
+ * Normalise une formulation unique (sans découpage). Renvoie null pour une saisie vide.
+ * `saisie` : saisie complète dont provient le fragment, pour la traçabilité.
+ */
+export function normaliserTerme(original: string, ref: Referentiels, saisie: string = original): TermeNormalise | null {
   const dico = dictionnaire(ref);
   const brut = original.trim();
   if (!brut) return null;
 
   const id = brut.toUpperCase();
   if (/^C\d{3}$/.test(id) && dico.ids.has(id)) {
-    return { statut: 'reconnu', original, competenceId: id, via: 'identifiant', formeReferentiel: id };
+    return { statut: 'reconnu', original, saisie, competenceId: id, via: 'identifiant', formeReferentiel: id, concurrents: [] };
   }
 
   const cle = cleDeCorrespondance(brut);
   const candidats = dico.formes.get(cle);
-  if (!candidats) return { statut: 'non-reconnu', original };
+  if (!candidats) return { statut: 'non-reconnu', original, saisie };
+
   const raison = dico.aConfirmer.get(cle);
-  if (raison) return { statut: 'a-confirmer', original, candidats: candidats.map((c) => ({ ...c })), raison };
-  if (candidats.length > 1) return { statut: 'ambigu', original, candidats: candidats.map((c) => ({ ...c })) };
-  return { statut: 'reconnu', original, ...candidats[0]! };
+  if (raison) return { statut: 'a-confirmer', original, saisie, candidats: copie(candidats), raison };
+
+  const composantes = dico.composees.get(cle);
+  if (composantes) {
+    return { statut: 'compose', original, saisie, composantes: copie(candidats.filter((c) => composantes.includes(c.competenceId))) };
+  }
+
+  if (candidats.length === 1) return { statut: 'reconnu', original, saisie, ...candidats[0]!, concurrents: [] };
+
+  // Nom canonique > synonyme : si la forme est le nom canonique d'une seule compétence, elle l'emporte.
+  const canoniques = candidats.filter((c) => c.via === 'nom-canonique');
+  if (canoniques.length === 1) {
+    const [retenu] = canoniques;
+    return {
+      statut: 'reconnu',
+      original,
+      saisie,
+      ...retenu!,
+      concurrents: copie(candidats.filter((c) => c !== retenu)),
+    };
+  }
+  return { statut: 'ambigu', original, saisie, candidats: copie(candidats) };
 }
 
+/** Séparateurs de saisie. « / », « + », « & » et « et » n'en sont pas : ils font partie de compétences. */
+const SEPARATEURS = /[,;\r\n]+/;
+
 /**
- * Normalise une liste de formulations (une formulation par entrée, sans découpage).
- * Seules les compétences reconnues sans ambiguïté ni réserve sont destinées au moteur.
+ * Normalise des saisies libres : chaque saisie est découpée sur « , », « ; » et les retours à la
+ * ligne, puis chaque fragment est normalisé indépendamment. Seules les compétences sûres
+ * (reconnues ou composées) sont destinées au moteur.
  */
-export function normaliserTermes(originaux: readonly string[], ref: Referentiels): ResultatNormalisation {
-  const termes = originaux.map((t) => normaliserTerme(t, ref)).filter((t): t is TermeNormalise => t !== null);
+export function normaliserTermes(saisies: readonly string[], ref: Referentiels): ResultatNormalisation {
+  const termes = saisies
+    .flatMap((saisie) => saisie.split(SEPARATEURS).map((fragment) => normaliserTerme(fragment.trim(), ref, saisie)))
+    .filter((t): t is TermeNormalise => t !== null);
   const competenceIds: CompetenceId[] = [];
-  for (const t of termes) if (t.statut === 'reconnu' && !competenceIds.includes(t.competenceId)) competenceIds.push(t.competenceId);
+  const ajouter = (id: CompetenceId) => {
+    if (!competenceIds.includes(id)) competenceIds.push(id);
+  };
+  for (const t of termes) {
+    if (t.statut === 'reconnu') ajouter(t.competenceId);
+    if (t.statut === 'compose') t.composantes.forEach((c) => ajouter(c.competenceId));
+  }
   return {
     termes,
     competenceIds,
+    composes: termes.filter((t): t is TermeCompose => t.statut === 'compose'),
     ambigus: termes.filter((t): t is TermeAmbigu => t.statut === 'ambigu'),
     aConfirmer: termes.filter((t): t is TermeAConfirmer => t.statut === 'a-confirmer'),
     nonReconnus: termes.filter((t): t is TermeNonReconnu => t.statut === 'non-reconnu'),
@@ -161,7 +213,9 @@ const LETTRE_OU_CHIFFRE = /[\p{L}\p{N}]/u;
 
 /**
  * Repère dans un texte libre les formes du référentiel (mots entiers, la plus longue d'abord,
- * sans chevauchement). Ce sont des suggestions : elles ne sont jamais transmises au moteur.
+ * sans chevauchement) et qualifie chaque détection. Seules les détections `sure` sont
+ * destinées au moteur. Ici, nom canonique et synonyme ne se départagent pas : une forme
+ * partagée reste ambiguë.
  */
 export function detecterDansTexte(texte: string, ref: Referentiels): DetectionTexte[] {
   const dico = dictionnaire(ref);
@@ -184,15 +238,26 @@ export function detecterDansTexte(texte: string, ref: Referentiels): DetectionTe
 
       const debut = origine[pos]!;
       const fin = origine[end - 1]! + 1;
-      const candidats = dico.formes.get(cle)!.map((c) => ({ ...c }));
+      const extrait = texte.slice(debut, fin);
+      const candidats = copie(dico.formes.get(cle)!);
+      const composantes = dico.composees.get(cle);
+      const compose = composantes !== undefined;
+      const ambigu = candidats.length > 1 && !compose;
+      const aConfirmer = dico.aConfirmer.get(cle) ?? null;
+      const formeCourte = cle.length <= LONGUEUR_FORME_COURTE;
+      const casseExacte = dico.graphies.get(cle)!.has(extrait);
+      const sure = !ambigu && aConfirmer === null && (!formeCourte || casseExacte);
       detections.push({
-        extrait: texte.slice(debut, fin),
+        extrait,
         debut,
         fin,
         candidats,
-        ambigu: candidats.length > 1,
-        aConfirmer: dico.aConfirmer.get(cle) ?? null,
-        formeCourte: cle.length <= LONGUEUR_FORME_COURTE,
+        ambigu,
+        compose,
+        aConfirmer,
+        formeCourte,
+        sure,
+        competenceIds: sure ? (composantes ?? candidats.map((c) => c.competenceId)) : [],
       });
     }
   }

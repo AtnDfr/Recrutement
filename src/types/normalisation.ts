@@ -10,40 +10,54 @@ export interface Correspondance {
   formeReferentiel: string;
 }
 
-export interface TermeReconnu extends Correspondance {
-  statut: 'reconnu';
-  /** Formulation telle que saisie, conservée pour la traçabilité. */
+interface TermeBase {
+  /** Fragment normalisé, tel que saisi (conservé pour la traçabilité). */
   original: string;
+  /** Saisie complète dont provient le fragment (identique à `original` sans découpage). */
+  saisie: string;
+}
+
+export interface TermeReconnu extends TermeBase, Correspondance {
+  statut: 'reconnu';
+  /**
+   * Autres compétences partageant la même forme, écartées parce que le nom canonique prime
+   * sur un synonyme (ex. « Monitoring » : C059, et non Observabilité). Vide en général.
+   */
+  concurrents: Correspondance[];
+}
+
+/** Forme qui exprime réellement plusieurs compétences (ex. « Spark SQL » → Spark + SQL). */
+export interface TermeCompose extends TermeBase {
+  statut: 'compose';
+  composantes: Correspondance[];
 }
 
 /** Formulation rattachée à plusieurs compétences : jamais résolue automatiquement. */
-export interface TermeAmbigu {
+export interface TermeAmbigu extends TermeBase {
   statut: 'ambigu';
-  original: string;
   candidats: Correspondance[];
 }
 
 /** Formulation reconnue, mais dont le rattachement peut changer le sens : jamais appliquée automatiquement. */
-export interface TermeAConfirmer {
+export interface TermeAConfirmer extends TermeBase {
   statut: 'a-confirmer';
-  original: string;
   candidats: Correspondance[];
   raison: string;
 }
 
 /** Formulation absente du référentiel : signalée, jamais rapprochée d'une compétence voisine. */
-export interface TermeNonReconnu {
+export interface TermeNonReconnu extends TermeBase {
   statut: 'non-reconnu';
-  original: string;
 }
 
-export type TermeNormalise = TermeReconnu | TermeAmbigu | TermeAConfirmer | TermeNonReconnu;
+export type TermeNormalise = TermeReconnu | TermeCompose | TermeAmbigu | TermeAConfirmer | TermeNonReconnu;
 
 export interface ResultatNormalisation {
-  /** Une entrée par formulation saisie non vide, dans l'ordre de saisie. */
+  /** Une entrée par fragment non vide, dans l'ordre de saisie. */
   termes: TermeNormalise[];
-  /** Compétences canoniques reconnues sans ambiguïté, dédoublonnées, dans l'ordre de saisie. */
+  /** Compétences sûres (reconnues ou composées), dédoublonnées, dans l'ordre de saisie. */
   competenceIds: CompetenceId[];
+  composes: TermeCompose[];
   ambigus: TermeAmbigu[];
   aConfirmer: TermeAConfirmer[];
   nonReconnus: TermeNonReconnu[];
@@ -57,9 +71,19 @@ export interface DetectionTexte {
   debut: number;
   fin: number;
   candidats: Correspondance[];
+  /** Plusieurs compétences possibles et forme non déclarée composée. */
   ambigu: boolean;
+  /** Forme déclarée composée (config.formesComposees) : toutes les compétences sont visées. */
+  compose: boolean;
   /** Raison si la forme est « à confirmer » (config.formesAConfirmer), sinon null. */
   aConfirmer: string | null;
-  /** Forme de 4 caractères ou moins (ex. « run », « CV ») : risque élevé de faux positif. */
+  /** Forme de 4 caractères ou moins (ex. « ML », « TOM ») : risque élevé de faux positif. */
   formeCourte: boolean;
+  /**
+   * Détection sûre, injectée automatiquement dans le moteur : ni ambiguë, ni à confirmer, et,
+   * pour une forme courte, écrite exactement avec la casse du référentiel (« SQL », pas « sql »).
+   */
+  sure: boolean;
+  /** Compétences injectées si la détection est sûre (vide sinon). */
+  competenceIds: CompetenceId[];
 }

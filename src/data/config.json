@@ -24,5 +24,11 @@
     "run": "Terme générique, rattaché à « Production / Run ».",
     "lake": "Forme tronquée, rattachée à « Data Lake » (ou Lakehouse ?).",
     "logs": "Forme générique, rattachée à « Observabilité »."
+  },
+  "formesComposees": {
+    "Spark SQL": [
+      "C020",
+      "C103"
+    ]
   }
 }

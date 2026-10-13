@@ -58,6 +58,7 @@ describe('validateReferentiels', () => {
       plafondMetiers: -1,
       competencesTransverses: { ZZZ: 'management' },
       formesAConfirmer: { 'forme inexistante': 'test' },
+      formesComposees: { 'Compétence fictive X01': ['X01', 'X02'] },
     });
     mini.metiers[0]!.signature.push({ competenceId: 'ABSENTE', statut: 'Core', occurrences: 3, base: 5 });
     mini.sourcing.push({ ...mini.sourcing[0]!, metierId: 'fantome' });
@@ -71,6 +72,7 @@ describe('validateReferentiels', () => {
         expect.stringMatching(/plafondMetiers/),
         expect.stringMatching(/ZZZ/),
         expect.stringMatching(/forme inexistante/),
+        expect.stringMatching(/Forme composée « Compétence fictive X01 »/),
       ]),
     );
   });

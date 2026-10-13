@@ -14,7 +14,17 @@ npm test             # Vitest
 npm run typecheck    # TypeScript strict
 npm run build:data   # régénère src/data/generated/*.json depuis data/raw/*.xlsx
 npm run check:data   # échoue si les JSON commités ne correspondent plus aux classeurs
+npm run valider      # joue validation/cas.json et écrit validation/rapport.md
+npm run valider -- --grade manager --selection "Databricks; Leadership technique" --texte "phrase libre"
 ```
+
+## Harnais de validation métier (`scripts/valider.ts`)
+
+Sans interface : on injecte des compétences sélectionnées, une phrase libre, des formulations libres
+et un grade, et le harnais affiche pour chaque cas les compétences analysées (avec leur provenance),
+les ambiguïtés, les métiers proposés et ce qui les justifie, les transverses et le grade, les
+résiduels expliqués et le sourcing. Les cas sont dans `validation/cas.json` ; le rapport
+`validation/rapport.md` se termine, pour chaque cas, par la question de validation recruteur.
 
 ## Données
 
@@ -57,20 +67,22 @@ séniorité / le leadership, le métier les compétences techniques et fonctionn
 
 ## Normalisation (`src/engine/normalisation.ts`)
 
-`normaliserTermes(formulations)` rattache chaque formulation à une compétence canonique, avant le moteur.
+Priorité des sources transmises au moteur :
+**sélection explicite SM > nom canonique (ou identifiant) > synonyme sûr (ou forme composée) > détection
+automatique sûre**. Les formulations ambiguës, à confirmer ou non reconnues ne sont jamais transmises.
 
 - Formes utilisées : identifiant (`C102`), nom canonique, synonymes (`1_Competences` et `2_Synonymes`).
-  Rien d'autre ; aucune compétence n'est jamais créée.
-- Correspondance exacte après mise en forme typographique : casse, accents, ligatures, apostrophes,
-  tirets, espaces (y compris autour de `/`). Pas de correspondance approchée, de racinisation ni de
-  correspondance partielle.
-- Statuts : `reconnu` (transmis au moteur), `ambigu` (plusieurs compétences : candidats exposés),
-  `a-confirmer` (forme listée dans `config.formesAConfirmer` car son rattachement peut changer le sens),
-  `non-reconnu` (signalé tel quel). Seul `reconnu` est transmis au moteur. La formulation d'origine est
-  toujours conservée.
-- `detecterDansTexte(texte)` repère les formes dans le texte libre ou la transcription (mots entiers, la
-  plus longue d'abord, sans chevauchement, avec position dans le texte d'origine). Ce sont des
-  suggestions, jamais transmises au moteur.
+  Aucune compétence n'est jamais créée ; la formulation d'origine est toujours conservée.
+- Saisie découpée sur `,`, `;` et les retours à la ligne ; jamais sur `/`, `+`, `&` ou « et ».
+- Correspondance exacte après mise en forme typographique (casse, accents, ligatures, apostrophes,
+  tirets, espaces). Pas de correspondance approchée, de racinisation ni de correspondance partielle.
+- Statuts d'une formulation saisie : `reconnu` ; `compose` (forme de `config.formesComposees`, ex.
+  « Spark SQL » → Spark + SQL) ; `ambigu` ; `a-confirmer` (forme de `config.formesAConfirmer`) ;
+  `non-reconnu`. Nom canonique > synonyme : « Monitoring » saisi → C059, le concurrent est tracé.
+- Texte libre et vocal (`detecterDansTexte`) : mots entiers, la plus longue forme d'abord. Une détection
+  est **sûre**, donc injectée automatiquement, si elle n'est ni ambiguë ni à confirmer et, pour une forme
+  de 4 caractères ou moins, si sa casse est celle du référentiel (« SQL » oui, « sql » ou « Tom » non).
+  En texte libre, le nom canonique ne départage pas : « monitoring » y reste ambigu.
 
 ## Points d'attention sur les référentiels
 
@@ -80,7 +92,6 @@ séniorité / le leadership, le métier les compétences techniques et fonctionn
 - 73 compétences sur 140 n'apparaissent dans aucune signature métier (résiduel `hors-signatures`).
 - Certains intitulés de métier portent une séniorité (Senior, Lead / Principal) alors que le grade est
   orthogonal : les données sont conservées telles quelles.
-- « Monitoring » est à la fois le nom canonique de C059 et un synonyme d'Observabilité (C060) :
-  traité comme ambigu.
+- « Monitoring » est à la fois le nom canonique de C059 et un synonyme d'Observabilité (C060).
 - Certains synonymes peuvent changer le sens (« CV », « TypeScript », « risk », « valeur », « ROI »,
   « production », « run », « lake », « logs ») : listés dans `config.formesAConfirmer`.

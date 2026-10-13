@@ -103,6 +103,11 @@ export interface EngineConfig {
    * les signale « à confirmer » au lieu de les appliquer. Clé = forme, valeur = raison.
    */
   formesAConfirmer: Record<string, string>;
+  /**
+   * Formes rattachées à plusieurs compétences dans le référentiel et qui les expriment toutes
+   * réellement (ex. « Spark SQL » → Spark + SQL). Clé = forme, valeur = compétences visées.
+   */
+  formesComposees: Record<string, CompetenceId[]>;
 }
 
 export interface Referentiels {
