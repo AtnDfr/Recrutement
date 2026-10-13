@@ -1,12 +1,14 @@
 import type {
   AttenteTransverse,
+  CompetenceId,
   Grade,
   GradeId,
   Referentiels,
   ResultatCouverture,
-  TransverseRenvoyee,
+  TransverseDemandee,
 } from '../types';
 import { ReferentielError } from './errors';
+import { buildIndex, statutDans } from './indexes';
 
 export function getGrade(gradeId: GradeId, ref: Referentiels): Grade {
   const grade = ref.grades.grades.find((g) => g.id === gradeId);
@@ -21,21 +23,35 @@ export function getAttentesTransverses(gradeId: GradeId, ref: Referentiels): Att
 }
 
 /**
- * Enrichissement après matching : les compétences transverses demandées que les métiers
- * retenus ne couvrent pas sont rattachées à l'axe du grade qui les porte, avec le niveau attendu.
- * Ne modifie jamais les métiers retenus.
+ * Enrichissement après matching. Chaque compétence transverse demandée est rattachée à l'axe
+ * du grade qui en porte la dimension de séniorité, avec le niveau attendu. Les métiers retenus
+ * qui l'ont dans leur signature restent indiqués : le grade ne retire rien à la couverture métier.
+ * Ne modifie jamais le résultat du moteur.
  */
-export function renvoyerTransversesAuGrade(
+export function rattacherTransversesAuGrade(
+  competenceIds: readonly CompetenceId[],
   resultat: ResultatCouverture,
   gradeId: GradeId,
   ref: Referentiels,
-): TransverseRenvoyee[] {
+): TransverseDemandee[] {
   const grade = getGrade(gradeId, ref);
-  return resultat.residuels
-    .filter((r) => r.motif === 'transverse-vers-grade')
-    .map((r) => {
-      const axe = ref.config.competencesTransverses[r.competenceId];
-      if (!axe) throw new ReferentielError(`Compétence transverse sans axe : ${r.competenceId}`);
-      return { competenceId: r.competenceId, axe, niveauAttendu: grade.niveaux[axe] };
+  const index = buildIndex(ref);
+  return [...new Set(competenceIds)]
+    .sort()
+    .flatMap((competenceId) => {
+      const axe = ref.config.competencesTransverses[competenceId];
+      if (!axe) return [];
+      const metiersPorteurs = resultat.metiers
+        .map((m) => m.metierId)
+        .filter((m) => statutDans(index, m, competenceId) !== undefined);
+      return [
+        {
+          competenceId,
+          axe,
+          niveauAttendu: grade.niveaux[axe],
+          metiersPorteurs,
+          renvoyeeAuGrade: metiersPorteurs.length === 0,
+        },
+      ];
     });
 }

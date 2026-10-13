@@ -63,17 +63,22 @@ describe('8. le grade enrichit les résultats après matching', () => {
     const analyste = buildFicheRecruteur(demande('analyste'), ref);
     const manager = buildFicheRecruteur(demande('manager'), ref);
     expect(analyste.resultat.residuels.find((r) => r.competenceId === 'C055')?.motif).toBe('transverse-vers-grade');
-    expect(analyste.transversesRenvoyees).toEqual([{ competenceId: 'C055', axe: 'relation-client', niveauAttendu: 2 }]);
-    expect(manager.transversesRenvoyees).toEqual([{ competenceId: 'C055', axe: 'relation-client', niveauAttendu: 5 }]);
+    const attendu = (niveauAttendu: number) => [
+      { competenceId: 'C055', axe: 'relation-client', niveauAttendu, metiersPorteurs: [], renvoyeeAuGrade: true },
+    ];
+    expect(analyste.transverses).toEqual(attendu(2));
+    expect(manager.transverses).toEqual(attendu(5));
   });
 
-  it('une transverse couverte par un métier retenu n’est pas renvoyée au grade', () => {
+  it('une transverse couverte par un métier retenu reste aussi portée par le grade', () => {
     const fiche = buildFicheRecruteur(
       { demandeur: 'Test', date: '2026-10-13', grade: 'manager', competenceIds: ['X11', 'X91'] },
       miniReferentiel(),
     );
     expect(fiche.resultat.metiers.map((m) => m.metierId)).toEqual(['m-e']);
-    expect(fiche.transversesRenvoyees).toEqual([]);
+    expect(fiche.transverses).toEqual([
+      { competenceId: 'X91', axe: 'management', niveauAttendu: 4, metiersPorteurs: ['m-e'], renvoyeeAuGrade: false },
+    ]);
   });
 
   it('grade inconnu : erreur explicite', () => {

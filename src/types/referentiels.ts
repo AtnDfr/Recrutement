@@ -98,6 +98,11 @@ export interface EngineConfig {
    */
   competencesTransverses: Record<CompetenceId, AxeTransverse>;
   poidsStatut: Record<SignatureStatut, number>;
+  /**
+   * Formes du référentiel dont le rattachement peut changer le sens métier : la normalisation
+   * les signale « à confirmer » au lieu de les appliquer. Clé = forme, valeur = raison.
+   */
+  formesAConfirmer: Record<string, string>;
 }
 
 export interface Referentiels {

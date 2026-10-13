@@ -1,5 +1,7 @@
 import type {
+  ArbitrageCouverture,
   CompetenceId,
+  CritereDecisif,
   CouvertureItem,
   MetierId,
   MetierRetenu,
@@ -54,7 +56,7 @@ export function computeCoverage(competenceIds: readonly CompetenceId[], ref: Ref
   const couvertesSet = new Set(metiers.flatMap((m) => m.nouvelles.map((i) => i.competenceId)));
   const residuels = selection.toutes
     .filter((c) => !couvertesSet.has(c))
-    .map((c) => residuel(c, best.combinaison, selection, index, plafond));
+    .map((c) => residuel(c, best, candidats, selection, index, plafond));
 
   return {
     metiers,
@@ -122,21 +124,104 @@ function restituer(
 
 function residuel(
   competenceId: CompetenceId,
-  retenus: readonly MetierId[],
+  retenue: { combinaison: MetierId[]; score: Score },
+  candidats: readonly MetierId[],
   selection: Selection,
   index: EngineIndex,
   plafond: number,
 ): Residuel {
+  const retenus = retenue.combinaison;
   const porteurs = (index.metiersParCompetence.get(competenceId) ?? []).filter((m) => !retenus.includes(m));
   const enCore = porteurs.filter((m) => statutDans(index, m, competenceId) === 'Core');
   const metiersCandidats = [...enCore, ...porteurs.filter((m) => !enCore.includes(m))];
 
-  let motif: Residuel['motif'];
-  if (selection.transverses.includes(competenceId)) motif = 'transverse-vers-grade';
-  else if (porteurs.length === 0) motif = 'hors-signatures';
-  else if (enCore.length === 0) motif = 'non-core-uniquement';
-  else if (retenus.length >= plafond) motif = 'plafond-atteint';
-  else motif = 'arbitrage-couverture';
+  if (selection.transverses.includes(competenceId)) return { competenceId, motif: 'transverse-vers-grade', metiersCandidats };
+  if (porteurs.length === 0) return { competenceId, motif: 'hors-signatures', metiersCandidats };
+  if (enCore.length === 0) return { competenceId, motif: 'non-core-uniquement', metiersCandidats };
+  if (retenus.length >= plafond) return { competenceId, motif: 'plafond-atteint', metiersCandidats };
+  return {
+    competenceId,
+    motif: 'arbitrage-couverture',
+    metiersCandidats,
+    arbitrages: enCore.map((m) => expliquerArbitrage(competenceId, m, retenue, candidats, selection, index, plafond)),
+  };
+}
 
-  return { competenceId, motif, metiersCandidats };
+const CRITERES: CritereDecisif[] = [
+  'couverture',
+  'nombre-de-metiers',
+  'qualite-des-statuts',
+  'transverses-couvertes',
+  'specialisation-non-demandee',
+];
+
+const LIBELLE_CRITERE: Record<CritereDecisif, string> = {
+  couverture: 'moins de compétences demandées couvertes',
+  'nombre-de-metiers': 'davantage de métiers pour la même couverture',
+  'qualite-des-statuts': 'couverture reposant sur des statuts moins forts (moins de Core)',
+  'transverses-couvertes': 'moins de compétences transverses demandées couvertes',
+  'specialisation-non-demandee': 'davantage de spécialisations Core non demandées',
+  'ordre-des-identifiants': 'solution ex aequo, départagée par l’ordre des identifiants',
+};
+
+/**
+ * Pourquoi un métier qui porte la compétence en Core n'a pas été retenu, alors que le plafond
+ * n'était pas atteint : on compare la solution retenue à la meilleure combinaison valide qui l'inclut.
+ */
+function expliquerArbitrage(
+  competenceId: CompetenceId,
+  metierEcarte: MetierId,
+  retenue: { combinaison: MetierId[]; score: Score },
+  candidats: readonly MetierId[],
+  selection: Selection,
+  index: EngineIndex,
+  plafond: number,
+): ArbitrageCouverture {
+  const avecEcarte = [...retenue.combinaison, metierEcarte];
+  const metiersRendusRedondants = retenue.combinaison.filter(
+    (m) => apportCoreUnique(m, avecEcarte, selection, index).length === 0,
+  );
+
+  // Le métier seul est toujours valide (il porte la compétence en Core, non couverte ailleurs).
+  let meilleure = { combinaison: [metierEcarte], score: scoreCombination([metierEcarte], selection, index) };
+  const autres = candidats.filter((m) => m !== metierEcarte);
+  for (let k = 1; k < plafond; k++) {
+    for (const reste of combinations(autres, k)) {
+      const combinaison = [...reste, metierEcarte].sort();
+      if (!isValidCombination(combinaison, selection, index)) continue;
+      const score = scoreCombination(combinaison, selection, index);
+      if (compareScores(score, meilleure.score) > 0) meilleure = { combinaison, score };
+    }
+  }
+
+  const i = retenue.score.findIndex((v, j) => v !== meilleure.score[j]);
+  const critereDecisif = i === -1 ? 'ordre-des-identifiants' : CRITERES[i]!;
+  const couvertureRetenue = retenue.score[0];
+  const couvertureAvecEcarte = meilleure.score[0];
+
+  const nomMetier = (m: MetierId) => `« ${index.metiers.get(m)?.nom ?? m} »`;
+  const nomCompetence = `« ${index.competences.get(competenceId)?.nom ?? competenceId} »`;
+  const raisons: string[] = [];
+  if (metiersRendusRedondants.length) {
+    raisons.push(
+      `l’ajouter à la solution retenue rendrait ${metiersRendusRedondants.map(nomMetier).join(', ')} ` +
+        `redondant (plus aucune compétence Core propre)`,
+    );
+  }
+  raisons.push(
+    `la meilleure combinaison qui l’inclut (${meilleure.combinaison.map(nomMetier).join(', ')}) couvre ` +
+      `${couvertureAvecEcarte} compétence(s) déclenchante(s) contre ${couvertureRetenue} pour la solution retenue ` +
+      `(critère décisif : ${LIBELLE_CRITERE[critereDecisif]})`,
+  );
+
+  return {
+    competenceId,
+    metierEcarte,
+    metiersRendusRedondants,
+    couvertureRetenue,
+    meilleureCombinaisonAvecEcarte: meilleure.combinaison,
+    couvertureAvecEcarte,
+    critereDecisif,
+    raison: `${nomMetier(metierEcarte)} aurait couvert ${nomCompetence} en Core, mais ${raisons.join(' ; ')}.`,
+  };
 }

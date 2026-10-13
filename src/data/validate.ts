@@ -82,5 +82,14 @@ export function validateReferentiels(ref: Referentiels): string[] {
     if (!(AXES_TRANSVERSES as readonly string[]).includes(axe)) errors.push(`Compétence ${id} : axe inconnu ${axe}`);
   }
 
+  const formes = new Set(
+    [...ref.competences.flatMap((c) => [c.nom, ...c.synonymes]), ...ref.synonymes.map((s) => s.forme)].map((f) =>
+      f.toLocaleLowerCase('fr'),
+    ),
+  );
+  for (const forme of Object.keys(config.formesAConfirmer ?? {})) {
+    if (!formes.has(forme.toLocaleLowerCase('fr'))) errors.push(`Forme à confirmer absente du référentiel : ${forme}`);
+  }
+
   return errors;
 }

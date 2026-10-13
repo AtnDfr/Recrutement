@@ -113,7 +113,28 @@ describe('Règles de couverture progressive (référentiel fictif)', () => {
       // {M-F} couvre X20 X21 X23 X24 ; M-G apporterait X22 mais rendrait M-F redondant.
       const r = computeCoverage(['X20', 'X21', 'X22', 'X23', 'X24'], ref);
       expect(ids(r)).toEqual(['m-f']);
-      expect(residuel(r, 'X22')).toEqual({ competenceId: 'X22', motif: 'arbitrage-couverture', metiersCandidats: ['m-g'] });
+      const x22 = residuel(r, 'X22')!;
+      expect(x22.motif).toBe('arbitrage-couverture');
+      expect(x22.metiersCandidats).toEqual(['m-g']);
+      expect(x22.arbitrages).toEqual([
+        {
+          competenceId: 'X22',
+          metierEcarte: 'm-g',
+          metiersRendusRedondants: ['m-f'],
+          couvertureRetenue: 4,
+          meilleureCombinaisonAvecEcarte: ['m-g'],
+          couvertureAvecEcarte: 3,
+          critereDecisif: 'couverture',
+          raison: expect.stringMatching(/« Métier fictif m-g » aurait couvert « Compétence fictive X22 » en Core/),
+        },
+      ]);
+      expect(x22.arbitrages![0]!.raison).toMatch(/rendrait « Métier fictif m-f » redondant/);
+      expect(x22.arbitrages![0]!.raison).toMatch(/couvre 3 compétence\(s\) déclenchante\(s\) contre 4/);
+    });
+
+    it('seul le motif arbitrage-couverture porte une explication d’arbitrage', () => {
+      const r = computeCoverage(['X01', 'X02', 'X03', 'X08', 'X91', 'X99'], ref);
+      for (const x of r.residuels) expect(x.arbitrages).toBeUndefined();
     });
   });
 });

@@ -54,7 +54,11 @@ describe('Intégrité des référentiels réels', () => {
 
 describe('validateReferentiels', () => {
   it('détecte jointures cassées, niveaux hors échelle et configuration invalide', () => {
-    const mini = miniReferentiel({ plafondMetiers: -1, competencesTransverses: { ZZZ: 'management' } });
+    const mini = miniReferentiel({
+      plafondMetiers: -1,
+      competencesTransverses: { ZZZ: 'management' },
+      formesAConfirmer: { 'forme inexistante': 'test' },
+    });
     mini.metiers[0]!.signature.push({ competenceId: 'ABSENTE', statut: 'Core', occurrences: 3, base: 5 });
     mini.sourcing.push({ ...mini.sourcing[0]!, metierId: 'fantome' });
     mini.grades.grades[0]!.niveaux.leadership = 9;
@@ -66,6 +70,7 @@ describe('validateReferentiels', () => {
         expect.stringMatching(/leadership/),
         expect.stringMatching(/plafondMetiers/),
         expect.stringMatching(/ZZZ/),
+        expect.stringMatching(/forme inexistante/),
       ]),
     );
   });

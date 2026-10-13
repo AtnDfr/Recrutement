@@ -1,6 +1,10 @@
 {
   "plafondMetiers": 3,
-  "poidsStatut": { "Core": 3, "Récurrente": 2, "Spécialisante": 1 },
+  "poidsStatut": {
+    "Core": 3,
+    "Récurrente": 2,
+    "Spécialisante": 1
+  },
   "competencesTransverses": {
     "C049": "developpement-commercial",
     "C050": "developpement-commercial",
@@ -9,5 +13,16 @@
     "C107": "leadership",
     "C108": "management",
     "C109": "management"
+  },
+  "formesAConfirmer": {
+    "CV": "En recrutement, « CV » désigne d’abord un curriculum vitae, pas Computer Vision.",
+    "TypeScript": "Langage distinct, rattaché à « Node.js / JavaScript » dans le référentiel.",
+    "risk": "La gestion des risques n’est pas la conformité réglementaire.",
+    "valeur": "Terme générique, rattaché à « Mesure de la valeur ».",
+    "ROI": "Indicateur financier, rattaché à « Mesure de la valeur ».",
+    "production": "Terme générique (mise en production, ML en production…), rattaché à « Production / Run ».",
+    "run": "Terme générique, rattaché à « Production / Run ».",
+    "lake": "Forme tronquée, rattachée à « Data Lake » (ou Lakehouse ?).",
+    "logs": "Forme générique, rattachée à « Observabilité »."
   }
 }
