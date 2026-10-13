@@ -1,0 +1,64 @@
+Consultant·e Machine Learning & AI Engineer – Jeune diplômé·e (H/F)
+
+## Description de l'entreprise
+Description de l'entreprise
+Rejoignez un cabinet de conseil international qui accompagne les grandes transformations stratégiques.
+Nous sommes Wavestone : des expert·es passionné·es et orienté·es solutions, qui placent l’humain au cœur de la performance et de la croissance. Ambitieux·ses et en pleine expansion, nous développons sans cesse notre portefeuille de clients et de projets, avec une portée internationale et une réelle volonté de générer un impact positif.
+Êtes-vous un vrai team player, porté par des valeurs fortes ? Êtes-vous curieux·se et déterminé·e, avec l’envie d’apprendre chaque jour ? Êtes-vous du genre à relever les défis sans hésiter ? Alors vous êtes au bon endroit. Rejoignez Wavestone et exprimez votre potentiel dans un environnement stimulant et collaboratif, où l’on transforme les défis d’aujourd’hui en opportunités de demain.
+
+## Description du poste
+Votre future équipe
+Vous rejoignez la Business Unit AI de Wavestone, une communauté de près de 200 consultants Data & IA qui accompagne les plus grandes entreprises françaises et internationales dans la conception, le développement et le déploiement de solutions Data & Intelligence Artificielle.
+Nos équipes interviennent sur l'ensemble de la chaîne de valeur :
+- Intelligence Artificielle Générative (LLM, RAG, Agents)
+- Machine Learning & Deep Learning
+- Data Science et analyse avancée
+- Data Platforms & Cloud
+- Gouvernance Data & IA Responsable
+Vous évoluerez dans un environnement où expertise technique, innovation et conseil se renforcent mutuellement.
+Votre rôle
+En tant que Consultant·e Machine Learning & AI Engineer, vous contribuerez au développement de solutions Data & IA à fort impact métier.
+Vous interviendrez sur toutes les phases des projets :
+- compréhension des enjeux métier ;
+- exploration et valorisation des données ;
+- conception et développement de modèles IA ;
+- industrialisation et passage à l'échelle ;
+- accompagnement du changement et adoption des solutions.
+Vous serez encadré·e par des experts reconnus tout en développant rapidement votre autonomie technique.
+Vos missions
+Vous participerez progressivement à :
+- Développer des modèles de Machine Learning et Deep Learning répondant à des problématiques métier complexes
+- Concevoir et déployer des applications basées sur les LLMs (GPT, Claude, Mistral, etc.)
+- Développer des solutions de Retrieval-Augmented Generation (RAG) et des agents IA
+- Construire des pipelines de traitement et d'exploitation de données
+- Participer à la mise en production et au monitoring de modèles IA dans des environnements cloud
+- Contribuer au développement de plateformes MLOps et LLMOps
+- Réaliser des expérimentations et benchmarks sur les technologies IA émergentes
+- Accompagner les clients dans l'identification et la priorisation de cas d'usage IA
+- Participer aux activités R&D et à la communauté Data & IA Wavestone
+Exemples de missions
+- Développement d'assistants IA et copilotes métiers basés sur des LLMs
+- Construction de solutions RAG alimentées par des bases documentaires complexes
+- Déploiement de modèles prédictifs pour optimiser la performance opérationnelle
+- Développement d'agents IA autonomes pour automatiser des processus métier
+
+## Qualifications
+Vos compétences
+Must-have
+- Jeune diplômé·e d’une grande école d’ingénieurs ou de commerce (Diplôme d'Ingénieur, PGE)
+- Forte appétence pour la Data Science, le Machine Learning ou l'IA
+- Bonne maîtrise de Python
+- Connaissances en Machine Learning et statistiques
+- Intérêt marqué pour les LLMs, la Generative AI et les agents IA
+- Anglais courant (minimum C1)
+
+## Informations supplémentaires
+Pourquoi nous rejoindre ?
+- Parcours d'intégration dédié aux jeunes diplômés
+- Accompagnement managérial de proximité
+- Formations certifiantes Cloud, Data, IA et GenAI
+- Communauté Data & IA de 200 experts
+- Participation à des projets innovants à fort impact
+- Opportunités d'évolution rapides en France et à l'international
+Data Engineer · AI Engineer · Generative AI · LLM · RAG · Data Platform · Cloud Computing · MLOps · Data Engineering · Junior Consultant ML 
+Parce que votre réussite est notre priorité, nous adaptons nos processus de recrutement et l'environnement de travail à vos besoins spécifiques ou situations de santé (aménagements de poste, tiers-temps, outils adaptés...). Cette démarche, confidentielle et fondée sur l'équité, garantit à chaque candidat·e les meilleures conditions pour exprimer son plein potentiel dès le processus de recrutement, lors de sa prise de poste et tout au long de sa carrière.

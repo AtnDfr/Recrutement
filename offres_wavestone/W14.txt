@@ -1,0 +1,61 @@
+Senior Consultant.e - Data Scientist (H/F)
+
+## Description de l'entreprise
+Rejoignez un cabinet de conseil international qui accompagne les grandes transformations stratégiques.
+Nous sommes Wavestone : des expert·es passionné·es et orienté·es solutions, qui placent l’humain au cœur de la performance et de la croissance. Ambitieux·ses et en pleine expansion, nous développons sans cesse notre portefeuille de clients et de projets, avec une portée internationale et une réelle volonté de générer un impact positif.
+Êtes-vous un vrai team player, porté par des valeurs fortes ? Êtes-vous curieux·se et déterminé·e, avec l’envie d’apprendre chaque jour ? Êtes-vous du genre à relever les défis sans hésiter ? Alors vous êtes au bon endroit. Rejoignez Wavestone et exprimez votre potentiel dans un environnement stimulant et collaboratif, où l’on transforme les défis d’aujourd’hui en opportunités de demain.
+
+## Description du poste
+Votre équipe
+Vous rejoignez la Business Unit AI, une communauté d’environ 200 consultants IA & Data, qui accompagnent les organisations de bout en bout :
+- Stratégie IA et feuille de route
+- Identification et priorisation de cas d’usage IA
+- Gouvernance Data & IA
+- Operating Models Data & IA
+- AI Governance et Responsible AI
+- Adoption et conduite du changement
+Votre rôle 
+En tant que Consultant.e Senior en data science, vous serez amené.e à jouer un rôle clé dans la conception, l’industrialisation et l’orchestration de solutions IA avancées. Votre rôle ne se limitera pas à “développer des POCs”, vous serez projeté.e au cœur de l'industrialisation de l'IA dans les organisations. 
+Voici quelques terrains d'expertises sur lesquels nous recherchons des expert.e.s :
+- Concevoir et faire évoluer les socles Data & AI de nos clients :
+- Définir et mettre en œuvre les architectures data modernes (data lake / lakehouse, entrepôt, data mesh, data products) supportant les cas d’usage analytiques, ML et GenAI.
+- Structurer des pipelines de données robustes (batch, micro‑batch, streaming), de l’ingestion à l’exposition (BI, APIs, features ML, RAG).
+- Industrialiser les cas d’usage IA & GenAI & BI :
+- Travailler en binôme avec les Data Scientists / AI Engineers pour passer du PoC à la production : packaging des modèles, automatisation des workflows, mise en place des bonnes pratiques de MLOps / LLMOps.
+- Concevoir et opérer les composants techniques des solutions GenAI (pipelines RAG, vector DB, outils d’observabilité des LLM, gestion des prompts, sécurisation des appels aux modèles).
+- Contribuer à la mise en place de plateformes data & IA :
+- Collaborer étroitement avec les équipes Data & AI Platform des clients (Data Platform Engineers, DevOps, Architectes, Sécurité) pour définir les patterns d’architecture, l’outillage (Databricks, Snowflake, Dataiku, Azure/AWS/GCP, etc.) et les standards de développement.
+- Tenir un rôle de Tech Lead Data Engineering au sein des squads IA / AI Factory : cadrage technique, arbitrages d’architecture, relecture de code, accompagnement des développeurs.
+- Structurer la qualité, la gouvernance et l’observabilité des données :
+- Mettre en œuvre les bonnes pratiques de data quality (tests, monitoring, gestion des schémas, data contracts) et de data observability au niveau des pipelines.
+- Contribuer aux travaux de gouvernance Data & AI (catalogues, lineage, sécurité d’accès, conformité – notamment dans un contexte AI Act).
+- Déployer des solutions agentiques (AI Agents) :
+- Designer l’architecture data et technique supportant des chaînes d’agents (orchestrateurs, agents spécialisés, intégration avec systèmes métier, APIs et outils métiers).
+- Travailler avec les équipes métier pour transformer des processus complexes en workflows agentiques industrialisables (service client, IT support, processus back‑office, etc.).
+Vos responsabilités  
+En tant que Senior Consultant.e, et selon votre niveau d'expérience, vous serez amené.e à: 
+- Apporter votre expertise et vos convictions aux grandes organisations sur les sujets data science. 
+- Piloter des missions en tant que chef.fe de projet, en assurant la qualité des livrables, la coordination des parties prenantes et la tenue des engagements. 
+- Encadrer des équipes, en assurant la montée en compétence des consultants et en diffusant les bonnes pratiques du cabinet. 
+- Contribuer en interne au développement de l’offre Data & IA, en identifiant les tendances du marché, en structurant nos convictions et en développant de nouveaux assets (outils, frameworks, benchmarks…). 
+- Participer au développement commercial, en aidant à la réponse aux appels d'offres, à des phases d'avant vente, en foisonnant chez votre client...
+
+## Qualifications
+Votre profil 
+Plus que des cases à cocher, vous possédez une ou plusieurs de ces compétences : 
+- Vous avez 4 ans d'expérience ou plus en Data Engineering et avez piloter avec succès des équipes de Data Engineers.
+- Une solide maîtrise des architectures data modernes : data lake / data warehouse / lakehouse, approche medallion (bronze / silver / gold), data products et patterns de data mesh.
+- Vous avez des expériences significatives sur au moins un grand cloud public (Azure, AWS ou GCP) et maîtrisez d’un ou plusieurs composants de l’écosystème moderne : Databricks, Snowflake, Dataiku, Palantir Foundry, Fabric, etc.
+- Vous maitrisez les outils d’infra‑as‑code (Terraform, CloudFormation, Bicep…) et de conteneurisation (Docker, éventuellement Kubernetes) pour industrialiser les socles data & IA.
+- Vous avez une bonne connaissance des pratiques de MLOps et une culture et premières expériences concrètes en LLMOps.
+- Vous à l'aise avec la traduction d'un besoin métier en cahier des charges technique, et pour expliquer les arbitrages techniques à des interlocuteurs non techniques.
+- Vous avez un excellent relationnel, capacité à animer des ateliers techniques avec IT, Data Office, métiers et sécurité, et à construire un consensus.
+- Vous maîtrisez le français et l'anglais couramment.
+
+## Informations supplémentaires
+En rejoignant Wavestone, vous bénéficierez de : 
+- Carreer model: une carrière sur mesure, cela signifie pour nous des possibilités de développement individuel. Notre Wavestone Horizon vous permet une évolution rapide de votre parcours et de la dynamique salariale. 
+- Further training: let's grow together ! Vous avez accès à un vaste catalogue de formations et de certifications (cloud, DevOps, GenAI, etc.) pour vous former continuellement. 
+- Smartworking: le travail flexible et mobile fait partie de notre ADN et permet un cadre adéquat de collaboration. 
+- A Great Place To Work: nous sommes reconnus comme Great Place To Work 2025, nous classant numéro un dans notre catégorie parmi les organisations de plus de 2500 employés (France). 
+Parce que votre réussite est notre priorité, nous adaptons nos processus de recrutement et l'environnement de travail à vos besoins spécifiques ou situations de santé (aménagements de poste, tiers-temps, outils adaptés...). Cette démarche, confidentielle et fondée sur l'équité, garantit à chaque candidat·e les meilleures conditions pour exprimer son plein potentiel dès le processus de recrutement, lors de sa prise de poste et tout au long de sa carrière.

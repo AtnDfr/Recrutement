@@ -1,0 +1,68 @@
+Consultant·e AI et Data Platform – Jeune diplômé·e (H/F)
+
+## Description de l'entreprise
+Rejoignez un cabinet de conseil international qui accompagne les grandes transformations stratégiques.
+Nous sommes Wavestone : des expert·es passionné·es et orienté·es solutions, qui placent l’humain au cœur de la performance et de la croissance. Ambitieux·ses et en pleine expansion, nous développons sans cesse notre portefeuille de clients et de projets, avec une portée internationale et une réelle volonté de générer un impact positif.
+Êtes-vous un vrai team player, porté par des valeurs fortes ? Êtes-vous curieux·se et déterminé·e, avec l’envie d’apprendre chaque jour ? Êtes-vous du genre à relever les défis sans hésiter ? Alors vous êtes au bon endroit. Rejoignez Wavestone et exprimez votre potentiel dans un environnement stimulant et collaboratif, où l’on transforme les défis d’aujourd’hui en opportunités de demain.
+
+## Description du poste
+Votre équipe
+Vous rejoignez la Business Unit AI, une communauté d’environ 200 consultants IA & Data qui accompagne les organisations de bout en bout :
+- identification de cas d’usage IA à fort impact métier,
+- conception de plateformes Data & IA performantes,
+- définition de modèles de gouvernance responsables et scalables.
+Role overview
+Le poste de Consultant·e AI & Data Platform – Jeune diplômé·e s’adresse à des profils en début de carrière souhaitant développer rapidement des compétences solides en Data & Intelligence Artificielle, à travers des projets concrets, encadrés par des consultants expérimentés.
+Vos responsabilités
+En tant que Consultant·e AI & Data Platform, vous interviendrez progressivement sur les missions suivantes :
+- Participer à la conception et à l’implémentation de plateformes Data & IA
+- Contribuer au développement de solutions GenAI et de plateformes agentiques
+- Intervenir sur des Data Platforms / Lakehouses (ingestion, qualité, catalogage, lineage)
+- Monter en compétences sur les pratiques DevOps, DataOps, MLOps / LLMOps
+- Contribuer à la mise en œuvre de pipelines IA (RAG, APIs, vector stores)
+- Participer à la structuration de la gouvernance Data & IA (sécurité, RGPD, AI Act)
+- Réaliser une veille technologique continue sur les solutions Data & IA
+- Contribuer à la vie et au rayonnement de la communauté IA Wavestone
+Exemples de missions
+- Banque & Assurance : création d’une AI Platform pour industrialiser des cas d’usage métier à forte valeur
+- Énergie & Industrie : ingestion temps réel et traitement massif de données IoT pour la maintenance prédictive
+- Secteur public & réglementaire : plateformes souveraines et sécurisation de données sensibles via GenAI
+
+## Qualifications
+Vos compétences – Hard skills
+- Bases en Python et développement logiciel ou data
+- Notions d’architectures Data Lake / Lakehouse
+- Sensibilisation aux environnements cloud : Azure, AWS ou GCP
+- Première approche des pipelines data (batch ou streaming)
+- Intérêt pour les plateformes IA et GenAI (vector DB, RAG, MLOps / LLMOps)
+- Sensibilité aux enjeux de qualité de la donnée, automatisation et sécurité
+Vos compétences – Soft skills
+- Curiosité intellectuelle et envie d’apprendre
+- Esprit d’équipe et goût du travail collaboratif
+- Capacité d’analyse et de structuration
+- Autonomie et sens des responsabilités
+- Aisance en communication écrite et orale
+Ce que vous apportez
+Must‑have
+- Jeune diplômé·e d’une grande école d’ingénieurs ou de commerce (Diplôme d'Ingénieur, PGE)
+- Spécialisation ou fort intérêt pour la data, l’IA ou la transformation digitale
+- Bases techniques acquises via cours, projets académiques ou stages
+- Motivation pour découvrir le conseil et les environnements clients
+Nice‑to‑have
+- Stage ou projet significatif en Data, IA ou Cloud
+- Première expérience avec Spark, Kafka, Airflow ou outils similaires
+- Sensibilisation aux enjeux de gouvernance, RGPD ou IA responsable
+Langues
+- Français : un niveau courant est requis pour ce poste
+- Anglais : un niveau minimum C1 est requis pour ce poste
+
+## Informations supplémentaires
+Ce que nous offrons
+- Un parcours d’intégration structuré pour jeunes diplômé·e·s
+- Un accompagnement de proximité (mentorat, formations, feedbacks réguliers)
+- Un accès à un large catalogue de formations et certifications (Cloud, DevOps, GenAI…)
+- Des missions variées à fort impact technologique et métier
+- Un environnement de travail flexible et collaboratif
+- Des perspectives d’évolution rapides, en France et à l’international
+AI Platform · Data Platform · Generative AI · GenAI · LLM · RAG · Cloud Computing · Data Engineering · Junior Consultant
+Parce que votre réussite est notre priorité, nous adaptons nos processus de recrutement et l'environnement de travail à vos besoins spécifiques ou situations de santé (aménagements de poste, tiers-temps, outils adaptés...). Cette démarche, confidentielle et fondée sur l'équité, garantit à chaque candidat·e les meilleures conditions pour exprimer son plein potentiel dès le processus de recrutement, lors de sa prise de poste et tout au long de sa carrière.

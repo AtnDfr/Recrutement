@@ -1,0 +1,59 @@
+Manager - Lead Data Scientist (H/F)
+
+## Description de l'entreprise
+Rejoignez un cabinet de conseil international qui accompagne les grandes transformations stratégiques.
+Nous sommes Wavestone : des expert·es passionné·es et orienté·es solutions, qui placent l’humain au cœur de la performance et de la croissance. Ambitieux·ses et en pleine expansion, nous développons sans cesse notre portefeuille de clients et de projets, avec une portée internationale et une réelle volonté de générer un impact positif.
+Êtes-vous un vrai team player, porté par des valeurs fortes ? Êtes-vous curieux·se et déterminé·e, avec l’envie d’apprendre chaque jour ? Êtes-vous du genre à relever les défis sans hésiter ? Alors vous êtes au bon endroit. Rejoignez Wavestone et exprimez votre potentiel dans un environnement stimulant et collaboratif, où l’on transforme les défis d’aujourd’hui en opportunités de demain.
+
+## Description du poste
+Votre équipe
+Vous rejoignez la Business Unit AI, une communauté d’environ 200 consultants IA & Data, qui accompagnent les organisations de bout en bout :
+- Stratégie IA et feuille de route
+- Identification et priorisation de cas d’usage IA
+- Gouvernance Data & IA
+- Operating Models Data & IA
+- AI Governance et Responsible AI
+- Adoption et conduite du changement
+Votre rôle 
+En tant que Lead Data Scientist, vous serez amené.e à jouer un rôle clé dans la conception, l’industrialisation et l’orchestration de solutions IA avancées. Votre rôle ne se limitera pas à “développer des POCs” : vous serez projeté.e au cœur de l'industrialisation de l'IA dans les organisations. 
+- Gestion de projet data science et IA :- Accompagner les organisation dans la transition de l'IA traditionnelle vers l'Agentique en menant des projets du cadrage à la mise en production.
+- Être le garant des choix technologiques et méthodologiques, en assurant la qualité et la robustesse des solutions développées.
+- Encadrer des équipes de data scientists et développeurs, en leur apportant support technique et mentoring, pour assurer le développement et l’atteinte des objectifs de performance de la solution.
+- Conception et industrialisation de solutions :- Concevoir, développer et déployer des modèles de machine learning, deep learning et IA générative pour répondre à des problématiques métiers variées.
+- Superviser la mise en place de pipelines data et ML.
+- Assurer les échanges avec les équipes techniques du clients (Data Engineer, Architect, ML Engineer, DSI) pour garantir l’intégration de la solution dans le SI Client.
+- Mettre en œuvre des méthodologies d’évaluation, de monitoring et d’amélioration continue des modèles en production.
+- Innovation et expertise technique :- Réaliser des benchmarks d’algorithmes, frameworks et technologies pour proposer des solutions innovantes.
+- Participer à des audits de solutions IA du marché pour éclairer vos clients sur le make or buy.
+- Contribuer à l’exploration de nouveaux cas d’usage en IA (vision par ordinateur, NLP, IA générative, etc.).
+- Participer à la montée en compétence des clients en animant des formations, des ateliers et des retours d’expérience.
+Vos responsabilités  
+En tant que Manager, vous serez amené.e à: 
+- Apporter une expertise différenciante aux grandes organisations sur les points ci-dessus.
+- Piloter des missions à fort enjeu, en assurant la qualité des livrables, la coordination des multiples parties prenantes et la tenue des engagements. 
+- Prendre un rôle clé dans le développement commercial, en identifiant des opportunités, en menant des avant-ventes et en portant des réponse à appels d’offres pour atteindre votre objectif commercial annuel. 
+- Encadrer et faire grandir les équipes, en assurant la montée en compétence des consultants et en diffusant les bonnes pratiques du cabinet.
+- Vous démultiplier et de mener plusieurs projets (client, interne, commercial) de front.
+- Contribuer en interne au développement de l’offre Data & IA, en identifiant les tendances du marché, en structurant nos convictions et en développant de nouveaux assets (outils, frameworks, benchmarks…). 
+- Faire rayonner Wavestone, en interne comme à l’externe, à travers des interventions, des publications ou des prises de parole sur les sujets Data & IA.
+
+## Qualifications
+Votre profil
+Plus que des cases à cocher, vous possédez une ou plusieurs de ces compétences :  
+- Vous justifiez d’une expérience professionnelle d'au moins 6 ans de Data Scientist.
+- Vous maitrisez plusieurs Frameworks (TensorFLow, Scikit-Learn, Spark, PyTorch, Hugging Face Models) et langages de Data Science (Python, etc.)
+- Vous maitrisez les bonnes pratiques de développement informatique : packaging de code, test, etc.
+- Vous maitrisez une ou plusieurs solutions Data & AI plateforme pour le développement de solution Data et IA (Databricks, Microsoft Fabric, GCP Vertex, AWS Sagemaker, Snowflakes, etc.)
+- Vous maitriser les enjeux du MLOps et les solutions et frameworks.
+- Vous maîtrisez le cycle de vente de projets complexes (prospection, avant-vente, appels d'offre...). Vous avez notamment déjà participé à des ventes complexes ou des initiatives de développement commercial avec succès.
+- Vous disposez de compétences en management d’équipe, avec une capacité à fédérer, encadrer et développer les équipes dont vous avez la charge.
+- Vous êtes doté.e d'un esprit critique et analytique aiguisé, d'un très bon relationnel et d'un sens prononcé du service et de l'excellence.
+- Vous parlez anglais et français couramment.
+
+## Informations supplémentaires
+En rejoignant Wavestone, vous bénéficierez de : 
+- Carreer model: une carrière sur mesure, cela signifie pour nous des possibilités de développement individuel. Notre Wavestone Horizon vous permet une évolution rapide de votre parcours et de la dynamique salariale. 
+- Further training: let's grow together ! Vous avez accès à un vaste catalogue de formations et de certifications (cloud, DevOps, GenAI, etc.) pour vous former continuellement. 
+- Smartworking: le travail flexible et mobile fait partie de notre ADN et permet un cadre adéquat de collaboration. 
+- A Great Place To Work: nous sommes reconnus comme Great Place To Work 2025, nous classant numéro un dans notre catégorie parmi les organisations de plus de 2500 employés (France). 
+Parce que votre réussite est notre priorité, nous adaptons nos processus de recrutement et l'environnement de travail à vos besoins spécifiques ou situations de santé (aménagements de poste, tiers-temps, outils adaptés...). Cette démarche, confidentielle et fondée sur l'équité, garantit à chaque candidat·e les meilleures conditions pour exprimer son plein potentiel dès le processus de recrutement, lors de sa prise de poste et tout au long de sa carrière.

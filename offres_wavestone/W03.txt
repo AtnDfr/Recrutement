@@ -1,0 +1,44 @@
+Manager – Data & AI Platform Architect (H/F/X) 
+
+## Description de l'entreprise
+Rejoignez un cabinet de conseil international qui accompagne les grandes transformations stratégiques.
+Nous sommes Wavestone : des expert·es passionné·es et orienté·es solutions, qui placent l’humain au cœur de la performance et de la croissance. Ambitieux·ses et en pleine expansion, nous développons sans cesse notre portefeuille de clients et de projets, avec une portée internationale et une réelle volonté de générer un impact positif.
+Êtes-vous un vrai team player, porté par des valeurs fortes ? Êtes-vous curieux·se et déterminé·e, avec l’envie d’apprendre chaque jour ? Êtes-vous du genre à relever les défis sans hésiter ? Alors vous êtes au bon endroit. Rejoignez Wavestone et exprimez votre potentiel dans un environnement stimulant et collaboratif, où l’on transforme les défis d’aujourd’hui en opportunités de demain.
+
+## Description du poste
+Vous rejoignez la Business Unit AI, une communauté de +500 consultants IA & Data, renforcée depuis septembre 2026 par l’intégration d’AI Builders. Nous accompagnons les organisations de bout en bout : identification de cas d’usage IA à fort impact métier, conception de plateformes Data & IA performantes, et définition de modèles de gouvernance responsables et scalables. Nous ne faisons pas de l’IA de démonstration. Nos équipes conçoivent, déploient et font évoluer des solutions utilisées en production. Nous travaillons avec Microsoft, Google, AWS, Mistral, Anthropic, Databricks et Dataiku, tout en conservant une approche indépendante et orientée valeur client. 
+Votre rôle 
+Vous intervenez comme design authority sur des programmes Data & IA. Vous reliez architecture, gouvernance, sécurité, operating model, souveraineté et trajectoire de delivery. 
+Votre responsabilité est de rendre les décisions structurantes explicites et actionnables. Vous intervenez auprès des décideurs, animez les revues d’architecture et sécurisez la cohérence entre cible, trajectoire, delivery et modèle d’exploitation. 
+Vos responsabilités 
+- Donner la direction - Définir la cible et les principes d’architecture. 
+- Conduire les analyses build vs buy et les arbitrages cloud, plateforme et sourcing. 
+- Définir les principes de gouvernance, d’intégration, de sécurité, de résilience, de réversibilité et de FinOps. 
+- Conduire le delivery et faire grandir les équipes - Piloter les architectes et aligner les équipes Data, Cloud, sécurité et métiers. 
+- Porter les décisions dans les instances de gouvernance. 
+- Organiser les revues de design, challenger les choix et maintenir la cohérence du programme dans la durée. 
+- Développer la relation client et le business - Faire émerger et structurer les programmes de transformation associés. 
+- Porter les propositions et soutenances complexes. 
+- Transformer les enjeux d’architecture en programmes de transformation et en propositions crédibles. 
+Exemples de missions 
+- Définir une plateforme Data & IA groupe. 
+- Rationaliser un paysage multi-plateformes. 
+- Concevoir une trajectoire hybride ou souveraine. 
+- Arbitrer une cible entre services natifs cloud, éditeurs spécialisés et composants internes.
+
+## Qualifications
+- 6 ans d’expérience ou plus en architecture Data, Cloud ou IA. 
+- Expérience de grands programmes et d’instances de décision. 
+- Leadership, capacité d’arbitrage et anglais courant. 
+- Capacité à synthétiser des arbitrages complexes pour des comités de direction. 
+- Expérience des sujets gouvernance, sécurité, résilience, FinOps et operating model. 
+- Maîtrise d’au moins un hyperscaler et connaissance des principales plateformes Data & IA. 
+- Vous parlez anglais et français couramment.
+
+## Informations supplémentaires
+En rejoignant Wavestone, vous bénéficierez de : 
+- Carreer model: une carrière sur mesure, cela signifie pour nous des possibilités de développement individuel. Notre Wavestone Horizon vous permet une évolution rapide de votre parcours et de la dynamique salariale. 
+- Further training: let's grow together ! Vous avez accès à un vaste catalogue de formations et de certifications (cloud, DevOps, GenAI, etc.) pour vous former continuellement. 
+- Smartworking: le travail flexible et mobile fait partie de notre ADN et permet un cadre adéquat de collaboration. 
+- A Great Place To Work: nous sommes reconnus comme Great Place To Work 2025, nous classant numéro un dans notre catégorie parmi les organisations de plus de 2500 employés (France). 
+Parce que votre réussite est notre priorité, nous adaptons nos processus de recrutement et l'environnement de travail à vos besoins spécifiques ou situations de santé (aménagements de poste, tiers-temps, outils adaptés...). Cette démarche, confidentielle et fondée sur l'équité, garantit à chaque candidat·e les meilleures conditions pour exprimer son plein potentiel dès le processus de recrutement, lors de sa prise de poste et tout au long de sa carrière.

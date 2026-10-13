@@ -1,0 +1,50 @@
+AI Analytics & Data Visualization – Jeune diplômé·e (H/F)
+
+## Description de l'entreprise
+Wavestone est un cabinet de conseil international qui accompagne les grandes organisations dans leurs transformations stratégiques, technologiques et organisationnelles.
+Nous rassemblons des expert·es passionné·es et orienté·es solutions, qui placent l’humain au cœur de la performance et de la croissance. En forte expansion, nous intervenons auprès de clients grands comptes, en France et à l’international, avec l’ambition de générer un impact positif et durable.
+
+## Description du poste
+L'intelligence artificielle redéfinit aujourd'hui les métiers, les processus et les modèles opérationnels des organisations. De la banque à l'industrie, en passant par le secteur public, les entreprises cherchent à identifier les cas d'usage les plus créateurs de valeur et à transformer durablement leurs activités grâce à l'IA.
+Vos responsabilités
+Nous recherchons des Analytics Engineers capables d’intervenir tout au long de la chaîne de valeur data, de la réflexion stratégique à la mise en œuvre opérationnelle. Vous accompagnerez nos clients dans la structuration de leurs usages data, la définition d’indicateurs de performance pertinents et le déploiement de solutions analytiques robustes. Vous évoluerez sur des environnements data modernes en vous appuyant sur SQL et Power BI (indispensable), avec, selon les missions, GCP BigQuery, Databricks ou Snowflake. La maîtrise de dbt et/ou d’autres outils de dataviz (Tableau, Looker…) constituera un véritable atout.
+
+## Qualifications
+Vos compétences – Hard skills
+- Bases en Data, IA ou transformation digitale
+- Compréhension des cas d’usage IA en entreprise
+- Notions de gouvernance Data & IA ou d’operating models
+- Bases en analyse métier ou transformation des organisations
+- Sensibilité aux enjeux de ROI, KPIs et création de valeur
+Vos compétences – Soft skills
+- Curiosité intellectuelle et envie d’apprendre
+- Esprit d’analyse et de structuration
+- Capacité à travailler en équipe
+- Bon relationnel et sens du service
+- Intérêt pour la conduite du changement
+- Aisance à l’oral et à l’écrit
+Ce que vous apportez
+Must‑have
+- Jeune diplômé·e d’une grande école d’ingénieurs ou de commerce (Diplôme d'Ingénieur, PGE)
+- Spécialisation ou intérêt fort pour la Data, l’IA ou la transformation digitale
+- Première exposition (stages ou projets) à des sujets de transformation ou d’analyse métier
+- Motivation pour découvrir le métier du conseil
+Nice-to-have
+- Expérience académique ou stage sur des projets Data / IA
+- Sensibilisation aux enjeux de gouvernance, IA responsable ou réglementation
+- Première expérience en animation d’ateliers ou gestion de projet
+Langues
+- Français : un niveau courant est requis pour ce poste
+- Anglais : un niveau minimum C1 est requis pour ce poste
+
+## Informations supplémentaires
+Ce que nous offrons
+- Un parcours d’intégration dédié aux jeunes diplômé·e·s
+- Un accompagnement de proximité (mentorat, feedbacks réguliers)
+- Des formations continues (Data, IA, conseil, change management)
+- Des missions à fort impact business
+- Une communauté d’experts Data & IA
+- Des perspectives d’évolution rapides
+- Un environnement bienveillant et stimulant
+Artificial Intelligence · AI Transformation · Generative AI · GenAI · Operating Model · AI Governance · AI Act · Change Management · Data Strategy · Business Transformation · Junior Consultant
+Parce que votre réussite est notre priorité, nous adaptons nos processus de recrutement et l'environnement de travail à vos besoins spécifiques ou situations de santé (aménagements de poste, tiers-temps, outils adaptés...). Cette démarche, confidentielle et fondée sur l'équité, garantit à chaque candidat·e les meilleures conditions pour exprimer son plein potentiel dès le processus de recrutement, lors de sa prise de poste et tout au long de sa carrière.

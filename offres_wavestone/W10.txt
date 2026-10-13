@@ -1,0 +1,44 @@
+Senior Consultant – Generative AI & Agentic Engineer (H/F/X) 
+
+## Description de l'entreprise
+Rejoignez un cabinet de conseil international qui accompagne les grandes transformations stratégiques.
+Nous sommes Wavestone : des expert·es passionné·es et orienté·es solutions, qui placent l’humain au cœur de la performance et de la croissance. Ambitieux·ses et en pleine expansion, nous développons sans cesse notre portefeuille de clients et de projets, avec une portée internationale et une réelle volonté de générer un impact positif.
+Êtes-vous un vrai team player, porté par des valeurs fortes ? Êtes-vous curieux·se et déterminé·e, avec l’envie d’apprendre chaque jour ? Êtes-vous du genre à relever les défis sans hésiter ? Alors vous êtes au bon endroit. Rejoignez Wavestone et exprimez votre potentiel dans un environnement stimulant et collaboratif, où l’on transforme les défis d’aujourd’hui en opportunités de demain.
+
+## Description du poste
+Vous rejoignez la Business Unit AI, une communauté de +500 consultants IA & Data, renforcée depuis septembre 2026 par l’intégration d’AI Builders. Nous accompagnons les organisations de bout en bout : identification de cas d’usage IA à fort impact métier, conception de plateformes Data & IA performantes, et définition de modèles de gouvernance responsables et scalables. Nous ne faisons pas de l’IA de démonstration. Nos équipes conçoivent, déploient et font évoluer des solutions utilisées en production. Nous travaillons avec Microsoft, Google, AWS, Mistral, Anthropic, Databricks et Dataiku, tout en conservant une approche indépendante et orientée valeur client. 
+Votre rôle 
+Vous concevez les solutions, guidez les choix techniques et pilotez leur industrialisation. Vous contribuez également à la coordination de l’équipe et à la relation avec les interlocuteurs client. 
+Vous intervenez de l’architecture de solution au passage en production, avec un rôle de référent sur les choix de conception, d’évaluation et d’intégration. Au niveau CS/M, vous êtes également attendu sur la coordination du delivery et la montée en compétence de l’équipe. 
+Vos responsabilités 
+- Donner la direction - Traduire les besoins en architecture de solution et trajectoire de delivery. 
+- Définir les patterns RAG, agentiques, d’évaluation et d’intégration. 
+- Arbitrer modèles, frameworks et composants selon la valeur, la sécurité, les coûts et la maintenabilité. 
+- Conduire le delivery et faire grandir les équipes - Piloter les chantiers techniques et accompagner les consultants plus juniors. 
+- Sécuriser qualité, observabilité, sécurité et passage au run. 
+- Organiser les revues techniques, sécuriser la qualité des livrables et préparer les conditions d’exploitation. 
+- Développer la relation client et le business - Contribuer aux avant-ventes et capitaliser les retours de mission. 
+- Identifier les opportunités d’extension autour des produits livrés. 
+- Transformer les retours de mission en assets, convictions et propositions réutilisables. 
+Exemples de missions 
+- Industrialiser un assistant métier. 
+- Mettre en place un workflow multi-agents. 
+- Construire un cadre d’évaluation et d’observabilité GenAI. 
+- Concevoir une architecture RAG ou agentique intégrée aux données et services du SI.
+
+## Qualifications
+- 4 ans d’expérience ou plus en AI Engineering. 
+- Python, RAG, agents, APIs, CI/CD et cloud. 
+- Expérience de mise en production 
+- Capacité à encadrer un chantier et à expliquer les choix à des interlocuteurs non spécialistes. 
+- Pratique de l’évaluation, de l’observabilité et des enjeux de sécurité GenAI. 
+- Maîtrise d’un framework d’orchestration et des patterns RAG, agents et tool calling. 
+- Vous parlez français et anglais couramment.
+
+## Informations supplémentaires
+Notre offre
+- Carreer model : une carrière sur mesure, cela signifie pour nous des possibilités de développement individuel. Notre Wavestone Horizon vous permet une évolution rapide de votre parcours et de la dynamique salariale. 
+- Further training : let's grow together ! Vous avez accès à un vaste catalogue de formations et de certifications (cloud, DevOps, GenAI, etc.) pour vous former continuellement. 
+- Smartworking : le travail flexible et mobile fait partie de notre ADN et permet un cadre adéquat de collaboration. 
+- A Great Place To Work : nous sommes reconnus comme Great Place To Work 2025, nous classant numéro un dans notre catégorie parmi les organisations de plus de 2500 employés (France). 
+Parce que votre réussite est notre priorité, nous adaptons nos processus de recrutement et l'environnement de travail à vos besoins spécifiques ou situations de santé (aménagements de poste, tiers-temps, outils adaptés...). Cette démarche, confidentielle et fondée sur l'équité, garantit à chaque candidat·e les meilleures conditions pour exprimer son plein potentiel dès le processus de recrutement, lors de sa prise de poste et tout au long de sa carrière.

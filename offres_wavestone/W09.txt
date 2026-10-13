@@ -1,0 +1,44 @@
+Manager – Agentic Automation & Low-Code Lead (H/F/X) 
+
+## Description de l'entreprise
+Rejoignez un cabinet de conseil international qui accompagne les grandes transformations stratégiques.
+Nous sommes Wavestone : des expert·es passionné·es et orienté·es solutions, qui placent l’humain au cœur de la performance et de la croissance. Ambitieux·ses et en pleine expansion, nous développons sans cesse notre portefeuille de clients et de projets, avec une portée internationale et une réelle volonté de générer un impact positif.
+Êtes-vous un vrai team player, porté par des valeurs fortes ? Êtes-vous curieux·se et déterminé·e, avec l’envie d’apprendre chaque jour ? Êtes-vous du genre à relever les défis sans hésiter ? Alors vous êtes au bon endroit. Rejoignez Wavestone et exprimez votre potentiel dans un environnement stimulant et collaboratif, où l’on transforme les défis d’aujourd’hui en opportunités de demain.
+
+## Description du poste
+Vous rejoignez la Business Unit AI, une communauté de +500 consultants IA & Data, renforcée depuis septembre 2026 par l’intégration d’AI Builders. Nous accompagnons les organisations de bout en bout : identification de cas d’usage IA à fort impact métier, conception de plateformes Data & IA performantes, et définition de modèles de gouvernance responsables et scalables. Nous ne faisons pas de l’IA de démonstration. Nos équipes conçoivent, déploient et font évoluer des solutions utilisées en production. Nous travaillons avec Microsoft, Google, AWS, Mistral, Anthropic, Databricks et Dataiku, tout en conservant une approche indépendante et orientée valeur client. 
+Votre rôle 
+Vous aidez les clients à industrialiser des usages mêlant agents, automatisation et low-code, sans dissocier expérience métier, architecture, sécurité et gouvernance. 
+Vous intervenez au croisement des processus métier, des plateformes digitales et de l’IA agentique. Vous aidez les clients à éviter la prolifération d’initiatives isolées et à construire un cadre cohérent de sélection, delivery et exploitation. 
+Vos responsabilités 
+- Donner la direction - Définir la cible, les cas d’usage et le cadre de gouvernance. 
+- Arbitrer pro-code, low-code et solutions du marché. 
+- Définir les principes d’architecture, d’intégration, de sécurité et de cycle de vie des automatisations et agents. 
+- Conduire le delivery et faire grandir les équipes - Piloter le déploiement, l’adoption et le modèle d’exploitation. 
+- Encadrer les équipes et sécuriser intégration, sécurité et qualité. 
+- Accompagner les Product Owners et équipes métiers dans la conception, la priorisation et l’adoption des solutions. 
+- Développer la relation client et le business - Structurer les offres et avant-ventes associées. 
+- Identifier les opportunités de généralisation et de transformation des processus. 
+- Construire un positionnement multi-technologique et développer les opportunités avec les métiers et les DSI. 
+Exemples de missions 
+- Déployer une fabrique d’agents métier. 
+- Gouverner un portefeuille Copilot Studio ou n8n. 
+- Définir l’articulation pro-code / low-code. 
+- Rationaliser un portefeuille d’automatisations et d’agents développés dans plusieurs entités.
+
+## Qualifications
+- 5 ans d’expérience ou plus en automation, low-code ou solutions digitales. 
+- Connaissance de Copilot Studio, Power Platform, n8n ou équivalents. 
+- Capacité de pilotage, gouvernance et développement business. 
+- Capacité à articuler gouvernance, expérience utilisateur et passage à l’échelle. 
+- Compréhension des enjeux API, IAM, données, sécurité et exploitation associés aux agents. 
+- Expérience de transformation de processus, de product ownership ou de plateformes d’automatisation.
+- Vous parlez français et anglais couramment.
+
+## Informations supplémentaires
+Notre offre
+- Carreer model : une carrière sur mesure, cela signifie pour nous des possibilités de développement individuel. Notre Wavestone Horizon vous permet une évolution rapide de votre parcours et de la dynamique salariale. 
+- Further training : let's grow together ! Vous avez accès à un vaste catalogue de formations et de certifications (cloud, DevOps, GenAI, etc.) pour vous former continuellement. 
+- Smartworking : le travail flexible et mobile fait partie de notre ADN et permet un cadre adéquat de collaboration. 
+- A Great Place To Work : nous sommes reconnus comme Great Place To Work 2025, nous classant numéro un dans notre catégorie parmi les organisations de plus de 2500 employés (France). 
+Parce que votre réussite est notre priorité, nous adaptons nos processus de recrutement et l'environnement de travail à vos besoins spécifiques ou situations de santé (aménagements de poste, tiers-temps, outils adaptés...). Cette démarche, confidentielle et fondée sur l'équité, garantit à chaque candidat·e les meilleures conditions pour exprimer son plein potentiel dès le processus de recrutement, lors de sa prise de poste et tout au long de sa carrière.
