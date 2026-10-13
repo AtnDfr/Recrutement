@@ -1,66 +1,1872 @@
 {
-  "description": "Cas de validation métier. Chaque cas est joué tel quel par `npm run valider`. « selection » = compétences que le SM cocherait (nom canonique ou identifiant exact) ; « termes » = formulations libres saisies ; « texte » = phrase libre. Les sélections sont des hypothèses de travail, à ajuster après discussion avec les SM.",
+  "description": "Jeu de validation métier (golden dataset). Baseline : moteur et 248 tests du commit cb68e7f. La vérité terrain (bloc « attendu ») est constituée manuellement ; « resultatActuel » est la sortie du moteur à cette version.",
+  "conventions": {
+    "A_VALIDER": "Attendu non encore fixé : nécessite un jugement métier (SM / recruteur).",
+    "A_EVALUER": "Conformité non encore évaluée.",
+    "conformite": [
+      "A_EVALUER",
+      "CONFORME",
+      "NON_CONFORME"
+    ],
+    "competences": "Noms canoniques exacts du référentiel (src/data/generated/competences.json).",
+    "metiers": "Identifiants de métier (src/data/generated/metiers.json), ex. « senior-data-engineer »."
+  },
+  "champs": {
+    "id": "Identifiant du cas (GD-xx).",
+    "categories": "Ce que le cas challenge (simple-un-metier, besoin-hybride, technologie-specialisee, plusieurs-metiers, capacites-transverses, grades, termes-non-reconnus, sans-signature-metier, demande-ambigue, demande-incoherente, couverture-vs-parcimonie).",
+    "titre": "Libellé court.",
+    "besoinOriginal": "Formulation originale du besoin par le SM.",
+    "grade": "analyste | consultant | consultant-senior | manager | senior-manager.",
+    "selection": "Compétences explicitement sélectionnées par le SM (noms canoniques).",
+    "termes": "Facultatif : formulations libres saisies, normalisées par le moteur.",
+    "texte": "Facultatif : texte libre accompagnant la demande.",
+    "objectifTest": "Pourquoi ce cas existe.",
+    "attendu.metierPrincipal": "Métier principal attendu (identifiant) ou A_VALIDER.",
+    "attendu.metiersSecondairesAcceptables": "Liste de métiers secondaires acceptables, ou A_VALIDER.",
+    "attendu.nombreMaxMetiers": "Nombre maximal de métiers attendu (entier), ou A_VALIDER.",
+    "attendu.competencesDevantEtreCouvertes": "Compétences qui doivent être couvertes, ou A_VALIDER.",
+    "attendu.competencesResiduellesAcceptees": "Compétences volontairement acceptées comme résiduelles, ou A_VALIDER.",
+    "resultatActuel": "Sortie du moteur à la version indiquée (régénérable, ne pas éditer à la main).",
+    "resultatActuel.repereMeilleurMetierUnique": "Repère d’analyse : le ou les métiers qui, seuls, couvrent le plus de compétences analysées (tout statut).",
+    "evaluation.conformite": "A_EVALUER | CONFORME | NON_CONFORME.",
+    "evaluation.commentaireMetier": "Commentaire libre du SM / recruteur."
+  },
   "cas": [
     {
-      "id": "databricks-encadrement-texte",
-      "titre": "Databricks + encadrement technique — phrase seule",
+      "id": "GD-01",
+      "categories": [
+        "simple-un-metier"
+      ],
+      "titre": "Data engineer pipelines",
+      "besoinOriginal": "Il me faut un data engineer confirmé pour construire et fiabiliser nos pipelines d’ingestion.",
       "grade": "consultant-senior",
-      "texte": "Je veux un profil très Databricks capable d'encadrer techniquement l'équipe."
+      "selection": [
+        "Conception de pipelines de données",
+        "ETL / ELT",
+        "Ingestion de données",
+        "Python",
+        "SQL"
+      ],
+      "objectifTest": "Cas de contrôle : sélection quasi identique à une signature Core. Un seul métier attendu.",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Conception de pipelines de données",
+            "origine": "selection"
+          },
+          {
+            "competence": "ETL / ELT",
+            "origine": "selection"
+          },
+          {
+            "competence": "Ingestion de données",
+            "origine": "selection"
+          },
+          {
+            "competence": "Python",
+            "origine": "selection"
+          },
+          {
+            "competence": "SQL",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "senior-data-engineer",
+            "justifiePar": [
+              "Conception de pipelines de données",
+              "ETL / ELT",
+              "Ingestion de données",
+              "Python",
+              "SQL"
+            ],
+            "couvre": [
+              "Conception de pipelines de données (Core)",
+              "ETL / ELT (Core)",
+              "Ingestion de données (Core)",
+              "Python (Core)",
+              "SQL (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          }
+        ],
+        "residuels": [],
+        "tauxCouverture": 1,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "gcp-data-engineer",
+            "senior-data-engineer"
+          ],
+          "competencesCouvertes": 5,
+          "competencesAnalysees": 5
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
     },
     {
-      "id": "databricks-encadrement-selection",
-      "titre": "Databricks + encadrement technique — avec sélection",
-      "grade": "consultant-senior",
-      "selection": ["Databricks", "Leadership technique"],
-      "texte": "Je veux un profil très Databricks capable d'encadrer techniquement l'équipe."
-    },
-    {
-      "id": "python-sql-ml-industrialisation-texte",
-      "titre": "Python + SQL + ML, industrialisation — phrase seule",
+      "id": "GD-02",
+      "categories": [
+        "simple-un-metier"
+      ],
+      "titre": "PO data",
+      "besoinOriginal": "Un PO data pour tenir le backlog et écrire les user stories avec les métiers.",
       "grade": "consultant",
-      "texte": "Python + SQL + ML, plutôt quelqu'un qui sait industrialiser."
+      "selection": [
+        "Gestion de backlog",
+        "User stories",
+        "Priorisation produit"
+      ],
+      "objectifTest": "Cas de contrôle produit : PO vs Product Manager, signatures proches.",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Gestion de backlog",
+            "origine": "selection"
+          },
+          {
+            "competence": "User stories",
+            "origine": "selection"
+          },
+          {
+            "competence": "Priorisation produit",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "data-product-owner",
+            "justifiePar": [
+              "Gestion de backlog",
+              "Priorisation produit",
+              "User stories"
+            ],
+            "couvre": [
+              "Gestion de backlog (Core)",
+              "Priorisation produit (Core)",
+              "User stories (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          }
+        ],
+        "residuels": [],
+        "tauxCouverture": 1,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "data-product-owner"
+          ],
+          "competencesCouvertes": 3,
+          "competencesAnalysees": 3
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
     },
     {
-      "id": "python-sql-ml-industrialisation-selection",
-      "titre": "Python + SQL + ML, industrialisation — avec sélection",
+      "id": "GD-03",
+      "categories": [
+        "simple-un-metier",
+        "technologie-specialisee"
+      ],
+      "titre": "MLOps outillé",
+      "besoinOriginal": "On veut industrialiser le cycle de vie de nos modèles : MLflow, model registry, suivi du drift.",
+      "grade": "consultant-senior",
+      "selection": [
+        "Cycle de vie ML",
+        "MLflow",
+        "Model registry",
+        "Détection de drift"
+      ],
+      "objectifTest": "MLOps Engineer vs LLMOps / GenAI Platform Engineer : 4/6 Core partagés.",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Cycle de vie ML",
+            "origine": "selection"
+          },
+          {
+            "competence": "MLflow",
+            "origine": "selection"
+          },
+          {
+            "competence": "Model registry",
+            "origine": "selection"
+          },
+          {
+            "competence": "Détection de drift",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "llmops-genai-platform-engineer",
+            "justifiePar": [
+              "Cycle de vie ML",
+              "Détection de drift",
+              "MLflow",
+              "Model registry"
+            ],
+            "couvre": [
+              "Cycle de vie ML (Core)",
+              "Détection de drift (Core)",
+              "MLflow (Core)",
+              "Model registry (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          }
+        ],
+        "residuels": [],
+        "tauxCouverture": 1,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "llmops-genai-platform-engineer"
+          ],
+          "competencesCouvertes": 4,
+          "competencesAnalysees": 4
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-04",
+      "categories": [
+        "besoin-hybride",
+        "couverture-vs-parcimonie"
+      ],
+      "titre": "Data engineer qui met des modèles en production",
+      "besoinOriginal": "Un profil data engineer qui sait aussi mettre des modèles de ML en production.",
       "grade": "consultant",
-      "selection": ["Python", "SQL", "Machine Learning", "Déploiement / serving de modèles", "CI/CD"],
-      "texte": "Python + SQL + ML, plutôt quelqu'un qui sait industrialiser.",
-      "hypothese": "« industrialiser » traduit par Déploiement / serving de modèles + CI/CD."
+      "selection": [
+        "Conception de pipelines de données",
+        "Python",
+        "Machine Learning",
+        "Pipelines ML",
+        "Déploiement / serving de modèles"
+      ],
+      "texte": "Un profil data engineer qui sait aussi mettre des modèles de ML en production.",
+      "objectifTest": "Hybride DE / MLE : un profil hybride ou deux profils ?",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Conception de pipelines de données",
+            "origine": "selection"
+          },
+          {
+            "competence": "Python",
+            "origine": "selection"
+          },
+          {
+            "competence": "Machine Learning",
+            "origine": "selection"
+          },
+          {
+            "competence": "Pipelines ML",
+            "origine": "selection"
+          },
+          {
+            "competence": "Déploiement / serving de modèles",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "machine-learning-engineer",
+            "justifiePar": [
+              "Machine Learning",
+              "Python",
+              "Déploiement / serving de modèles",
+              "Pipelines ML"
+            ],
+            "couvre": [
+              "Machine Learning (Core)",
+              "Python (Core)",
+              "Déploiement / serving de modèles (Core)",
+              "Pipelines ML (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          },
+          {
+            "rang": 2,
+            "metierId": "data-platform-engineer",
+            "justifiePar": [
+              "Conception de pipelines de données"
+            ],
+            "couvre": [
+              "Conception de pipelines de données (Core)"
+            ],
+            "partage": [],
+            "alternatives": [
+              "senior-data-engineer"
+            ]
+          }
+        ],
+        "residuels": [],
+        "tauxCouverture": 1,
+        "ambigu": true,
+        "signalements": [
+          "texte « production » non injecté"
+        ],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "gcp-ai-ml-engineer",
+            "machine-learning-engineer"
+          ],
+          "competencesCouvertes": 4,
+          "competencesAnalysees": 5
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
     },
     {
-      "id": "agentic-relation-client-texte",
-      "titre": "Agentic AI + relation client — phrase seule",
-      "grade": "consultant-senior",
-      "texte": "Je cherche quelqu'un capable de faire de l'Agentic AI et de gérer la relation client."
-    },
-    {
-      "id": "agentic-relation-client-selection",
-      "titre": "Agentic AI + relation client — avec sélection",
-      "grade": "consultant-senior",
-      "selection": ["Agents IA", "Systèmes multi-agents", "Relation client"],
-      "texte": "Je cherche quelqu'un capable de faire de l'Agentic AI et de gérer la relation client.",
-      "hypothese": "« Agentic AI » traduit par Agents IA + Systèmes multi-agents."
-    },
-    {
-      "id": "kubernetes-mlops-azure-termes",
-      "titre": "Kubernetes, MLOps, Azure, niveau Manager — saisie libre",
+      "id": "GD-05",
+      "categories": [
+        "besoin-hybride",
+        "couverture-vs-parcimonie"
+      ],
+      "titre": "Stratégie puis vision produit",
+      "besoinOriginal": "Quelqu’un qui cadre la stratégie data & IA avec le client puis porte la vision produit.",
       "grade": "manager",
-      "termes": ["Kubernetes, MLOps, Azure"]
+      "selection": [
+        "Stratégie Data & IA",
+        "Business case",
+        "Vision produit",
+        "Roadmap produit"
+      ],
+      "objectifTest": "Hybride conseil / produit : Product Strategy Consultant couvre-t-il seul le besoin ?",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Stratégie Data & IA",
+            "origine": "selection"
+          },
+          {
+            "competence": "Business case",
+            "origine": "selection"
+          },
+          {
+            "competence": "Vision produit",
+            "origine": "selection"
+          },
+          {
+            "competence": "Roadmap produit",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "data-ai-product-strategy-consultant",
+            "justifiePar": [
+              "Roadmap produit",
+              "Vision produit",
+              "Business case",
+              "Stratégie Data & IA"
+            ],
+            "couvre": [
+              "Roadmap produit (Core)",
+              "Vision produit (Core)",
+              "Business case (Core)",
+              "Stratégie Data & IA (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          }
+        ],
+        "residuels": [],
+        "tauxCouverture": 1,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "data-ai-product-strategy-consultant"
+          ],
+          "competencesCouvertes": 4,
+          "competencesAnalysees": 4
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
     },
     {
-      "id": "kubernetes-mlops-azure-selection",
-      "titre": "Kubernetes, MLOps, Azure, niveau Manager — avec sélection",
-      "grade": "manager",
-      "selection": ["Kubernetes", "Microsoft Azure", "Cycle de vie ML", "Pipelines ML", "Déploiement / serving de modèles"],
-      "hypothese": "« MLOps » traduit par Cycle de vie ML + Pipelines ML + Déploiement / serving de modèles."
-    },
-    {
-      "id": "demande-incoherente",
-      "titre": "Demande volontairement incohérente (trois métiers ou plus)",
+      "id": "GD-06",
+      "categories": [
+        "technologie-specialisee",
+        "sans-signature-metier"
+      ],
+      "titre": "Data engineer GCP",
+      "besoinOriginal": "Data engineer GCP : Dataflow, BigQuery, et un peu de Vertex AI.",
       "grade": "consultant",
-      "selection": ["Stratégie Data & IA", "Business case", "Computer Vision", "Databricks", "Gestion de backlog", "Kubernetes"],
-      "texte": "Un profil qui fait de la stratégie COMEX, du deep learning vision et de l'admin Databricks."
+      "selection": [
+        "Google Cloud Platform",
+        "Dataflow",
+        "BigQuery",
+        "Vertex AI"
+      ],
+      "texte": "Data engineer GCP : Dataflow, BigQuery, et un peu de Vertex AI.",
+      "objectifTest": "BigQuery et Vertex AI n’apparaissent dans aucune signature : le métier GCP est-il quand même trouvé ?",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Google Cloud Platform",
+            "origine": "selection"
+          },
+          {
+            "competence": "Dataflow",
+            "origine": "selection"
+          },
+          {
+            "competence": "BigQuery",
+            "origine": "selection"
+          },
+          {
+            "competence": "Vertex AI",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "agentic-ai-engineer",
+            "justifiePar": [
+              "Dataflow"
+            ],
+            "couvre": [
+              "Dataflow (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          },
+          {
+            "rang": 2,
+            "metierId": "gcp-data-ai-architect",
+            "justifiePar": [
+              "Google Cloud Platform"
+            ],
+            "couvre": [
+              "Google Cloud Platform (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          }
+        ],
+        "residuels": [
+          {
+            "competence": "BigQuery",
+            "motif": "hors-signatures"
+          },
+          {
+            "competence": "Vertex AI",
+            "motif": "hors-signatures"
+          }
+        ],
+        "tauxCouverture": 0.5,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "agentic-ai-engineer",
+            "gcp-ai-ml-engineer",
+            "gcp-data-ai-architect",
+            "gcp-data-engineer"
+          ],
+          "competencesCouvertes": 1,
+          "competencesAnalysees": 4
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-07",
+      "categories": [
+        "technologie-specialisee"
+      ],
+      "titre": "Databricks spécialisé",
+      "besoinOriginal": "Un expert Databricks : Unity Catalog, Spark, Delta Lake.",
+      "grade": "consultant-senior",
+      "selection": [
+        "Databricks",
+        "Unity Catalog",
+        "Apache Spark / PySpark",
+        "Delta Lake"
+      ],
+      "objectifTest": "Trois métiers Databricks voisins (Architect, Tech Lead, Senior DE) ; Delta Lake hors signature.",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Databricks",
+            "origine": "selection"
+          },
+          {
+            "competence": "Unity Catalog",
+            "origine": "selection"
+          },
+          {
+            "competence": "Apache Spark / PySpark",
+            "origine": "selection"
+          },
+          {
+            "competence": "Delta Lake",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "senior-databricks-data-engineer",
+            "justifiePar": [
+              "Apache Spark / PySpark",
+              "Databricks",
+              "Unity Catalog"
+            ],
+            "couvre": [
+              "Apache Spark / PySpark (Core)",
+              "Databricks (Core)",
+              "Unity Catalog (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          }
+        ],
+        "residuels": [
+          {
+            "competence": "Delta Lake",
+            "motif": "hors-signatures"
+          }
+        ],
+        "tauxCouverture": 0.75,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "senior-databricks-data-engineer"
+          ],
+          "competencesCouvertes": 3,
+          "competencesAnalysees": 4
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-08",
+      "categories": [
+        "technologie-specialisee",
+        "sans-signature-metier"
+      ],
+      "titre": "Assistants GenAI RAG",
+      "besoinOriginal": "Développer des assistants GenAI en RAG avec LangChain, exposés via MCP.",
+      "grade": "consultant",
+      "selection": [
+        "Prompt engineering",
+        "Protocoles MCP / A2A",
+        "Retrieval-Augmented Generation",
+        "LangChain"
+      ],
+      "texte": "Développer des assistants GenAI en RAG avec LangChain, exposés via MCP.",
+      "objectifTest": "RAG et LangChain hors signature ; GenAI / LLM Engineer vs Agentic AI Engineer vs Applied AI Engineer.",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Prompt engineering",
+            "origine": "selection"
+          },
+          {
+            "competence": "Protocoles MCP / A2A",
+            "origine": "selection"
+          },
+          {
+            "competence": "Retrieval-Augmented Generation",
+            "origine": "selection"
+          },
+          {
+            "competence": "LangChain",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "genai-llm-engineer",
+            "justifiePar": [
+              "Prompt engineering",
+              "Protocoles MCP / A2A"
+            ],
+            "couvre": [
+              "Prompt engineering (Core)",
+              "Protocoles MCP / A2A (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          }
+        ],
+        "residuels": [
+          {
+            "competence": "LangChain",
+            "motif": "hors-signatures"
+          },
+          {
+            "competence": "Retrieval-Augmented Generation",
+            "motif": "hors-signatures"
+          }
+        ],
+        "tauxCouverture": 0.5,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "genai-llm-engineer"
+          ],
+          "competencesCouvertes": 2,
+          "competencesAnalysees": 4
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-09",
+      "categories": [
+        "plusieurs-metiers"
+      ],
+      "titre": "Équipe plateforme data",
+      "besoinOriginal": "On monte une équipe plateforme data : il faut l’architecture, quelqu’un côté produit et un data scientist.",
+      "grade": "manager",
+      "selection": [
+        "Architecture de plateforme Data",
+        "Data Lake",
+        "Infrastructure as Code",
+        "Vision produit",
+        "Adoption produit",
+        "Statistiques",
+        "Expérimentation"
+      ],
+      "objectifTest": "Besoin réellement multi-profils : trois métiers attendus, au plafond.",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Architecture de plateforme Data",
+            "origine": "selection"
+          },
+          {
+            "competence": "Data Lake",
+            "origine": "selection"
+          },
+          {
+            "competence": "Infrastructure as Code",
+            "origine": "selection"
+          },
+          {
+            "competence": "Vision produit",
+            "origine": "selection"
+          },
+          {
+            "competence": "Adoption produit",
+            "origine": "selection"
+          },
+          {
+            "competence": "Statistiques",
+            "origine": "selection"
+          },
+          {
+            "competence": "Expérimentation",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "data-platform-architect",
+            "justifiePar": [
+              "Architecture de plateforme Data",
+              "Data Lake",
+              "Infrastructure as Code"
+            ],
+            "couvre": [
+              "Architecture de plateforme Data (Core)",
+              "Data Lake (Core)",
+              "Infrastructure as Code (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          },
+          {
+            "rang": 2,
+            "metierId": "applied-scientist-ai-scientist",
+            "justifiePar": [
+              "Expérimentation",
+              "Statistiques"
+            ],
+            "couvre": [
+              "Expérimentation (Core)",
+              "Statistiques (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          },
+          {
+            "rang": 3,
+            "metierId": "data-ai-platform-product-manager",
+            "justifiePar": [
+              "Adoption produit",
+              "Vision produit"
+            ],
+            "couvre": [
+              "Adoption produit (Core)",
+              "Vision produit (Core)"
+            ],
+            "partage": [],
+            "alternatives": [
+              "data-product-manager"
+            ]
+          }
+        ],
+        "residuels": [],
+        "tauxCouverture": 1,
+        "ambigu": true,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "data-platform-architect"
+          ],
+          "competencesCouvertes": 3,
+          "competencesAnalysees": 7
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-10",
+      "categories": [
+        "plusieurs-metiers",
+        "couverture-vs-parcimonie"
+      ],
+      "titre": "Python + SQL + ML industrialisé",
+      "besoinOriginal": "Python + SQL + ML, plutôt quelqu’un qui sait industrialiser.",
+      "grade": "consultant",
+      "selection": [
+        "Python",
+        "SQL",
+        "Machine Learning",
+        "Déploiement / serving de modèles",
+        "CI/CD"
+      ],
+      "texte": "Python + SQL + ML, plutôt quelqu’un qui sait industrialiser.",
+      "objectifTest": "Cas pivot : le moteur propose deux métiers là où un Machine Learning Engineer couvre l’essentiel.",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Python",
+            "origine": "selection"
+          },
+          {
+            "competence": "SQL",
+            "origine": "selection"
+          },
+          {
+            "competence": "Machine Learning",
+            "origine": "selection"
+          },
+          {
+            "competence": "Déploiement / serving de modèles",
+            "origine": "selection"
+          },
+          {
+            "competence": "CI/CD",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "senior-data-scientist",
+            "justifiePar": [
+              "Machine Learning",
+              "SQL"
+            ],
+            "couvre": [
+              "Machine Learning (Core)",
+              "Python (Core)",
+              "SQL (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          },
+          {
+            "rang": 2,
+            "metierId": "applied-ai-engineer",
+            "justifiePar": [
+              "Déploiement / serving de modèles"
+            ],
+            "couvre": [
+              "CI/CD (Récurrente)",
+              "Déploiement / serving de modèles (Core)"
+            ],
+            "partage": [
+              "Python (Core)"
+            ],
+            "alternatives": []
+          }
+        ],
+        "residuels": [],
+        "tauxCouverture": 1,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "agentic-ai-engineer",
+            "applied-ai-engineer",
+            "gcp-ai-ml-engineer",
+            "machine-learning-engineer",
+            "senior-data-scientist"
+          ],
+          "competencesCouvertes": 3,
+          "competencesAnalysees": 5
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-11",
+      "categories": [
+        "capacites-transverses",
+        "couverture-vs-parcimonie"
+      ],
+      "titre": "Programme de gouvernance IA",
+      "besoinOriginal": "Piloter un programme de gouvernance IA (AI Act) chez un client grand compte.",
+      "grade": "manager",
+      "selection": [
+        "Stratégie Data & IA",
+        "Conformité",
+        "Protection des données",
+        "Pilotage de programme",
+        "Relation client"
+      ],
+      "texte": "Piloter un programme de gouvernance IA (AI Act) chez un client grand compte.",
+      "objectifTest": "Transverses (pilotage, relation client) portées à la fois par le métier Governance et par le grade.",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Stratégie Data & IA",
+            "origine": "selection"
+          },
+          {
+            "competence": "Conformité",
+            "origine": "selection"
+          },
+          {
+            "competence": "Protection des données",
+            "origine": "selection"
+          },
+          {
+            "competence": "Pilotage de programme",
+            "origine": "selection"
+          },
+          {
+            "competence": "Relation client",
+            "origine": "selection"
+          },
+          {
+            "competence": "Gouvernance Data / IA",
+            "origine": "texte"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "data-ai-governance-consultant-manager",
+            "justifiePar": [
+              "Stratégie Data & IA",
+              "Conformité",
+              "Protection des données"
+            ],
+            "couvre": [
+              "Pilotage de programme (Core)",
+              "Relation client (Core)",
+              "Stratégie Data & IA (Core)",
+              "Conformité (Core)",
+              "Protection des données (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          }
+        ],
+        "residuels": [
+          {
+            "competence": "Gouvernance Data / IA",
+            "motif": "hors-signatures"
+          }
+        ],
+        "tauxCouverture": 0.83,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "data-ai-governance-consultant-manager"
+          ],
+          "competencesCouvertes": 5,
+          "competencesAnalysees": 6
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-12",
+      "categories": [
+        "capacites-transverses",
+        "besoin-hybride"
+      ],
+      "titre": "Lead data scientist",
+      "besoinOriginal": "Un lead data scientist pour encadrer une équipe de cinq personnes.",
+      "grade": "manager",
+      "selection": [
+        "Machine Learning",
+        "Expérimentation",
+        "Évaluation de modèles ML",
+        "Leadership technique",
+        "Management d’équipe",
+        "Mentorat / coaching"
+      ],
+      "texte": "Un lead data scientist pour encadrer une équipe de cinq personnes.",
+      "objectifTest": "Les transverses doivent orienter vers Lead / Principal Data Scientist sans être la justification.",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Machine Learning",
+            "origine": "selection"
+          },
+          {
+            "competence": "Expérimentation",
+            "origine": "selection"
+          },
+          {
+            "competence": "Évaluation de modèles ML",
+            "origine": "selection"
+          },
+          {
+            "competence": "Leadership technique",
+            "origine": "selection"
+          },
+          {
+            "competence": "Management d’équipe",
+            "origine": "selection"
+          },
+          {
+            "competence": "Mentorat / coaching",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "lead-principal-data-scientist",
+            "justifiePar": [
+              "Expérimentation",
+              "Machine Learning",
+              "Évaluation de modèles ML"
+            ],
+            "couvre": [
+              "Expérimentation (Core)",
+              "Machine Learning (Core)",
+              "Évaluation de modèles ML (Core)",
+              "Leadership technique (Core)",
+              "Management d’équipe (Core)",
+              "Mentorat / coaching (Récurrente)"
+            ],
+            "partage": [],
+            "alternatives": []
+          }
+        ],
+        "residuels": [],
+        "tauxCouverture": 1,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "lead-principal-data-scientist"
+          ],
+          "competencesCouvertes": 6,
+          "competencesAnalysees": 6
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-13",
+      "categories": [
+        "capacites-transverses"
+      ],
+      "titre": "Profil commercial / avant-vente",
+      "besoinOriginal": "Un profil qui développe le compte et fait de l’avant-vente data & IA.",
+      "grade": "senior-manager",
+      "selection": [
+        "Business development",
+        "Avant-vente",
+        "Relation client"
+      ],
+      "objectifTest": "Uniquement des transverses : aucun métier par construction. Est-ce acceptable pour le recruteur ?",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Business development",
+            "origine": "selection"
+          },
+          {
+            "competence": "Avant-vente",
+            "origine": "selection"
+          },
+          {
+            "competence": "Relation client",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [],
+        "residuels": [
+          {
+            "competence": "Avant-vente",
+            "motif": "transverse-vers-grade"
+          },
+          {
+            "competence": "Business development",
+            "motif": "transverse-vers-grade"
+          },
+          {
+            "competence": "Relation client",
+            "motif": "transverse-vers-grade"
+          }
+        ],
+        "tauxCouverture": 0,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "ai-transformation-adoption-consultant-manager",
+            "data-ai-architect",
+            "data-ai-governance-consultant-manager",
+            "data-ai-platform-product-manager",
+            "data-ai-product-strategy-consultant",
+            "data-ai-strategy-consultant-manager",
+            "data-product-manager",
+            "data-product-owner",
+            "data-solution-architect"
+          ],
+          "competencesCouvertes": 1,
+          "competencesAnalysees": 3
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-14",
+      "categories": [
+        "grades"
+      ],
+      "titre": "Data engineer junior",
+      "besoinOriginal": "Un data engineer junior pour renforcer l’équipe pipelines.",
+      "grade": "analyste",
+      "selection": [
+        "Conception de pipelines de données",
+        "ETL / ELT",
+        "Python",
+        "SQL"
+      ],
+      "texte": "Un data engineer junior pour renforcer l’équipe pipelines.",
+      "objectifTest": "Grade bas : le métier « Senior Data Engineer » reste-t-il acceptable pour un Analyste ?",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Conception de pipelines de données",
+            "origine": "selection"
+          },
+          {
+            "competence": "ETL / ELT",
+            "origine": "selection"
+          },
+          {
+            "competence": "Python",
+            "origine": "selection"
+          },
+          {
+            "competence": "SQL",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "senior-data-engineer",
+            "justifiePar": [
+              "Conception de pipelines de données",
+              "ETL / ELT",
+              "Python",
+              "SQL"
+            ],
+            "couvre": [
+              "Conception de pipelines de données (Core)",
+              "ETL / ELT (Core)",
+              "Python (Core)",
+              "SQL (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          }
+        ],
+        "residuels": [],
+        "tauxCouverture": 1,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "gcp-data-engineer",
+            "lead-principal-data-engineer",
+            "senior-data-engineer"
+          ],
+          "competencesCouvertes": 4,
+          "competencesAnalysees": 4
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-15",
+      "categories": [
+        "grades",
+        "capacites-transverses"
+      ],
+      "titre": "Responsable data engineering",
+      "besoinOriginal": "Un responsable de l’équipe data engineering, qui manage et garde la main technique.",
+      "grade": "senior-manager",
+      "selection": [
+        "Conception de pipelines de données",
+        "ETL / ELT",
+        "Python",
+        "SQL",
+        "Leadership technique",
+        "Management d’équipe"
+      ],
+      "objectifTest": "Même socle technique que GD-14, grade élevé et transverses : Lead / Principal Data Engineer attendu ?",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Conception de pipelines de données",
+            "origine": "selection"
+          },
+          {
+            "competence": "ETL / ELT",
+            "origine": "selection"
+          },
+          {
+            "competence": "Python",
+            "origine": "selection"
+          },
+          {
+            "competence": "SQL",
+            "origine": "selection"
+          },
+          {
+            "competence": "Leadership technique",
+            "origine": "selection"
+          },
+          {
+            "competence": "Management d’équipe",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "lead-principal-data-engineer",
+            "justifiePar": [
+              "Conception de pipelines de données",
+              "ETL / ELT",
+              "Python",
+              "SQL"
+            ],
+            "couvre": [
+              "Conception de pipelines de données (Core)",
+              "ETL / ELT (Core)",
+              "Python (Core)",
+              "SQL (Core)",
+              "Leadership technique (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          }
+        ],
+        "residuels": [
+          {
+            "competence": "Management d’équipe",
+            "motif": "transverse-vers-grade"
+          }
+        ],
+        "tauxCouverture": 0.83,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "lead-principal-data-engineer"
+          ],
+          "competencesCouvertes": 5,
+          "competencesAnalysees": 6
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-16",
+      "categories": [
+        "termes-non-reconnus",
+        "demande-ambigue"
+      ],
+      "titre": "Saisie libre jargon",
+      "besoinOriginal": "MLOps, LLMOps, Agentic AI ; un peu de data transformation, monitoring et du CV ; Kubernetes.",
+      "grade": "consultant-senior",
+      "selection": [],
+      "termes": [
+        "MLOps, LLMOps, Agentic AI",
+        "data transformation; Monitoring; CV",
+        "Kubernetes"
+      ],
+      "objectifTest": "Jargon absent du référentiel, homonyme, forme à confirmer et nom canonique prioritaire dans une même saisie.",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Monitoring",
+            "origine": "terme-nom-canonique"
+          },
+          {
+            "competence": "Kubernetes",
+            "origine": "terme-nom-canonique"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "data-platform-engineer",
+            "justifiePar": [
+              "Kubernetes"
+            ],
+            "couvre": [
+              "Kubernetes (Core)"
+            ],
+            "partage": [],
+            "alternatives": [
+              "ml-ai-platform-engineer"
+            ]
+          }
+        ],
+        "residuels": [
+          {
+            "competence": "Monitoring",
+            "motif": "hors-signatures"
+          }
+        ],
+        "tauxCouverture": 0.5,
+        "ambigu": true,
+        "signalements": [
+          "« MLOps » non reconnu",
+          "« LLMOps » non reconnu",
+          "« Agentic AI » non reconnu",
+          "« data transformation » ambigu : Transformation de données / Transformation Data & IA",
+          "« Monitoring » → nom canonique Monitoring (concurrent : Observabilité)",
+          "« CV » à confirmer"
+        ],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "data-platform-engineer",
+            "ml-ai-platform-engineer"
+          ],
+          "competencesCouvertes": 1,
+          "competencesAnalysees": 2
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-17",
+      "categories": [
+        "termes-non-reconnus"
+      ],
+      "titre": "Phrase sans vocabulaire du référentiel",
+      "besoinOriginal": "Quelqu’un en Python capable d’industrialiser, d’encadrer techniquement et de vulgariser auprès du métier.",
+      "grade": "consultant-senior",
+      "selection": [
+        "Python"
+      ],
+      "texte": "Quelqu’un capable d’industrialiser, d’encadrer techniquement et de vulgariser auprès du métier.",
+      "objectifTest": "Le sens de la phrase n’est capté par aucune forme du référentiel : que perd-on ?",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Python",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "applied-scientist-ai-scientist",
+            "justifiePar": [
+              "Python"
+            ],
+            "couvre": [
+              "Python (Core)"
+            ],
+            "partage": [],
+            "alternatives": [
+              "machine-learning-engineer"
+            ]
+          }
+        ],
+        "residuels": [],
+        "tauxCouverture": 1,
+        "ambigu": true,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "agentic-ai-engineer",
+            "applied-ai-engineer",
+            "applied-scientist-ai-scientist",
+            "databricks-tech-lead-expert-engineer",
+            "gcp-ai-ml-engineer",
+            "gcp-data-engineer",
+            "genai-llm-engineer",
+            "lead-principal-data-engineer",
+            "lead-principal-data-scientist",
+            "machine-learning-engineer",
+            "senior-data-engineer",
+            "senior-data-scientist",
+            "senior-databricks-data-engineer"
+          ],
+          "competencesCouvertes": 1,
+          "competencesAnalysees": 1
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-18",
+      "categories": [
+        "sans-signature-metier"
+      ],
+      "titre": "Compétences sans métier",
+      "besoinOriginal": "Ingénieur IA : agents, deep learning et vision, sur Azure, avec Kafka et Airflow.",
+      "grade": "consultant",
+      "selection": [
+        "Agents IA",
+        "Deep Learning",
+        "Computer Vision",
+        "Microsoft Azure",
+        "Kafka",
+        "Airflow"
+      ],
+      "objectifTest": "Toutes les compétences sont hors signatures : aucun métier par construction.",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Agents IA",
+            "origine": "selection"
+          },
+          {
+            "competence": "Deep Learning",
+            "origine": "selection"
+          },
+          {
+            "competence": "Computer Vision",
+            "origine": "selection"
+          },
+          {
+            "competence": "Microsoft Azure",
+            "origine": "selection"
+          },
+          {
+            "competence": "Kafka",
+            "origine": "selection"
+          },
+          {
+            "competence": "Airflow",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [],
+        "residuels": [
+          {
+            "competence": "Microsoft Azure",
+            "motif": "hors-signatures"
+          },
+          {
+            "competence": "Airflow",
+            "motif": "hors-signatures"
+          },
+          {
+            "competence": "Kafka",
+            "motif": "hors-signatures"
+          },
+          {
+            "competence": "Computer Vision",
+            "motif": "hors-signatures"
+          },
+          {
+            "competence": "Deep Learning",
+            "motif": "hors-signatures"
+          },
+          {
+            "competence": "Agents IA",
+            "motif": "hors-signatures"
+          }
+        ],
+        "tauxCouverture": 0,
+        "ambigu": false,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [],
+          "competencesCouvertes": 0,
+          "competencesAnalysees": 6
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-19",
+      "categories": [
+        "demande-ambigue"
+      ],
+      "titre": "Bon profil Python",
+      "besoinOriginal": "Un bon profil Python.",
+      "grade": "consultant",
+      "selection": [
+        "Python"
+      ],
+      "objectifTest": "Python est Core dans 13 métiers : quel métier, ou faut-il refuser de trancher ?",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Python",
+            "origine": "selection"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "applied-scientist-ai-scientist",
+            "justifiePar": [
+              "Python"
+            ],
+            "couvre": [
+              "Python (Core)"
+            ],
+            "partage": [],
+            "alternatives": [
+              "machine-learning-engineer"
+            ]
+          }
+        ],
+        "residuels": [],
+        "tauxCouverture": 1,
+        "ambigu": true,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "agentic-ai-engineer",
+            "applied-ai-engineer",
+            "applied-scientist-ai-scientist",
+            "databricks-tech-lead-expert-engineer",
+            "gcp-ai-ml-engineer",
+            "gcp-data-engineer",
+            "genai-llm-engineer",
+            "lead-principal-data-engineer",
+            "lead-principal-data-scientist",
+            "machine-learning-engineer",
+            "senior-data-engineer",
+            "senior-data-scientist",
+            "senior-databricks-data-engineer"
+          ],
+          "competencesCouvertes": 1,
+          "competencesAnalysees": 1
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
+    },
+    {
+      "id": "GD-20",
+      "categories": [
+        "demande-incoherente",
+        "plusieurs-metiers",
+        "couverture-vs-parcimonie"
+      ],
+      "titre": "Mouton à cinq pattes",
+      "besoinOriginal": "Un profil qui fait la stratégie COMEX, du deep learning vision, l’admin Databricks, le PO et de la data science.",
+      "grade": "consultant",
+      "selection": [
+        "Stratégie Data & IA",
+        "Target Operating Model",
+        "Computer Vision",
+        "Databricks",
+        "Gestion de backlog",
+        "Kubernetes",
+        "Statistiques"
+      ],
+      "texte": "Un profil qui fait la stratégie COMEX, du deep learning vision, l’admin Databricks, le PO et de la data science.",
+      "objectifTest": "Demande incohérente : le plafond de 3 métiers coupe, et quoi signaler au SM ?",
+      "attendu": {
+        "metierPrincipal": "A_VALIDER",
+        "metiersSecondairesAcceptables": "A_VALIDER",
+        "nombreMaxMetiers": "A_VALIDER",
+        "competencesDevantEtreCouvertes": "A_VALIDER",
+        "competencesResiduellesAcceptees": "A_VALIDER"
+      },
+      "resultatActuel": {
+        "versionMoteur": "cb68e7f",
+        "dateExecution": "2026-10-13",
+        "competencesAnalysees": [
+          {
+            "competence": "Stratégie Data & IA",
+            "origine": "selection"
+          },
+          {
+            "competence": "Target Operating Model",
+            "origine": "selection"
+          },
+          {
+            "competence": "Computer Vision",
+            "origine": "selection"
+          },
+          {
+            "competence": "Databricks",
+            "origine": "selection"
+          },
+          {
+            "competence": "Gestion de backlog",
+            "origine": "selection"
+          },
+          {
+            "competence": "Kubernetes",
+            "origine": "selection"
+          },
+          {
+            "competence": "Statistiques",
+            "origine": "selection"
+          },
+          {
+            "competence": "Deep Learning",
+            "origine": "texte"
+          }
+        ],
+        "metiers": [
+          {
+            "rang": 1,
+            "metierId": "data-ai-strategy-consultant-manager",
+            "justifiePar": [
+              "Stratégie Data & IA",
+              "Target Operating Model"
+            ],
+            "couvre": [
+              "Stratégie Data & IA (Core)",
+              "Target Operating Model (Core)"
+            ],
+            "partage": [],
+            "alternatives": []
+          },
+          {
+            "rang": 2,
+            "metierId": "data-ai-platform-product-manager",
+            "justifiePar": [
+              "Gestion de backlog"
+            ],
+            "couvre": [
+              "Gestion de backlog (Core)"
+            ],
+            "partage": [],
+            "alternatives": [
+              "databricks-platform-architect"
+            ]
+          },
+          {
+            "rang": 3,
+            "metierId": "data-platform-engineer",
+            "justifiePar": [
+              "Kubernetes"
+            ],
+            "couvre": [
+              "Kubernetes (Core)"
+            ],
+            "partage": [],
+            "alternatives": [
+              "databricks-platform-architect",
+              "ml-ai-platform-engineer"
+            ]
+          }
+        ],
+        "residuels": [
+          {
+            "competence": "Computer Vision",
+            "motif": "hors-signatures"
+          },
+          {
+            "competence": "Deep Learning",
+            "motif": "hors-signatures"
+          },
+          {
+            "competence": "Statistiques",
+            "motif": "plafond-atteint"
+          },
+          {
+            "competence": "Databricks",
+            "motif": "plafond-atteint"
+          }
+        ],
+        "tauxCouverture": 0.5,
+        "ambigu": true,
+        "signalements": [],
+        "repereMeilleurMetierUnique": {
+          "metierIds": [
+            "data-ai-strategy-consultant-manager"
+          ],
+          "competencesCouvertes": 2,
+          "competencesAnalysees": 8
+        }
+      },
+      "evaluation": {
+        "conformite": "A_EVALUER",
+        "commentaireMetier": ""
+      }
     }
   ]
 }
