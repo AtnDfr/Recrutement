@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "campagne-cooptation-client-side-solution",
+    "id": "1ec9aa0c-d395-4668-8112-885953fdd521",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "BU Data & IA",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.23.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Campagne de cooptation : ciblage des collaborateurs BU Data & IA et transmission au flow Power Automate."
+      },
+      "longDescription": {
+        "default": "Campagne de cooptation : ciblage des collaborateurs BU Data & IA et transmission au flow Power Automate."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Campagne de cooptation",
+        "description": "Web part Campagne de cooptation.",
+        "id": "11b3db8f-e813-44eb-bf8b-f873a432f30d",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/campagne-cooptation.sppkg"
+  }
+}

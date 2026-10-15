@@ -1,0 +1,23 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "campagne-cooptation",
+    "environment": "spo",
+    "packageManager": "npm",
+    "skipFeatureDeployment": true,
+    "useGulp": false,
+    "componentType": "webpart",
+    "template": "react",
+    "componentName": "CampagneCooptation",
+    "componentDescription": "Campagne de cooptation Teams",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.22.0",
+    "sdksVersions": {},
+    "version": "1.23.2",
+    "libraryName": "campagne-cooptation",
+    "libraryId": "1ec9aa0c-d395-4668-8112-885953fdd521",
+    "solutionShortDescription": "campagne-cooptation description",
+    "isDomainIsolated": false
+  }
+}

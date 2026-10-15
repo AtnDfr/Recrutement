@@ -1,0 +1,240 @@
+$texte: "[theme:bodyText, default:#323130]";
+$texteSecondaire: "[theme:bodySubtext, default:#605e5c]";
+$fond: "[theme:bodyBackground, default:#ffffff]";
+$fondDoux: "[theme:neutralLighterAlt, default:#faf9f8]";
+$bordure: "[theme:neutralLight, default:#edebe9]";
+$accent: "[theme:themePrimary, default:#0078d4]";
+$accentClair: "[theme:themeLighterAlt, default:#eff6fc]";
+
+.app {
+  color: $texte;
+  font-size: 14px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.entete {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $bordure;
+  margin-bottom: 16px;
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+.compteur {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 16px;
+  background: $accentClair;
+  color: $accent;
+  white-space: nowrap;
+
+  strong {
+    font-size: 20px;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.etapes {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  flex-wrap: wrap;
+
+  li {
+    flex: 1 1 160px;
+  }
+
+  button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid $bordure;
+    border-bottom-width: 3px;
+    border-radius: 2px;
+    background: $fond;
+    color: $texteSecondaire;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+  }
+
+  .numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    font-weight: 600;
+    flex: none;
+  }
+
+  .active {
+    border-bottom-color: $accent;
+    color: $texte;
+    font-weight: 600;
+
+    .numero {
+      background: $accent;
+      border-color: $accent;
+      color: #ffffff;
+    }
+  }
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: minmax(240px, 300px) 1fr;
+  gap: 20px;
+  align-items: start;
+
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grilleEgale {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.carte {
+  border: 1px solid $bordure;
+  border-radius: 4px;
+  padding: 16px;
+  background: $fond;
+  min-width: 0;
+
+  h2 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  h3 {
+    margin: 16px 0 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+.pile > * + * {
+  margin-top: 8px;
+}
+
+.ligneGrade {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.nombre {
+  color: $texteSecondaire;
+  font-variant-numeric: tabular-nums;
+}
+
+.aide {
+  color: $texteSecondaire;
+  font-size: 12px;
+}
+
+.actionsLigne {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.liste {
+  max-height: 420px;
+  overflow: auto;
+  border: 1px solid $bordure;
+  border-radius: 2px;
+}
+
+.listeCourte {
+  max-height: 260px;
+}
+
+.apercu {
+  border: 1px solid $bordure;
+  border-radius: 4px;
+  padding: 12px 16px;
+  background: $fondDoux;
+  min-height: 120px;
+  overflow-wrap: anywhere;
+
+  p {
+    margin: 0 0 8px;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 8px;
+    padding-left: 20px;
+  }
+}
+
+.barreOutils {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.syntheseChiffre {
+  font-size: 32px;
+  font-weight: 600;
+  color: $accent;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.criteres {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.pied {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid $bordure;
+}
+
+.etatCentre {
+  padding: 40px 16px;
+  text-align: center;
+}

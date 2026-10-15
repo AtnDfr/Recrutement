@@ -6,6 +6,8 @@ retient le plus petit ensemble cohérent de métiers qui les couvre et prépare 
 
 **État : données, normalisation, moteur et tests. Aucune interface pour le moment.** Spécification : [`CLAUDE.md`](CLAUDE.md).
 
+> Le dossier [`campagne-cooptation/`](campagne-cooptation/README.md) contient une application distincte : la web part SharePoint de campagne de cooptation Teams.
+
 ## Commandes
 
 ```bash
