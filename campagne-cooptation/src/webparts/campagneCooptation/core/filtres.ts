@@ -114,18 +114,6 @@ export function compterParGrade(collaborateurs: readonly Collaborateur[], grades
   return compte;
 }
 
-/** Valeurs de Grade présentes dans la liste mais absentes de la configuration (signalées, non ciblables). */
-export function gradesNonConfigures(collaborateurs: readonly Collaborateur[], grades: readonly string[]): string[] {
-  const connus = grades.map(normaliser);
-  const autres: string[] = [];
-  for (const c of collaborateurs) {
-    if (c.grade !== null && connus.indexOf(normaliser(c.grade)) === -1 && autres.indexOf(c.grade) === -1) {
-      autres.push(c.grade);
-    }
-  }
-  return autres.sort();
-}
-
 export function normaliser(valeur: string): string {
   return valeur.trim().toLowerCase();
 }

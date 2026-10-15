@@ -5,7 +5,7 @@ import { carteDeLaCampagne, decrireCriteres, preparerEnvoi } from '../core/campa
 import { campagnePrete, controlerCampagne } from '../core/contenu';
 import { calculerCiblage } from '../core/destinataires';
 import { etatInitial, reducer } from '../core/etat';
-import { compterParGrade, gradesNonConfigures, optionsCdm } from '../core/filtres';
+import { compterParGrade, optionsCdm } from '../core/filtres';
 import { Collaborateur, PayloadFlow } from '../core/types';
 import { ConfirmationDialog } from './ConfirmationDialog';
 import { PanneauDestinataires } from './PanneauDestinataires';
@@ -67,7 +67,6 @@ export function CampagneApp({ config, chargerCollaborateurs, chargerModele, tran
     [collaborateurs, etat.grades, etat.complementaires, etat.estCdm, etat.cdms, etat.retraits, config]
   );
   const compteParGrade = React.useMemo(() => compterParGrade(collaborateurs, config.grades), [collaborateurs, config]);
-  const gradesHorsConfig = React.useMemo(() => gradesNonConfigures(collaborateurs, config.grades), [collaborateurs, config]);
   const cdms = React.useMemo(() => optionsCdm(collaborateurs, config), [collaborateurs, config]);
   const carte = React.useMemo(() => (modele === null ? null : carteDeLaCampagne(etat.contenu, modele)), [etat.contenu, modele]);
 
@@ -164,7 +163,6 @@ export function CampagneApp({ config, chargerCollaborateurs, chargerModele, tran
             etat={etat}
             ciblage={ciblage}
             compteParGrade={compteParGrade}
-            gradesHorsConfig={gradesHorsConfig}
             cdms={cdms}
             dispatch={dispatch}
             onGererListe={() => setPanneauListe(true)}

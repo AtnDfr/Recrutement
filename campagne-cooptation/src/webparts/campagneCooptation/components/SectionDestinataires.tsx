@@ -11,7 +11,6 @@ interface Props {
   etat: EtatCampagne;
   ciblage: ResultatCiblage;
   compteParGrade: Record<string, number>;
-  gradesHorsConfig: string[];
   cdms: OptionCdm[];
   dispatch: (action: Action) => void;
   onGererListe: () => void;
@@ -20,7 +19,7 @@ interface Props {
 const VISAGES = 8;
 
 export function SectionDestinataires(props: Props): JSX.Element {
-  const { config, etat, ciblage, compteParGrade, gradesHorsConfig, cdms, dispatch, onGererListe } = props;
+  const { config, etat, ciblage, compteParGrade, cdms, dispatch, onGererListe } = props;
   const tousCoches = etat.grades.length === config.grades.length;
   const nb = ciblage.destinataires.length;
 
@@ -66,9 +65,6 @@ export function SectionDestinataires(props: Props): JSX.Element {
             );
           })}
         </div>
-        {gradesHorsConfig.length > 0 && (
-          <p className={styles.aide} style={{ marginTop: 8 }}>Non ciblables : {gradesHorsConfig.join(', ')}.</p>
-        )}
       </div>
 
       <div>

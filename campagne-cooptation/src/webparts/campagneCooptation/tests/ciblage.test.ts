@@ -1,5 +1,5 @@
 import { calculerCiblage } from '../core/destinataires';
-import { compterParGrade, emailsDesCdm, filtrerCollaborateurs, gradesNonConfigures, optionsCdm } from '../core/filtres';
+import { compterParGrade, emailsDesCdm, filtrerCollaborateurs, optionsCdm } from '../core/filtres';
 import { Criteres } from '../core/types';
 import { collab, configTest } from './fixtures';
 
@@ -30,9 +30,8 @@ describe('grades', () => {
     expect(ids({ grades: ['Analyst', 'Consultant'] })).toEqual(['1', '2', '3', '6', '8']);
   });
 
-  it('compte par grade et signale les grades non configurés', () => {
+  it('compte par grade (les grades hors configuration ne sont pas ciblables)', () => {
     expect(compterParGrade(population, config.grades)).toEqual({ Analyst: 1, Consultant: 4, Manager: 2 });
-    expect(gradesNonConfigures(population, config.grades)).toEqual(['Account Director']);
   });
 });
 

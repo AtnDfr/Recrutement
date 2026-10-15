@@ -84,7 +84,7 @@ marqué **À CONFIRMER**.
    https://digiplace.sharepoint.com/sites/WOFHR-RECRUITMENTACTIVITIES/_api/web/lists/getbytitle('IA - Suivi des acteurs - Acteurs')/fields?$select=Title,InternalName,TypeAsString&$filter=Hidden eq false
    ```
 2. **Adresse du modèle de carte** (`urlModeleCarte`) : la bibliothèque qui accueille `modeles/carte-cooptation.json`.
-3. **Grades** : seules les valeurs listées sont ciblables. Les autres valeurs trouvées (ex. « CS - Consulting ») sont signalées.
+3. **Grades** : seules les valeurs listées sont ciblables (ex. « CS - Consulting » ne l'est pas).
 
 ## Développement
 
