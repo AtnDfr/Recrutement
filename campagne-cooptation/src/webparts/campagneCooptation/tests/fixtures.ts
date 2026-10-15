@@ -25,6 +25,8 @@ export function configTest(partiel: Partial<ConfigCampagne> = {}): ConfigCampagn
       statutInitial: 'À envoyer'
     },
     urlModeleCarte: 'https://exemple.sharepoint.com/modele.json',
+    emojis: ['🚀', '🤝'],
+    galerieImages: [],
     tailleMaxPayload: 60000,
     limites: { titre: 120, ctaLibelle: 40 },
     ...partiel
@@ -52,7 +54,7 @@ export function collab(id: string, grade: string | null, email: string | null, o
 }
 
 export function contenuTest(partiel: Partial<Contenu> = {}): Contenu {
-  return { titre: 'On recrute', message: 'Bonjour **à tous**', avecBouton: false, ctaLibelle: '', ctaUrl: '', ...partiel };
+  return { titre: 'On recrute', message: 'Bonjour **à tous**', avecBouton: false, ctaLibelle: '', ctaUrl: '', avecImage: false, imageUrl: '', ...partiel };
 }
 
 /** Modèle de carte de test, même forme que modeles/carte-cooptation.json. */
@@ -61,6 +63,7 @@ export const modeleTest = {
   version: '1.5',
   'x-modele': 'carte-test@3',
   body: [
+    { $when: '${imageUrl}', type: 'Image', url: '${imageUrl}', size: 'Stretch' },
     { type: 'TextBlock', text: '${titre}', weight: 'Bolder' },
     { type: 'TextBlock', text: '${message}', wrap: true }
   ],

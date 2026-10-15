@@ -76,5 +76,15 @@ export const configCampagne: ConfigCampagne = {
   // Une colonne « Plusieurs lignes de texte » (texte brut) accepte 63 999 caractères via l'interface.
   tailleMaxPayload: 60000,
 
+  emojis: [
+    '🚀', '🤝', '🎯', '💡', '🎉', '👋', '🙌', '👏', '✅', '📣', '🔥', '⭐',
+    '💼', '🧠', '📊', '🤖', '💬', '📅', '👉', '🔎', '🏆', '🌱', '⚡', '🙏',
+    '😊', '😉', '💪', '❤️', '📌', '🎁', '☕', '🌍'
+  ],
+
+  // À COMPLÉTER : visuels approuvés par la BU, hébergés à une adresse lisible par tous les destinataires.
+  // Exemple : { libelle: 'Bannière cooptation', url: 'https://…/banniere-cooptation.png' }
+  galerieImages: [],
+
   limites: { titre: 120, ctaLibelle: 40 }
 };

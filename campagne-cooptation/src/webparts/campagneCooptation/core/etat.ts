@@ -1,5 +1,5 @@
 import { ConfigCampagne } from '../config/types';
-import { campagnePrete, contenuVide } from './contenu';
+import { campagnePrete, contenuVide, ImageLisible } from './contenu';
 import { Contenu } from './types';
 
 /**
@@ -40,9 +40,9 @@ export type Action =
   | { type: 'REINTEGRER'; email: string }
   | { type: 'REINTEGRER_TOUS' }
   | { type: 'MODIFIER_CONTENU'; contenu: Partial<Contenu> }
-  | { type: 'OUVRIR_VERIFICATION'; nbDestinataires: number; config: ConfigCampagne }
+  | { type: 'OUVRIR_VERIFICATION'; nbDestinataires: number; config: ConfigCampagne; imageLisible?: ImageLisible }
   | { type: 'FERMER_VERIFICATION' }
-  | { type: 'OUVRIR_CONFIRMATION'; nbDestinataires: number; config: ConfigCampagne }
+  | { type: 'OUVRIR_CONFIRMATION'; nbDestinataires: number; config: ConfigCampagne; imageLisible?: ImageLisible }
   | { type: 'FERMER_CONFIRMATION' }
   | { type: 'ENVOI_REFUSE'; raison: string }
   | { type: 'ENVOI_DEMARRE' }
@@ -103,13 +103,13 @@ export function reducer(etat: EtatCampagne, action: Action): EtatCampagne {
     case 'MODIFIER_CONTENU':
       return modifie({ contenu: { ...etat.contenu, ...action.contenu } });
     case 'OUVRIR_VERIFICATION':
-      return campagnePrete(etat.contenu, action.nbDestinataires, action.config)
+      return campagnePrete(etat.contenu, action.nbDestinataires, action.config, action.imageLisible)
         ? { ...etat, etape: 'verification', confirmationOuverte: false }
         : etat;
     case 'FERMER_VERIFICATION':
       return { ...etat, etape: 'edition', confirmationOuverte: false };
     case 'OUVRIR_CONFIRMATION':
-      return etat.etape === 'verification' && campagnePrete(etat.contenu, action.nbDestinataires, action.config)
+      return etat.etape === 'verification' && campagnePrete(etat.contenu, action.nbDestinataires, action.config, action.imageLisible)
         ? { ...etat, confirmationOuverte: true }
         : etat;
     case 'FERMER_CONFIRMATION':

@@ -1,5 +1,5 @@
 import { ConfigCampagne } from '../config/types';
-import { campagnePrete, donneesCarte } from './contenu';
+import { campagnePrete, donneesCarte, ImageLisible } from './contenu';
 import { EtatCampagne } from './etat';
 import { critereActif, OptionCdm } from './filtres';
 import { appliquerModele, ResultatModele } from './modeleCarte';
@@ -22,6 +22,7 @@ export function construirePayload(
     message: donnees.message ?? '',
     ctaLibelle: donnees.ctaLibelle,
     ctaUrl: donnees.ctaUrl,
+    imageUrl: donnees.imageUrl,
     modele: carte.modele,
     carte: carte.carte
   };
@@ -57,14 +58,15 @@ export function preparerEnvoi(
   destinataires: readonly Collaborateur[],
   modele: unknown,
   config: ConfigCampagne,
-  cdms: readonly OptionCdm[]
+  cdms: readonly OptionCdm[],
+  imageLisible: ImageLisible = true
 ): PreparationEnvoi {
   if (etat.etape !== 'verification') return { ok: false, raison: 'La campagne doit être vérifiée avant l\'envoi.' };
   if (!etat.confirmationOuverte) return { ok: false, raison: 'L\'envoi doit être confirmé explicitement.' };
   if (etat.envoi.statut === 'enCours' || etat.envoi.statut === 'succes') return { ok: false, raison: 'Cette campagne a déjà été transmise.' };
   if (destinataires.length === 0) return { ok: false, raison: 'Aucun destinataire.' };
   if (destinataires.some(d => d.email === null)) return { ok: false, raison: 'Un destinataire n\'a pas d\'email.' };
-  if (!campagnePrete(etat.contenu, destinataires.length, config)) return { ok: false, raison: 'La campagne est incomplète.' };
+  if (!campagnePrete(etat.contenu, destinataires.length, config, imageLisible)) return { ok: false, raison: 'La campagne est incomplète.' };
 
   const carte = carteDeLaCampagne(etat.contenu, modele);
   if (!carte.ok) return { ok: false, raison: carte.erreur };

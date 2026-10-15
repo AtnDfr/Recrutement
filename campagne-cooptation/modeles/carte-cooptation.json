@@ -2,8 +2,15 @@
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
   "version": "1.5",
-  "x-modele": "carte-cooptation@1",
+  "x-modele": "carte-cooptation@2",
   "body": [
+    {
+      "$when": "${imageUrl}",
+      "type": "Image",
+      "url": "${imageUrl}",
+      "size": "Stretch",
+      "altText": "${titre}"
+    },
     {
       "type": "TextBlock",
       "text": "Cooptation · BU Data & IA",

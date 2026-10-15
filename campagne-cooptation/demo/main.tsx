@@ -30,6 +30,22 @@ registerIcons({
   }
 });
 
+/**
+ * Galerie de démo : visuels fictifs publiés avec la page. Les adresses sont rendues absolues,
+ * comme le seront les vraies (https), pour que l'aperçu et la carte transmise soient identiques.
+ */
+const configDemo = {
+  ...configCampagne,
+  galerieImages: [
+    { libelle: 'On recrute', fichier: 'banniere-on-recrute.png' },
+    { libelle: 'Cooptation', fichier: 'banniere-cooptation.png' },
+    { libelle: 'Data & IA', fichier: 'banniere-data-ia.png' },
+    { libelle: 'Merci (GIF animé)', fichier: 'confettis.gif' }
+  ].map(v => ({ libelle: v.libelle, url: new URL(`images/${v.fichier}`, document.baseURI).href }))
+};
+
+const AIDE_IMAGE_DEMO = 'Dans la démo, la sécurité de la page bloque les images externes : seules celles de la galerie s’affichent.';
+
 type Scenario = 'normal' | 'erreurSharePoint' | 'erreurFlow' | 'listeVide';
 
 const SCENARIOS = [
@@ -80,7 +96,8 @@ function Demo(): JSX.Element {
       <main className="demo-app">
         <CampagneApp
           key={scenario}
-          config={configCampagne}
+          config={configDemo}
+          aideImage={AIDE_IMAGE_DEMO}
           chargerCollaborateurs={charger}
           chargerModele={chargerModele}
           transmettre={transmettre}

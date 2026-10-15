@@ -4,9 +4,11 @@ import { messageVide } from './message';
 import { DonneesCarte } from './modeleCarte';
 import { Contenu } from './types';
 
-export const contenuVide: Contenu = { titre: '', message: '', avecBouton: false, ctaLibelle: '', ctaUrl: '' };
+export const contenuVide: Contenu = {
+  titre: '', message: '', avecBouton: false, ctaLibelle: '', ctaUrl: '', avecImage: false, imageUrl: ''
+};
 
-export type CleControle = 'destinataires' | 'titre' | 'message' | 'bouton';
+export type CleControle = 'destinataires' | 'titre' | 'message' | 'bouton' | 'image';
 
 export interface Controle {
   cle: CleControle;
@@ -16,8 +18,20 @@ export interface Controle {
   aide: string;
 }
 
+/**
+ * État de chargement de l'image, vérifié dans le navigateur de l'expéditeur :
+ * null = en cours, true = affichable, false = introuvable.
+ * Une image qui ne s'affiche pas chez l'expéditeur ne s'affichera pas chez les destinataires.
+ */
+export type ImageLisible = boolean | null;
+
 /** Liste de contrôle affichée dans le récapitulatif. Une campagne est prête quand tout est ok. */
-export function controlerCampagne(contenu: Contenu, nbDestinataires: number, config: ConfigCampagne): Controle[] {
+export function controlerCampagne(
+  contenu: Contenu,
+  nbDestinataires: number,
+  config: ConfigCampagne,
+  imageLisible: ImageLisible = true
+): Controle[] {
   const titre = contenu.titre.trim();
   const libelle = contenu.ctaLibelle.trim();
   const controles: Controle[] = [
@@ -47,11 +61,27 @@ export function controlerCampagne(contenu: Contenu, nbDestinataires: number, con
         : 'L\'adresse du bouton doit commencer par https://'
     });
   }
+  if (contenu.avecImage) {
+    const okUrl = lienValide(contenu.imageUrl);
+    controles.push({
+      cle: 'image',
+      libelle: 'Image',
+      ok: okUrl && imageLisible === true,
+      aide: !okUrl
+        ? 'Choisissez une image ou saisissez une adresse en https://'
+        : imageLisible === null ? 'Chargement de l\'image…' : 'Image introuvable : vérifiez l\'adresse.'
+    });
+  }
   return controles;
 }
 
-export function campagnePrete(contenu: Contenu, nbDestinataires: number, config: ConfigCampagne): boolean {
-  return controlerCampagne(contenu, nbDestinataires, config).every(c => c.ok);
+export function campagnePrete(
+  contenu: Contenu,
+  nbDestinataires: number,
+  config: ConfigCampagne,
+  imageLisible: ImageLisible = true
+): boolean {
+  return controlerCampagne(contenu, nbDestinataires, config, imageLisible).every(c => c.ok);
 }
 
 /** Variables injectées dans le modèle de carte. Bouton désactivé = variables du bouton vides. */
@@ -60,6 +90,7 @@ export function donneesCarte(contenu: Contenu): DonneesCarte {
     titre: contenu.titre.trim(),
     message: contenu.message.trim(),
     ctaLibelle: contenu.avecBouton ? contenu.ctaLibelle.trim() : null,
-    ctaUrl: contenu.avecBouton ? contenu.ctaUrl.trim() : null
+    ctaUrl: contenu.avecBouton ? contenu.ctaUrl.trim() : null,
+    imageUrl: contenu.avecImage ? contenu.imageUrl.trim() : null
   };
 }

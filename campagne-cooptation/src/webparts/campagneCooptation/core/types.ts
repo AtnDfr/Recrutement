@@ -52,6 +52,9 @@ export interface Contenu {
   avecBouton: boolean;
   ctaLibelle: string;
   ctaUrl: string;
+  /** Image ou GIF affiché en bannière en haut de la carte. */
+  avecImage: boolean;
+  imageUrl: string;
 }
 
 /** Contrat transmis au flow Power Automate. */
@@ -61,6 +64,7 @@ export interface PayloadFlow {
   message: string;
   ctaLibelle: string | null;
   ctaUrl: string | null;
+  imageUrl: string | null;
   /** Identifiant et version du modèle de carte utilisé (traçabilité). */
   modele: string;
   /** Adaptive Card finale : exactement celle affichée dans l'aperçu. Le flow la publie telle quelle. */

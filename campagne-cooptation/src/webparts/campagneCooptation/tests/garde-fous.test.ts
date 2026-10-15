@@ -28,6 +28,7 @@ describe('payload transmis au flow', () => {
       message: 'Bonjour',
       ctaLibelle: null,
       ctaUrl: null,
+      imageUrl: null,
       modele: 'carte-test@3',
       carte: {
         type: 'AdaptiveCard',
@@ -70,6 +71,19 @@ describe('garde-fous du parcours', () => {
     const etat = jouer([...jusquaConfirmation, { type: 'RETIRER', email: 'un@x.com' }]);
     expect(etat.etape).toBe('edition');
     expect(etat.confirmationOuverte).toBe(false);
+  });
+
+  it('refuse l\'envoi tant que l\'image n\'est pas lisible', () => {
+    const avecImage: Action[] = [...remplir, { type: 'MODIFIER_CONTENU', contenu: { avecImage: true, imageUrl: 'https://x.fr/b.gif' } }];
+    expect(jouer([...avecImage, { type: 'OUVRIR_VERIFICATION', nbDestinataires: 2, config, imageLisible: false }]).etape).toBe('edition');
+    const etat = jouer([
+      ...avecImage,
+      { type: 'OUVRIR_VERIFICATION', nbDestinataires: 2, config, imageLisible: true },
+      { type: 'OUVRIR_CONFIRMATION', nbDestinataires: 2, config, imageLisible: true }
+    ]);
+    expect(preparerEnvoi(etat, destinataires, modeleTest, config, [], null).ok).toBe(false);
+    const ok = preparerEnvoi(etat, destinataires, modeleTest, config, [], true);
+    expect(ok.ok && ok.payload.imageUrl).toBe('https://x.fr/b.gif');
   });
 
   it('refuse 0 destinataire, un modèle de carte invalide ou une campagne trop volumineuse', () => {

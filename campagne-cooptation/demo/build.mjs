@@ -1,5 +1,5 @@
 /**
- * Construit la démo navigable dans demo/dist (index.html + app.js + carte-cooptation.json).
+ * Construit la démo navigable dans demo/dist (index.html + app.js + carte-cooptation.json + images/).
  * Prérequis : `heft build` (la démo réutilise lib/, sortie compilée de la web part).
  *   node demo/build.mjs           construit
  *   node demo/build.mjs --serve   construit et sert sur http://localhost:8080
@@ -50,6 +50,12 @@ const options = {
 
 // Le modèle unique de carte est publié à côté de la page et lu à l'exécution, comme dans SharePoint.
 fs.copyFileSync(path.join(ici, '..', 'modeles', 'carte-cooptation.json'), path.join(dist, 'carte-cooptation.json'));
+
+// Visuels fictifs de la galerie de démo (bannières et GIF), publiés à côté de la page.
+fs.mkdirSync(path.join(dist, 'images'), { recursive: true });
+for (const fichier of fs.readdirSync(path.join(ici, 'images'))) {
+  fs.copyFileSync(path.join(ici, 'images', fichier), path.join(dist, 'images', fichier));
+}
 
 const page = fs.readFileSync(path.join(ici, 'index.html'), 'utf8');
 fs.writeFileSync(

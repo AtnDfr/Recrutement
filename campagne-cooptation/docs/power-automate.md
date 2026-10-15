@@ -28,8 +28,8 @@ Le modèle est une Adaptive Card 1.5, qui reste testable dans le [Designer](http
 
 | Syntaxe | Effet |
 |---|---|
-| `"${titre}"`, `"${message}"`, `"${ctaLibelle}"`, `"${ctaUrl}"` | remplacées par le contenu saisi |
-| `"$when": "${ctaUrl}"` sur un élément | l'élément n'est gardé que si la variable est renseignée |
+| `"${titre}"`, `"${message}"`, `"${ctaLibelle}"`, `"${ctaUrl}"`, `"${imageUrl}"` | remplacées par le contenu saisi |
+| `"$when": "${ctaUrl}"` ou `"$when": "${imageUrl}"` sur un élément | l'élément n'est gardé que si la variable est renseignée |
 | `"x-modele": "carte-cooptation@1"` | nom et version du modèle, retirés de la carte et tracés dans le payload |
 
 Toute autre variable, ou toute autre forme de `$when`, est refusée et bloque l'envoi avec un message clair. La version doit être 1.5 au plus, pour Teams. Après chaque modification, **incrémenter la version** dans `x-modele`.
@@ -45,12 +45,13 @@ Il est écrit dans la colonne `Payload` de la liste « Campagnes cooptation » :
   "message": "Bonjour,\n\nNous cherchons des **data engineers**.\n\n- Prime de cooptation",
   "ctaLibelle": "Je coopte",
   "ctaUrl": "https://forms.office.com/r/…",
-  "modele": "carte-cooptation@1",
+  "imageUrl": "https://…/banniere-cooptation.png",
+  "modele": "carte-cooptation@2",
   "carte": { "type": "AdaptiveCard", "version": "1.5", "body": [ … ], "actions": [ … ] }
 }
 ```
 
-`titre`, `message`, `ctaLibelle`, `ctaUrl` et `modele` servent à la traçabilité. Seuls `destinataires` et `carte` sont utilisés pour l'envoi.
+`titre`, `message`, `ctaLibelle`, `ctaUrl`, `imageUrl` et `modele` servent à la traçabilité. Seuls `destinataires` et `carte` sont utilisés pour l'envoi.
 
 ## Étapes du flow
 
@@ -76,3 +77,14 @@ Il est écrit dans la colonne `Payload` de la liste « Campagnes cooptation » :
    - **Bot Flow** : Publier en tant que *Flow bot*, Publier dans *Conversation avec le bot Flow*, Destinataire `items('Appliquer_à_chacun')`. Pas besoin de créer de conversation. Expéditeur affiché : « Workflows ».
    - **Utilisateur** : on garde « Créer une conversation » (membre `items('Appliquer_à_chacun')`), puis Publier en tant que *Utilisateur* dans *Conversation de groupe*, avec l'id de la conversation. Expéditeur : le compte de connexion du flow.
 6. **Mettre à jour l'élément** : Statut = `Envoyé`, ou `Envoyé avec erreurs` et la colonne `Erreurs`.
+
+## Images et GIF dans la carte
+
+- Teams ne reçoit que l'**adresse** de l'image : chaque destinataire la télécharge lui-même.
+  L'adresse doit donc être en https et lisible **sans connexion** par tous les destinataires.
+  Une image stockée dans une bibliothèque SharePoint protégée s'affiche cassée.
+- Une carte Teams est limitée à environ 28 Ko : on ne peut pas y embarquer l'image elle-même.
+- PNG, JPG et GIF animés sont acceptés. Le format bannière (environ 3:1) est conseillé.
+- L'application vérifie que l'image se charge chez l'expéditeur avant d'autoriser l'envoi.
+- À l'intégration, vérifier l'affichage réel sur Teams bureau, web et mobile, notamment pour les GIF animés.
+- La galerie de visuels approuvés se règle dans `galerieImages` de la configuration.

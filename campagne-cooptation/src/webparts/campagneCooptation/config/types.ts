@@ -86,6 +86,13 @@ export interface ConfigCampagne {
   urlModeleCarte: string;
   /** Taille maximale du JSON transmis (colonne texte multiligne). */
   tailleMaxPayload: number;
+  /** Emojis proposés par le sélecteur de la rédaction, dans l'ordre d'affichage. */
+  emojis: string[];
+  /**
+   * Visuels proposés pour la bannière de la carte. Chaque adresse doit être lisible par TOUS les
+   * destinataires dans Teams (https, sans authentification) : une image SharePoint protégée s'affiche cassée.
+   */
+  galerieImages: { libelle: string; url: string }[];
   /** Limites de saisie du contenu de la carte. */
   limites: { titre: number; ctaLibelle: number };
 }

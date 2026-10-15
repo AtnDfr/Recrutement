@@ -36,6 +36,10 @@ describe('éditeur → markdown Teams', () => {
     expect(domVersMarkdown(dom('<div><br></div><div>&nbsp;texte&nbsp;</div><b></b>'))).toBe('texte');
   });
 
+  it('conserve les emojis saisis dans l\'éditeur', () => {
+    expect(domVersMarkdown(dom('On recrute 🚀 <b>vite</b> 🙌'))).toBe('On recrute 🚀 **vite** 🙌');
+  });
+
   it('valide les liens', () => {
     expect(lienValide('https://forms.office.com/r/abc')).toBe(true);
     expect(lienValide('http://exemple.com')).toBe(false);

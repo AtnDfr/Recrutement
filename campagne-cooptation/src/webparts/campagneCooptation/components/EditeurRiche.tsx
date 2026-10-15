@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Callout, DefaultButton, DirectionalHint, IconButton, PrimaryButton, TextField } from '@fluentui/react';
 import { domVersMarkdown, lienValide } from '../core/editeur';
+import { SelecteurEmoji } from './SelecteurEmoji';
 import styles from './CampagneApp.module.scss';
 
 /**
@@ -21,10 +22,11 @@ const OUTILS: { commande: Commande; libelle: string; icone: string; raccourci?: 
 interface Props {
   id: string;
   placeholder: string;
+  emojis: readonly string[];
   onChange: (markdown: string) => void;
 }
 
-export function EditeurRiche({ id, placeholder, onChange }: Props): JSX.Element {
+export function EditeurRiche({ id, placeholder, emojis, onChange }: Props): JSX.Element {
   const zone = React.useRef<HTMLDivElement>(null);
   const plage = React.useRef<Range | null>(null);
   const [actifs, setActifs] = React.useState<Commande[]>([]);
@@ -71,6 +73,13 @@ export function EditeurRiche({ id, placeholder, onChange }: Props): JSX.Element 
     document.execCommand(commande, false);
     publier();
     majEtatOutils();
+  };
+
+  const insererEmoji = (emoji: string): void => {
+    restaurerSelection();
+    document.execCommand('insertText', false, emoji);
+    memoriserSelection();
+    publier();
   };
 
   const insererLien = (): void => {
@@ -121,6 +130,7 @@ export function EditeurRiche({ id, placeholder, onChange }: Props): JSX.Element 
           onMouseDown={e => { e.preventDefault(); memoriserSelection(); }}
           onClick={() => setLienOuvert(true)}
         />
+        <SelecteurEmoji id={`${id}-emoji`} emojis={emojis} onOuvrir={memoriserSelection} onChoisir={insererEmoji} />
       </div>
       <div
         id={id}

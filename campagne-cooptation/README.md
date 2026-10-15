@@ -38,7 +38,9 @@ Page SharePoint du site WOFHR-RECRUITMENTACTIVITIES
   - résultat sous forme d'avatars, avec « Gérer la liste » qui ouvre un panneau : recherche, retrait, réintégration, personnes sans email, doublons.
 - **Message**
   - un titre ;
-  - un éditeur léger : gras, italique, listes, liens https ; le collage se fait toujours en texte brut ;
+  - un éditeur léger : gras, italique, listes, liens https et emojis ; le collage se fait toujours en texte brut ;
+  - un sélecteur d'emojis, aussi disponible dans le titre (liste dans `config.emojis`) ;
+  - une image ou un GIF facultatif en bannière : galerie de visuels approuvés (`config.galerieImages`) ou adresse https, avec vérification que l'image s'affiche ;
   - un bouton facultatif (libellé + lien) ;
   - l'aperçu de la carte exacte dans un faux fil Teams.
 - **Récapitulatif**
@@ -69,7 +71,7 @@ Ce sont des règles pures (`core/etat.ts`, `core/campagne.ts`), couvertes par le
 - **Aucun envoi automatique** : rien ne part au chargement ni au changement de filtre.
 - **Envoi seulement depuis la vérification**, après la confirmation explicite.
 - **Toute modification renvoie à l'édition** : la vérification doit être refaite.
-- **Campagne incomplète** : vérification impossible sans destinataire, titre ou message, ou si le bouton est incomplet (libellé et lien `https://` exigés).
+- **Campagne incomplète** : vérification impossible sans destinataire, titre ou message, si le bouton est incomplet (libellé et lien `https://` exigés), ou si l'image ne se charge pas.
 - **Modèle invalide** : un modèle de carte invalide bloque l'envoi, avec un message explicite.
 - **Pas de double envoi** : la campagne est verrouillée pendant et après l'envoi.
 
@@ -84,7 +86,8 @@ marqué **À CONFIRMER**.
    https://digiplace.sharepoint.com/sites/WOFHR-RECRUITMENTACTIVITIES/_api/web/lists/getbytitle('IA - Suivi des acteurs - Acteurs')/fields?$select=Title,InternalName,TypeAsString&$filter=Hidden eq false
    ```
 2. **Adresse du modèle de carte** (`urlModeleCarte`) : la bibliothèque qui accueille `modeles/carte-cooptation.json`.
-3. **Grades** : seules les valeurs listées sont ciblables (ex. « CS - Consulting » ne l'est pas).
+3. **Galerie d'images** (`galerieImages`) : visuels approuvés, hébergés à une adresse https lisible par tous les destinataires (voir [docs/power-automate.md](docs/power-automate.md#images-et-gif-dans-la-carte)).
+4. **Grades** : seules les valeurs listées sont ciblables (ex. « CS - Consulting » ne l'est pas).
 
 ## Développement
 
@@ -135,7 +138,7 @@ src/webparts/campagneCooptation/
   services/                      accès SharePoint (liste Acteurs, modèle de carte, liste Campagnes)
   components/                    interface React (Fluent UI), sans règle métier
   tests/                         tests Jest du cœur métier
-demo/                            démo navigable : données fictives, faux flow
+demo/                            démo navigable : données fictives, faux flow, visuels fictifs (demo/images)
 docs/                            liste Campagnes, flow Power Automate
 ```
 

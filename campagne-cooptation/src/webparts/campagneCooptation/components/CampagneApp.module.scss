@@ -643,3 +643,75 @@ $ecart: 16px;
   justify-content: center;
   font-size: 24px;
 }
+
+// Emojis ----------------------------------------------------------------------------------
+
+.iconeEmoji {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.grilleEmojis {
+  display: grid;
+  grid-template-columns: repeat(8, 36px);
+  gap: 2px;
+  padding: 8px;
+}
+
+.emoji {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background: $fondDoux;
+    outline: none;
+  }
+}
+
+// Image / GIF -----------------------------------------------------------------------------
+
+.image {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.vignette {
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background: $fondDoux;
+  cursor: pointer;
+  overflow: hidden;
+  aspect-ratio: 3 / 1;
+  max-width: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &[aria-checked="true"] {
+    border-color: $accent;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 2px;
+  }
+}

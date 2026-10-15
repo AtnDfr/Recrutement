@@ -2,7 +2,8 @@ import * as React from 'react';
 import { DefaultButton, Icon, MessageBar, MessageBarType, PrimaryButton, Spinner, SpinnerSize } from '@fluentui/react';
 import { ConfigCampagne } from '../config/types';
 import { carteDeLaCampagne, decrireCriteres, preparerEnvoi } from '../core/campagne';
-import { campagnePrete, controlerCampagne } from '../core/contenu';
+import { campagnePrete, controlerCampagne, ImageLisible } from '../core/contenu';
+import { lienValide } from '../core/editeur';
 import { calculerCiblage } from '../core/destinataires';
 import { etatInitial, reducer } from '../core/etat';
 import { compterParGrade, optionsCdm } from '../core/filtres';
@@ -23,12 +24,30 @@ export interface CampagneAppProps {
   chargerModele: () => Promise<unknown>;
   /** Transmission au flow Power Automate (ou faux flow en démo). Renvoie une référence. */
   transmettre: (payload: PayloadFlow, criteres: string[]) => Promise<string>;
+  /** Aide affichée sous le champ image (ex. limite propre à la démo). */
+  aideImage?: string;
 }
 
 type Chargement =
   | { statut: 'enCours' }
   | { statut: 'erreur'; titre: string; message: string }
   | { statut: 'pret'; collaborateurs: Collaborateur[]; modele: unknown };
+
+/** Charge l'image dans le navigateur pour vérifier qu'elle s'affiche. null = en cours. */
+function useImageLisible(url: string | null): ImageLisible {
+  const [etat, setEtat] = React.useState<{ url: string | null; lisible: ImageLisible }>({ url: null, lisible: true });
+  React.useEffect(() => {
+    if (url === null) return;
+    let actif = true;
+    const img = new Image();
+    img.onload = () => { if (actif) setEtat({ url, lisible: true }); };
+    img.onerror = () => { if (actif) setEtat({ url, lisible: false }); };
+    img.src = url;
+    return () => { actif = false; };
+  }, [url]);
+  if (url === null) return true;
+  return etat.url === url ? etat.lisible : null;
+}
 
 function messageErreur(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
@@ -41,7 +60,7 @@ function echec(titre: string): (e: unknown) => never {
   };
 }
 
-export function CampagneApp({ config, chargerCollaborateurs, chargerModele, transmettre }: CampagneAppProps): JSX.Element {
+export function CampagneApp({ config, chargerCollaborateurs, chargerModele, transmettre, aideImage }: CampagneAppProps): JSX.Element {
   const [chargement, setChargement] = React.useState<Chargement>({ statut: 'enCours' });
   const [etat, dispatch] = React.useReducer(reducer, etatInitial);
   const [panneauListe, setPanneauListe] = React.useState(false);
@@ -70,13 +89,15 @@ export function CampagneApp({ config, chargerCollaborateurs, chargerModele, tran
   const cdms = React.useMemo(() => optionsCdm(collaborateurs, config), [collaborateurs, config]);
   const carte = React.useMemo(() => (modele === null ? null : carteDeLaCampagne(etat.contenu, modele)), [etat.contenu, modele]);
 
+  const imageLisible = useImageLisible(etat.contenu.avecImage && lienValide(etat.contenu.imageUrl) ? etat.contenu.imageUrl.trim() : null);
+
   const nb = ciblage.destinataires.length;
   const criteres = decrireCriteres(etat, config, cdms);
-  const controles = controlerCampagne(etat.contenu, nb, config);
-  const pret = campagnePrete(etat.contenu, nb, config) && carte !== null && carte.ok;
+  const controles = controlerCampagne(etat.contenu, nb, config, imageLisible);
+  const pret = campagnePrete(etat.contenu, nb, config, imageLisible) && carte !== null && carte.ok;
 
   const confirmer = (): void => {
-    const preparation = preparerEnvoi(etat, ciblage.destinataires, modele, config, cdms);
+    const preparation = preparerEnvoi(etat, ciblage.destinataires, modele, config, cdms, imageLisible);
     if (!preparation.ok) {
       dispatch({ type: 'ENVOI_REFUSE', raison: preparation.raison });
       return;
@@ -171,6 +192,8 @@ export function CampagneApp({ config, chargerCollaborateurs, chargerModele, tran
             config={config}
             contenu={etat.contenu}
             carte={carte}
+            imageLisible={imageLisible}
+            aideImage={aideImage}
             cleEditeur={numeroCampagne}
             onChange={contenu => dispatch({ type: 'MODIFIER_CONTENU', contenu })}
           />
@@ -180,7 +203,7 @@ export function CampagneApp({ config, chargerCollaborateurs, chargerModele, tran
           criteres={criteres}
           controles={controles}
           pret={pret}
-          onVerifier={() => dispatch({ type: 'OUVRIR_VERIFICATION', nbDestinataires: nb, config })}
+          onVerifier={() => dispatch({ type: 'OUVRIR_VERIFICATION', nbDestinataires: nb, config, imageLisible })}
         />
       </div>
 
@@ -194,7 +217,7 @@ export function CampagneApp({ config, chargerCollaborateurs, chargerModele, tran
         envoi={etat.envoi}
         confirmationOuverte={etat.confirmationOuverte}
         onModifier={() => dispatch({ type: 'FERMER_VERIFICATION' })}
-        onEnvoyer={() => dispatch({ type: 'OUVRIR_CONFIRMATION', nbDestinataires: nb, config })}
+        onEnvoyer={() => dispatch({ type: 'OUVRIR_CONFIRMATION', nbDestinataires: nb, config, imageLisible })}
       />
 
       <ConfirmationDialog
