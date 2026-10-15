@@ -17,35 +17,57 @@ const REPARTITION: [string, number][] = [
   ['Analyst', 3], ['Consulting Apprentice', 2], ['Associate Partner', 2], ['Partner', 2],
   ['CS - Consulting', 1], ['Account Director', 1]
 ];
-const STATUTS = ['Non embarqué', 'Non embarqué', 'Non embarqué', 'Actif', 'Stand-by', 'En formation', 'Back-up'];
-const TYPES = [null, null, null, 'CS (maker)', 'CS (non maker)', 'M&S (strat)', 'Interv 1 (strat)'];
+const GRADES_CDM = ['Manager', 'Senior Manager', 'Associate Partner', 'Partner'];
+const STATUTS = ['Non embarqué', 'Non embarqué', 'Non embarqué', 'Actif', 'Stand-by', 'En formation', 'Back-up', 'Actif'];
+const TYPES = [null, null, null, null, 'CS (maker)', 'CS (non maker)', 'M&S (strat)', 'Interv 1 (strat)', 'M&S (maker)', 'Interv 1 (maker)', 'Interviewer 1'];
+
+interface PersonneDemo {
+  id: number;
+  grade: string;
+  nom: string;
+  email: string;
+}
+
+function sansAccents(texte: string): string {
+  return texte.normalize('NFD').replace(/[̀-ͯ]/g, '');
+}
 
 export function elementsDemo(config: ConfigCampagne): ElementSharePoint[] {
-  const elements: ElementSharePoint[] = [];
+  const personnes: PersonneDemo[] = [];
   let id = 1;
   for (const [grade, nombre] of REPARTITION) {
     for (let i = 0; i < nombre; i++, id++) {
       const prenom = PRENOMS[(id * 7) % PRENOMS.length];
       const nom = NOMS[(id * 11) % NOMS.length];
-      const sansEmail = id === 17;
-      const element: ElementSharePoint = {
-        Id: id,
-        [config.listeActeurs.colonnePersonne]: {
-          Title: `${nom} ${prenom}`,
-          EMail: sansEmail ? '' : `${prenom}.${nom}${id}@exemple.com`.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
-        },
-        [config.listeActeurs.colonneGrade]: grade
-      };
-      for (const colonne of config.colonnes) {
-        const valeur =
-          colonne.cle === 'cdm' ? `${NOMS[(id * 3) % NOMS.length]} ${PRENOMS[(id * 5) % PRENOMS.length]}` :
-          colonne.cle === 'statut' ? STATUTS[id % STATUTS.length] :
-          colonne.cle === 'typeEntretien' ? TYPES[id % TYPES.length] :
-          null;
-        element[colonne.nomInterne] = colonne.type === 'personne' && valeur !== null ? { Title: valeur } : valeur;
-      }
-      elements.push(element);
+      personnes.push({ id, grade, nom: `${nom} ${prenom}`, email: sansAccents(`${prenom}.${nom}${id}@exemple.com`).toLowerCase() });
     }
   }
-  return elements;
+
+  // Les CDM sont des managers et associés de la liste, plus deux CDM qui n'y figurent pas.
+  const cdms = personnes
+    .filter(p => GRADES_CDM.indexOf(p.grade) !== -1)
+    .slice(0, 9)
+    .map(p => ({ Title: p.nom, EMail: p.email }))
+    .concat([{ Title: 'EXTERNE Paul', EMail: 'paul.externe@exemple.com' }, { Title: 'EXTERNE Anne', EMail: 'anne.externe@exemple.com' }]);
+
+  return personnes.map(p => {
+    const element: ElementSharePoint = {
+      Id: p.id,
+      [config.listeActeurs.colonnePersonne]: { Title: p.nom, EMail: p.id === 17 ? '' : p.email },
+      [config.listeActeurs.colonneGrade]: p.grade
+    };
+    for (const colonne of config.colonnes) {
+      if (colonne.cle === config.colonneCdm) {
+        const cdm = cdms[p.id % cdms.length];
+        element[colonne.nomInterne] = cdm.EMail === p.email ? cdms[(p.id + 1) % cdms.length] : cdm;
+      } else if (colonne.cle === 'statut') {
+        element[colonne.nomInterne] = STATUTS[p.id % STATUTS.length];
+      } else if (colonne.cle === 'typeEntretien') {
+        element[colonne.nomInterne] = TYPES[(p.id * 3) % TYPES.length];
+      } else {
+        element[colonne.nomInterne] = null;
+      }
+    }
+    return element;
+  });
 }

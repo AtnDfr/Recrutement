@@ -45,15 +45,17 @@ export const configCampagne: ConfigCampagne = {
     'Partner'
   ],
 
-  // Règles NON CONNUES à ce jour : les critères sont affichés mais inactifs (regle: null).
-  // Exemple de règle, à n'activer qu'une fois validée par la BU :
-  //   regle: { colonne: 'typeEntretien', operateur: 'contient', valeurs: ['(maker)'] }
+  // Règles validées par la BU (provisoires pour Maker / Non-maker : signal tiré de Type Entretien).
+  // Non-maker n'est PAS « tout sauf Maker » : sans Type Entretien, une personne n'est ni l'un ni l'autre.
   criteresComplementaires: [
-    { id: 'maker', libelle: 'Maker', regle: null },
-    { id: 'nonMaker', libelle: 'Non-maker', regle: null },
-    { id: 'cdm', libelle: 'CDM', regle: null },
-    { id: 'acteurRecrutement', libelle: 'Acteur du recrutement', regle: null }
+    { id: 'maker', libelle: 'Maker', groupe: 'profil', regle: { colonne: 'typeEntretien', operateur: 'contient', valeurs: ['(maker)'] } },
+    { id: 'nonMaker', libelle: 'Non-maker', groupe: 'profil', regle: { colonne: 'typeEntretien', operateur: 'contient', valeurs: ['(non maker)'] } },
+    // Statut « Actif » uniquement : Back-up, Stand-by, En formation… ne sont pas inclus.
+    { id: 'acteurRecrutementActif', libelle: 'Acteur recrutement actif', regle: { colonne: 'statut', operateur: 'egal', valeurs: ['Actif'] } }
   ],
+
+  // Colonne Person « CDM » : filtres « Est CDM » et « Collaborateurs de… » (rapprochement par email).
+  colonneCdm: 'cdm',
 
   // Liste à créer (voir docs/liste-campagnes.md). Noms internes à confirmer après création.
   listeCampagnes: {
@@ -68,6 +70,11 @@ export const configCampagne: ConfigCampagne = {
     statutInitial: 'À envoyer'
   },
 
+  // À CONFIRMER à l'intégration : bibliothèque qui héberge modeles/carte-cooptation.json.
+  urlModeleCarte: 'https://digiplace.sharepoint.com/sites/WOFHR-RECRUITMENTACTIVITIES/Modeles%20cooptation/carte-cooptation.json',
+
   // Une colonne « Plusieurs lignes de texte » (texte brut) accepte 63 999 caractères via l'interface.
-  tailleMaxPayload: 60000
+  tailleMaxPayload: 60000,
+
+  limites: { titre: 120, ctaLibelle: 40 }
 };

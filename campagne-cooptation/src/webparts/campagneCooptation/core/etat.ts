@@ -1,11 +1,14 @@
-import { messageVide } from './message';
+import { ConfigCampagne } from '../config/types';
+import { campagnePrete, contenuVide } from './contenu';
+import { Contenu } from './types';
 
 /**
- * État du parcours. Aucune action de ce reducer ne déclenche d'envoi :
- * l'envoi n'est possible qu'après preparerEnvoi() (campagne.ts), à l'étape « verifier », confirmation ouverte.
+ * État du parcours : une page d'édition, puis une vérification obligatoire, puis la confirmation.
+ * Aucune action de ce reducer ne déclenche d'envoi : l'envoi n'est possible qu'après preparerEnvoi()
+ * (campagne.ts), à l'étape « verification », confirmation ouverte.
  */
 
-export type Etape = 'cibler' | 'rediger' | 'verifier';
+export type Etape = 'edition' | 'verification';
 
 export type Envoi =
   | { statut: 'inactif' }
@@ -17,9 +20,12 @@ export interface EtatCampagne {
   etape: Etape;
   grades: string[];
   complementaires: string[];
+  estCdm: boolean;
+  /** Emails des CDM choisis dans « Collaborateurs de… ». */
+  cdms: string[];
   /** Emails retirés manuellement. */
   retraits: string[];
-  message: string;
+  contenu: Contenu;
   confirmationOuverte: boolean;
   envoi: Envoi;
 }
@@ -28,25 +34,30 @@ export type Action =
   | { type: 'BASCULER_GRADE'; grade: string }
   | { type: 'DEFINIR_GRADES'; grades: string[] }
   | { type: 'BASCULER_CRITERE'; id: string }
+  | { type: 'BASCULER_EST_CDM' }
+  | { type: 'DEFINIR_CDMS'; emails: string[] }
   | { type: 'RETIRER'; email: string }
   | { type: 'REINTEGRER'; email: string }
   | { type: 'REINTEGRER_TOUS' }
-  | { type: 'SAISIR_MESSAGE'; message: string }
-  | { type: 'ALLER_ETAPE'; etape: Etape; nbDestinataires: number }
-  | { type: 'OUVRIR_CONFIRMATION'; nbDestinataires: number }
+  | { type: 'MODIFIER_CONTENU'; contenu: Partial<Contenu> }
+  | { type: 'OUVRIR_VERIFICATION'; nbDestinataires: number; config: ConfigCampagne }
+  | { type: 'FERMER_VERIFICATION' }
+  | { type: 'OUVRIR_CONFIRMATION'; nbDestinataires: number; config: ConfigCampagne }
   | { type: 'FERMER_CONFIRMATION' }
+  | { type: 'ENVOI_REFUSE'; raison: string }
   | { type: 'ENVOI_DEMARRE' }
   | { type: 'ENVOI_REUSSI'; reference: string }
   | { type: 'ENVOI_ECHOUE'; message: string }
-  | { type: 'ENVOI_REFUSE'; raison: string }
   | { type: 'NOUVELLE_CAMPAGNE' };
 
 export const etatInitial: EtatCampagne = {
-  etape: 'cibler',
+  etape: 'edition',
   grades: [],
   complementaires: [],
+  estCdm: false,
+  cdms: [],
   retraits: [],
-  message: '',
+  contenu: contenuVide,
   confirmationOuverte: false,
   envoi: { statut: 'inactif' }
 };
@@ -54,18 +65,6 @@ export const etatInitial: EtatCampagne = {
 /** Une campagne envoyée ou en cours d'envoi ne peut plus être modifiée. */
 export function verrouillee(etat: EtatCampagne): boolean {
   return etat.envoi.statut === 'enCours' || etat.envoi.statut === 'succes';
-}
-
-/** Conditions pour accéder à une étape. */
-export function etapeAccessible(etape: Etape, etat: EtatCampagne, nbDestinataires: number): boolean {
-  switch (etape) {
-    case 'cibler':
-      return true;
-    case 'rediger':
-      return nbDestinataires > 0;
-    case 'verifier':
-      return nbDestinataires > 0 && !messageVide(etat.message);
-  }
 }
 
 export function reducer(etat: EtatCampagne, action: Action): EtatCampagne {
@@ -80,9 +79,9 @@ export function reducer(etat: EtatCampagne, action: Action): EtatCampagne {
   }
   if (verrouillee(etat)) return etat;
 
-  // Toute modification ferme la confirmation : le nombre affiché doit rester exact.
+  // Toute modification renvoie à l'édition et ferme la confirmation : la vérification doit être refaite.
   const modifie = (partiel: Partial<EtatCampagne>): EtatCampagne =>
-    ({ ...etat, ...partiel, confirmationOuverte: false, envoi: { statut: 'inactif' } });
+    ({ ...etat, ...partiel, etape: 'edition', confirmationOuverte: false, envoi: { statut: 'inactif' } });
 
   switch (action.type) {
     case 'BASCULER_GRADE':
@@ -91,20 +90,26 @@ export function reducer(etat: EtatCampagne, action: Action): EtatCampagne {
       return modifie({ grades: action.grades.slice() });
     case 'BASCULER_CRITERE':
       return modifie({ complementaires: basculer(etat.complementaires, action.id) });
+    case 'BASCULER_EST_CDM':
+      return modifie({ estCdm: !etat.estCdm });
+    case 'DEFINIR_CDMS':
+      return modifie({ cdms: action.emails.slice() });
     case 'RETIRER':
       return etat.retraits.indexOf(action.email) !== -1 ? etat : modifie({ retraits: etat.retraits.concat(action.email) });
     case 'REINTEGRER':
       return modifie({ retraits: etat.retraits.filter(e => e !== action.email) });
     case 'REINTEGRER_TOUS':
       return modifie({ retraits: [] });
-    case 'SAISIR_MESSAGE':
-      return modifie({ message: action.message });
-    case 'ALLER_ETAPE':
-      return etapeAccessible(action.etape, etat, action.nbDestinataires)
-        ? { ...etat, etape: action.etape, confirmationOuverte: false }
+    case 'MODIFIER_CONTENU':
+      return modifie({ contenu: { ...etat.contenu, ...action.contenu } });
+    case 'OUVRIR_VERIFICATION':
+      return campagnePrete(etat.contenu, action.nbDestinataires, action.config)
+        ? { ...etat, etape: 'verification', confirmationOuverte: false }
         : etat;
+    case 'FERMER_VERIFICATION':
+      return { ...etat, etape: 'edition', confirmationOuverte: false };
     case 'OUVRIR_CONFIRMATION':
-      return etat.etape === 'verifier' && etapeAccessible('verifier', etat, action.nbDestinataires)
+      return etat.etape === 'verification' && campagnePrete(etat.contenu, action.nbDestinataires, action.config)
         ? { ...etat, confirmationOuverte: true }
         : etat;
     case 'FERMER_CONFIRMATION':
@@ -112,7 +117,7 @@ export function reducer(etat: EtatCampagne, action: Action): EtatCampagne {
     case 'ENVOI_REFUSE':
       return { ...etat, confirmationOuverte: false, envoi: { statut: 'erreur', message: action.raison } };
     case 'ENVOI_DEMARRE':
-      return etat.etape === 'verifier' && etat.confirmationOuverte ? { ...etat, envoi: { statut: 'enCours' } } : etat;
+      return etat.etape === 'verification' && etat.confirmationOuverte ? { ...etat, envoi: { statut: 'enCours' } } : etat;
   }
 }
 

@@ -1,240 +1,645 @@
+// Jetons de thème SharePoint (valeur par défaut = thème bleu standard).
 $texte: "[theme:bodyText, default:#323130]";
-$texteSecondaire: "[theme:bodySubtext, default:#605e5c]";
+$texteDoux: "[theme:bodySubtext, default:#605e5c]";
+$texteFaible: "[theme:neutralTertiary, default:#a19f9d]";
 $fond: "[theme:bodyBackground, default:#ffffff]";
-$fondDoux: "[theme:neutralLighterAlt, default:#faf9f8]";
+$fondPage: "[theme:neutralLighterAlt, default:#faf9f8]";
+$fondDoux: "[theme:neutralLighter, default:#f3f2f1]";
 $bordure: "[theme:neutralLight, default:#edebe9]";
+$bordureForte: "[theme:neutralQuaternaryAlt, default:#e1dfdd]";
 $accent: "[theme:themePrimary, default:#0078d4]";
+$accentFonce: "[theme:themeDarker, default:#004578]";
 $accentClair: "[theme:themeLighterAlt, default:#eff6fc]";
+$accentBord: "[theme:themeLight, default:#c7e0f4]";
+$succes: "[theme:green, default:#107c10]";
+$alerte: "[theme:orangeLighter, default:#ff8c00]";
+
+$rayon: 6px;
+$ecart: 16px;
 
 .app {
   color: $texte;
   font-size: 14px;
-  max-width: 1200px;
+  line-height: 1.45;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
+// En-tête -------------------------------------------------------------------
+
 .entete {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid $bordure;
-  margin-bottom: 16px;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 20px;
 
   h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    margin: 0;
+    color: $texteDoux;
+  }
+}
+
+// Mise en page : colonne principale + récapitulatif collant ------------------
+
+.disposition {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 24px;
+  align-items: start;
+}
+
+.colonne {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.section {
+  background: $fond;
+  border: 1px solid $bordure;
+  border-radius: $rayon;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.sectionTitre {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  h2 {
+    margin: 0;
+    font-size: 18px;
     font-weight: 600;
   }
 }
 
-.compteur {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 6px;
-  padding: 6px 14px;
-  border-radius: 16px;
-  background: $accentClair;
+.etiquette {
+  font-size: 12px;
+  font-weight: 600;
+  color: $texteDoux;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+}
+
+.aide {
+  color: $texteDoux;
+  font-size: 12px;
+  margin: 0;
+}
+
+.lienBouton {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
   color: $accent;
-  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 2px;
+  }
+}
+
+// Pastilles (grades, critères) ------------------------------------------------
+
+.pastilles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pastille {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid $bordureForte;
+  border-radius: 16px;
+  background: $fond;
+  color: $texte;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.12s, border-color 0.12s;
+
+  &:hover {
+    background: $fondDoux;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 2px;
+  }
+
+  &[aria-pressed="true"] {
+    background: $accentClair;
+    border-color: $accent;
+    color: $accentFonce;
+    font-weight: 600;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: $texteFaible;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+.compteurPastille {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: $texteDoux;
+  font-weight: 400;
+}
+
+.pastilleVide {
+  color: $texteFaible;
+}
+
+.affiner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px 16px;
+  align-items: center;
+  padding: 14px 16px;
+  background: $fondPage;
+  border-radius: $rayon;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.affinerLibelle {
+  font-size: 13px;
+  color: $texteDoux;
+}
+
+// Résultat du ciblage ----------------------------------------------------------
+
+.resultat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid $bordure;
+}
+
+.resultatTexte {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  min-width: 0;
 
   strong {
-    font-size: 20px;
+    font-size: 16px;
     font-variant-numeric: tabular-nums;
   }
 }
 
-.etapes {
-  display: flex;
-  gap: 8px;
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px;
-  flex-wrap: wrap;
-
-  li {
-    flex: 1 1 160px;
-  }
-
-  button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 12px;
-    border: 1px solid $bordure;
-    border-bottom-width: 3px;
-    border-radius: 2px;
-    background: $fond;
-    color: $texteSecondaire;
-    font: inherit;
-    text-align: left;
-    cursor: pointer;
-
-    &:disabled {
-      cursor: not-allowed;
-      opacity: 0.55;
-    }
-  }
-
-  .numero {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 1px solid currentColor;
-    font-weight: 600;
-    flex: none;
-  }
-
-  .active {
-    border-bottom-color: $accent;
-    color: $texte;
-    font-weight: 600;
-
-    .numero {
-      background: $accent;
-      border-color: $accent;
-      color: #ffffff;
-    }
-  }
-}
-
-.grille {
-  display: grid;
-  grid-template-columns: minmax(240px, 300px) 1fr;
-  gap: 20px;
-  align-items: start;
-
-  @media (max-width: 760px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.grilleEgale {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  align-items: start;
-
-  @media (max-width: 760px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.carte {
-  border: 1px solid $bordure;
-  border-radius: 4px;
-  padding: 16px;
-  background: $fond;
-  min-width: 0;
-
-  h2 {
-    margin: 0 0 12px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-
-  h3 {
-    margin: 16px 0 8px;
-    font-size: 14px;
-    font-weight: 600;
-  }
-}
-
-.pile > * + * {
-  margin-top: 8px;
-}
-
-.ligneGrade {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-}
-
-.nombre {
-  color: $texteSecondaire;
-  font-variant-numeric: tabular-nums;
-}
-
-.aide {
-  color: $texteSecondaire;
+.signal {
   font-size: 12px;
+  color: $texteDoux;
 }
 
-.actionsLigne {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
+.vide {
+  padding: 4px 0;
+  color: $texteDoux;
 }
 
-.liste {
-  max-height: 420px;
-  overflow: auto;
-  border: 1px solid $bordure;
-  border-radius: 2px;
-}
+// Message -----------------------------------------------------------------------
 
-.listeCourte {
-  max-height: 260px;
-}
+.message {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
 
-.apercu {
-  border: 1px solid $bordure;
-  border-radius: 4px;
-  padding: 12px 16px;
-  background: $fondDoux;
-  min-height: 120px;
-  overflow-wrap: anywhere;
-
-  p {
-    margin: 0 0 8px;
+  @media (max-width: 1100px) {
+    grid-template-columns: minmax(0, 1fr);
   }
+}
 
-  ul,
-  ol {
-    margin: 0 0 8px;
-    padding-left: 20px;
+.formulaire {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.champLibelle {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.editeur {
+  border: 1px solid $bordureForte;
+  border-radius: 4px;
+  background: $fond;
+
+  &:focus-within {
+    border-color: $accent;
+    box-shadow: 0 0 0 1px $accent;
   }
 }
 
 .barreOutils {
   display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-  margin-bottom: 4px;
+  gap: 2px;
+  padding: 4px;
+  border-bottom: 1px solid $bordure;
 }
 
-.syntheseChiffre {
-  font-size: 32px;
-  font-weight: 600;
-  color: $accent;
-  font-variant-numeric: tabular-nums;
-  line-height: 1.1;
+.separateurOutils {
+  width: 1px;
+  margin: 4px 4px;
+  background: $bordure;
 }
 
-.criteres {
-  margin: 0;
-  padding-left: 18px;
+.zoneSaisie {
+  position: relative;
+  min-height: 180px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding: 10px 12px;
+  outline: none;
+  overflow-wrap: anywhere;
+
+  p,
+  div {
+    margin: 0;
+  }
+
+  // Chaque ligne validée par Entrée devient un paragraphe dans la carte : on montre le même écart.
+  > div + div,
+  > div + ul,
+  > div + ol,
+  > ul + div,
+  > ol + div {
+    margin-top: 8px;
+  }
+
+  ul,
+  ol {
+    margin: 4px 0;
+    padding-left: 22px;
+  }
+
+  a {
+    color: $accent;
+  }
 }
 
-.pied {
+.zoneVide::before {
+  content: attr(data-placeholder);
+  color: $texteFaible;
+  pointer-events: none;
+  position: absolute;
+}
+
+.bouton {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 12px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Aperçu Teams ------------------------------------------------------------------
+
+.teams {
+  background: #f5f5f5;
+  border-radius: $rayon;
+  padding: 16px;
+  min-width: 0;
+}
+
+.teamsEntete {
   display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #616161;
+
+  strong {
+    color: #242424;
+    font-weight: 600;
+  }
+}
+
+.teamsAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #5b5fc7;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  flex: none;
+}
+
+.teamsCarte {
+  margin-left: 36px;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14), 0 0 2px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  min-width: 0;
+
+  :global {
+    .ac-adaptiveCard p {
+      margin: 0 0 6px;
+    }
+
+    .ac-adaptiveCard p:last-child {
+      margin-bottom: 0;
+    }
+
+    .ac-adaptiveCard ul,
+    .ac-adaptiveCard ol {
+      margin: 0 0 6px;
+      padding-left: 20px;
+    }
+
+    .ac-adaptiveCard a {
+      color: #5b5fc7;
+    }
+
+    .ac-pushButton {
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      min-height: 32px;
+      padding: 0 12px;
+      border: 1px solid #d1d1d1;
+      border-radius: 4px;
+      background: #ffffff;
+      color: #242424;
+      cursor: default;
+    }
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+  }
+}
+
+.teamsNote {
+  margin: 10px 0 0 36px;
+  font-size: 12px;
+  color: #616161;
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+  }
+}
+
+// Récapitulatif collant ------------------------------------------------------------
+
+.recap {
+  position: sticky;
+  top: 16px;
+  background: $fond;
+  border: 1px solid $bordure;
+  border-radius: $rayon;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.recapNombre {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+
+  strong {
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 600;
+    color: $accent;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: $fondDoux;
+  color: $texte;
+}
+
+.controles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.controle {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+}
+
+.controleIcone {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid $bordureForte;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin-top: 1px;
+}
+
+.controleOk .controleIcone {
+  background: $succes;
+  border-color: $succes;
+  color: #ffffff;
+}
+
+.controleAide {
+  display: block;
+  font-size: 12px;
+  color: $texteDoux;
+}
+
+.recapMobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .disposition {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .app {
+    padding-bottom: 88px;
+  }
+
+  .recap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    z-index: 10;
+    border-radius: 0;
+    border-width: 1px 0 0;
+    padding: 12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .recapDetail {
+    display: none;
+  }
+
+  .recapMobile {
+    display: block;
+    font-size: 12px;
+    color: $texteDoux;
+  }
+
+  .recapNombre strong {
+    font-size: 24px;
+  }
+}
+
+// Panneaux -----------------------------------------------------------------------------
+
+.lignes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ligne {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid $bordure;
+  padding: 6px 0;
+  border-bottom: 1px solid $bordure;
+  min-width: 0;
 }
 
+.panneauCorps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.verification {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  padding-top: 8px;
+
+  @media (max-width: 760px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.listeBornee {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.piedPanneau {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+// États --------------------------------------------------------------------------------
+
 .etatCentre {
-  padding: 40px 16px;
+  padding: 48px 16px;
   text-align: center;
+}
+
+.succes {
+  max-width: 560px;
+  margin: 24px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0;
+    color: $texteDoux;
+  }
+}
+
+.succesIcone {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: $succes;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
 }

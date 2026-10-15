@@ -4,17 +4,24 @@ import { configTest } from './fixtures';
 describe('lecture de la liste SharePoint', () => {
   const config = configTest();
 
-  it('demande Title et EMail de la colonne Person, le Grade, et expand les colonnes Person', () => {
+  it('demande Title et EMail des colonnes Person, le Grade, et expand les colonnes Person', () => {
     const requete = construireRequeteActeurs(config, 500);
     expect(requete).toBe(
-      '$select=Id,Acteurs/Title,Acteurs/EMail,Grade,CDM/Title,Type_x0020_Entretien&$expand=Acteurs,CDM&$top=500'
+      '$select=Id,Acteurs/Title,Acteurs/EMail,Grade,CDM/Title,CDM/EMail,statut,Type_x0020_Entretien&$expand=Acteurs,CDM&$top=500'
     );
     expect(requete).not.toContain('JobTitle');
   });
 
-  it('utilise l\'email fourni par SharePoint, sans le reconstruire', () => {
+  it('utilise l\'email fourni par SharePoint, sans le reconstruire, et garde l\'email du CDM', () => {
     const [c] = versCollaborateurs(
-      { Id: 7, Acteurs: { Title: 'NOM Prénom', EMail: 'adresse.reelle@exemple.com' }, Grade: 'Consultant', CDM: { Title: 'CDM X' }, Type_x0020_Entretien: 'CS (a)' },
+      {
+        Id: 7,
+        Acteurs: { Title: 'NOM Prénom', EMail: 'adresse.reelle@exemple.com' },
+        Grade: 'Consultant',
+        CDM: { Title: 'CDM X', EMail: 'cdm.x@exemple.com' },
+        statut: 'Actif',
+        Type_x0020_Entretien: 'CS (maker)'
+      },
       config
     );
     expect(c).toEqual({
@@ -22,13 +29,15 @@ describe('lecture de la liste SharePoint', () => {
       nom: 'NOM Prénom',
       email: 'adresse.reelle@exemple.com',
       grade: 'Consultant',
-      champs: { cdm: 'CDM X', typeEntretien: 'CS (a)' }
+      champs: { cdm: 'CDM X', statut: 'Actif', typeEntretien: 'CS (maker)' },
+      personnes: { cdm: [{ nom: 'CDM X', email: 'cdm.x@exemple.com' }] }
     });
   });
 
   it('laisse l\'email à null s\'il est absent', () => {
     const [c] = versCollaborateurs({ Id: 1, Acteurs: { Title: 'Sans Mail', EMail: '' }, Grade: 'Analyst' }, config);
     expect(c.email).toBeNull();
+    expect(c.personnes.cdm).toEqual([]);
   });
 
   it('produit un collaborateur par personne si la colonne Person est multiple', () => {

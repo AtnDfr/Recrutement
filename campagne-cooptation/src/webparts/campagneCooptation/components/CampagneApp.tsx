@@ -1,60 +1,83 @@
 import * as React from 'react';
-import { DefaultButton, MessageBar, MessageBarType, PrimaryButton, Spinner, SpinnerSize } from '@fluentui/react';
+import { DefaultButton, Icon, MessageBar, MessageBarType, PrimaryButton, Spinner, SpinnerSize } from '@fluentui/react';
 import { ConfigCampagne } from '../config/types';
-import { decrireCriteres, preparerEnvoi } from '../core/campagne';
+import { carteDeLaCampagne, decrireCriteres, preparerEnvoi } from '../core/campagne';
+import { campagnePrete, controlerCampagne } from '../core/contenu';
 import { calculerCiblage } from '../core/destinataires';
-import { Etape, etapeAccessible, etatInitial, reducer, verrouillee } from '../core/etat';
-import { compterParGrade, gradesNonConfigures } from '../core/filtres';
+import { etatInitial, reducer } from '../core/etat';
+import { compterParGrade, gradesNonConfigures, optionsCdm } from '../core/filtres';
 import { Collaborateur, PayloadFlow } from '../core/types';
-import { CiblageEtape } from './CiblageEtape';
 import { ConfirmationDialog } from './ConfirmationDialog';
-import { Etapes } from './Etapes';
-import { RedactionEtape } from './RedactionEtape';
-import { VerificationEtape } from './VerificationEtape';
+import { PanneauDestinataires } from './PanneauDestinataires';
+import { PanneauVerification } from './PanneauVerification';
+import { Recapitulatif } from './Recapitulatif';
+import { SectionDestinataires } from './SectionDestinataires';
+import { SectionMessage } from './SectionMessage';
 import styles from './CampagneApp.module.scss';
 
 export interface CampagneAppProps {
   config: ConfigCampagne;
-  /** Lecture de la liste SharePoint (injectée par la web part). */
+  /** Lecture des collaborateurs (SharePoint, ou données de démo). */
   chargerCollaborateurs: () => Promise<Collaborateur[]>;
-  /** Transmission au flow Power Automate (injectée par la web part). Renvoie une référence. */
+  /** Lecture du modèle unique de carte Teams (fichier JSON, chargé à l'exécution). */
+  chargerModele: () => Promise<unknown>;
+  /** Transmission au flow Power Automate (ou faux flow en démo). Renvoie une référence. */
   transmettre: (payload: PayloadFlow, criteres: string[]) => Promise<string>;
 }
 
 type Chargement =
   | { statut: 'enCours' }
-  | { statut: 'erreur'; message: string }
-  | { statut: 'pret'; collaborateurs: Collaborateur[] };
+  | { statut: 'erreur'; titre: string; message: string }
+  | { statut: 'pret'; collaborateurs: Collaborateur[]; modele: unknown };
 
-const SUIVANTE: Record<Etape, Etape | null> = { cibler: 'rediger', rediger: 'verifier', verifier: null };
-const PRECEDENTE: Record<Etape, Etape | null> = { cibler: null, rediger: 'cibler', verifier: 'rediger' };
+function messageErreur(e: unknown): string {
+  return e instanceof Error ? e.message : String(e);
+}
 
-export function CampagneApp({ config, chargerCollaborateurs, transmettre }: CampagneAppProps): JSX.Element {
+/** Relance l'erreur en précisant ce qui n'a pas pu être chargé. */
+function echec(titre: string): (e: unknown) => never {
+  return e => {
+    throw Object.assign(new Error(messageErreur(e)), { titre });
+  };
+}
+
+export function CampagneApp({ config, chargerCollaborateurs, chargerModele, transmettre }: CampagneAppProps): JSX.Element {
   const [chargement, setChargement] = React.useState<Chargement>({ statut: 'enCours' });
   const [etat, dispatch] = React.useReducer(reducer, etatInitial);
+  const [panneauListe, setPanneauListe] = React.useState(false);
+  const [numeroCampagne, setNumeroCampagne] = React.useState(0);
 
   const charger = React.useCallback((): void => {
     setChargement({ statut: 'enCours' });
-    chargerCollaborateurs()
-      .then(collaborateurs => setChargement({ statut: 'pret', collaborateurs }))
-      .catch((e: unknown) => setChargement({ statut: 'erreur', message: e instanceof Error ? e.message : String(e) }));
-  }, [chargerCollaborateurs]);
+    Promise.all([
+      chargerCollaborateurs().catch(echec('Erreur SharePoint.')),
+      chargerModele().catch(echec('Modèle de carte introuvable.'))
+    ])
+      .then(([collaborateurs, modele]) => setChargement({ statut: 'pret', collaborateurs, modele }))
+      .catch((e: Error & { titre?: string }) => setChargement({ statut: 'erreur', titre: e.titre ?? 'Erreur.', message: e.message }));
+  }, [chargerCollaborateurs, chargerModele]);
 
   React.useEffect(charger, [charger]);
 
   const collaborateurs = chargement.statut === 'pret' ? chargement.collaborateurs : [];
+  const modele = chargement.statut === 'pret' ? chargement.modele : null;
+
   const ciblage = React.useMemo(
-    () => calculerCiblage(collaborateurs, { grades: etat.grades, complementaires: etat.complementaires }, etat.retraits, config),
-    [collaborateurs, etat.grades, etat.complementaires, etat.retraits, config]
+    () => calculerCiblage(collaborateurs, { grades: etat.grades, complementaires: etat.complementaires, estCdm: etat.estCdm, cdms: etat.cdms }, etat.retraits, config),
+    [collaborateurs, etat.grades, etat.complementaires, etat.estCdm, etat.cdms, etat.retraits, config]
   );
   const compteParGrade = React.useMemo(() => compterParGrade(collaborateurs, config.grades), [collaborateurs, config]);
   const gradesHorsConfig = React.useMemo(() => gradesNonConfigures(collaborateurs, config.grades), [collaborateurs, config]);
-  const nb = ciblage.destinataires.length;
+  const cdms = React.useMemo(() => optionsCdm(collaborateurs, config), [collaborateurs, config]);
+  const carte = React.useMemo(() => (modele === null ? null : carteDeLaCampagne(etat.contenu, modele)), [etat.contenu, modele]);
 
-  const allerA = (etape: Etape): void => dispatch({ type: 'ALLER_ETAPE', etape, nbDestinataires: nb });
+  const nb = ciblage.destinataires.length;
+  const criteres = decrireCriteres(etat, config, cdms);
+  const controles = controlerCampagne(etat.contenu, nb, config);
+  const pret = campagnePrete(etat.contenu, nb, config) && carte !== null && carte.ok;
 
   const confirmer = (): void => {
-    const preparation = preparerEnvoi(etat, ciblage.destinataires, config);
+    const preparation = preparerEnvoi(etat, ciblage.destinataires, modele, config, cdms);
     if (!preparation.ok) {
       dispatch({ type: 'ENVOI_REFUSE', raison: preparation.raison });
       return;
@@ -62,15 +85,18 @@ export function CampagneApp({ config, chargerCollaborateurs, transmettre }: Camp
     dispatch({ type: 'ENVOI_DEMARRE' });
     transmettre(preparation.payload, preparation.criteres)
       .then(reference => dispatch({ type: 'ENVOI_REUSSI', reference }))
-      .catch((e: unknown) => dispatch({ type: 'ENVOI_ECHOUE', message: e instanceof Error ? e.message : String(e) }));
+      .catch((e: unknown) => dispatch({ type: 'ENVOI_ECHOUE', message: messageErreur(e) }));
+  };
+
+  const nouvelleCampagne = (): void => {
+    dispatch({ type: 'NOUVELLE_CAMPAGNE' });
+    setNumeroCampagne(n => n + 1);
   };
 
   const entete = (
     <header className={styles.entete}>
       <h1>Campagne de cooptation</h1>
-      <span className={styles.compteur} aria-live="polite">
-        <strong>{nb}</strong> destinataire{nb > 1 ? 's' : ''}
-      </span>
+      <p>Un message Teams individuel aux collaborateurs que vous ciblez.</p>
     </header>
   );
 
@@ -78,7 +104,7 @@ export function CampagneApp({ config, chargerCollaborateurs, transmettre }: Camp
     return (
       <div className={styles.app}>
         {entete}
-        <div className={styles.etatCentre}><Spinner size={SpinnerSize.large} label="Chargement des collaborateurs depuis SharePoint…" /></div>
+        <div className={styles.etatCentre}><Spinner size={SpinnerSize.large} label="Chargement des collaborateurs…" /></div>
       </div>
     );
   }
@@ -87,12 +113,8 @@ export function CampagneApp({ config, chargerCollaborateurs, transmettre }: Camp
     return (
       <div className={styles.app}>
         {entete}
-        <MessageBar
-          messageBarType={MessageBarType.error}
-          isMultiline
-          actions={<DefaultButton onClick={charger} text="Réessayer" />}
-        >
-          <strong>Erreur SharePoint.</strong> {chargement.message}
+        <MessageBar messageBarType={MessageBarType.error} isMultiline actions={<DefaultButton onClick={charger} text="Réessayer" />}>
+          <strong>{chargement.titre}</strong> {chargement.message}
         </MessageBar>
       </div>
     );
@@ -102,88 +124,85 @@ export function CampagneApp({ config, chargerCollaborateurs, transmettre }: Camp
     return (
       <div className={styles.app}>
         {entete}
-        <MessageBar messageBarType={MessageBarType.warning}>La liste des collaborateurs est vide ou inaccessible avec vos droits.</MessageBar>
+        <MessageBar messageBarType={MessageBarType.warning}>
+          La liste des collaborateurs est vide, ou vos droits ne permettent pas de la lire.
+        </MessageBar>
       </div>
     );
   }
 
-  const envoi = etat.envoi;
-  const suivante = SUIVANTE[etat.etape];
-  const precedente = PRECEDENTE[etat.etape];
+  if (etat.envoi.statut === 'succes') {
+    const reference = etat.envoi.reference;
+    return (
+      <div className={styles.app}>
+        {entete}
+        <div className={styles.succes}>
+          <span className={styles.succesIcone} aria-hidden="true"><Icon iconName="CheckMark" /></span>
+          <h2>Campagne transmise</h2>
+          <p>
+            Le flow va envoyer la carte « {etat.contenu.titre.trim()} » à {nb} collaborateur{nb > 1 ? 's' : ''}, un message chacun.
+            {reference !== '' ? ` Référence ${reference}.` : ''} Le suivi est visible dans la liste « {config.listeCampagnes.titre} ».
+          </p>
+          <PrimaryButton onClick={nouvelleCampagne} text="Nouvelle campagne" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.app}>
       {entete}
-
-      {envoi.statut === 'succes' ? (
-        <div className={styles.pile}>
-          <MessageBar messageBarType={MessageBarType.success} isMultiline>
-            <strong>Campagne transmise.</strong> Le flow Power Automate va envoyer le message à {nb} collaborateur{nb > 1 ? 's' : ''}
-            {envoi.reference !== '' ? ` (référence ${envoi.reference})` : ''}. Le suivi est visible dans la liste « {config.listeCampagnes.titre} ».
-          </MessageBar>
-          <PrimaryButton onClick={() => dispatch({ type: 'NOUVELLE_CAMPAGNE' })} text="Nouvelle campagne" />
-        </div>
-      ) : (
-        <>
-          <Etapes courante={etat.etape} accessible={e => etapeAccessible(e, etat, nb)} onChoisir={allerA} />
-
-          {envoi.statut === 'erreur' && (
-            <MessageBar messageBarType={MessageBarType.error} isMultiline>
-              <strong>Le flow n’a pas pu être déclenché.</strong> {envoi.message} Aucun message n’a été envoyé.
-            </MessageBar>
-          )}
-
-          {etat.etape === 'cibler' && (
-            <CiblageEtape
-              config={config}
-              etat={etat}
-              ciblage={ciblage}
-              compteParGrade={compteParGrade}
-              gradesHorsConfig={gradesHorsConfig}
-              dispatch={dispatch}
-            />
-          )}
-          {etat.etape === 'rediger' && (
-            <RedactionEtape message={etat.message} onChange={message => dispatch({ type: 'SAISIR_MESSAGE', message })} />
-          )}
-          {etat.etape === 'verifier' && (
-            <VerificationEtape
-              destinataires={ciblage.destinataires}
-              colonnes={config.colonnes}
-              criteres={decrireCriteres(etat, config)}
-              message={etat.message}
-            />
-          )}
-
-          <footer className={styles.pied}>
-            <div>
-              {precedente !== null && <DefaultButton onClick={() => allerA(precedente)} text="Précédent" iconProps={{ iconName: 'ChevronLeft' }} />}
-            </div>
-            <div>
-              {suivante !== null ? (
-                <PrimaryButton
-                  onClick={() => allerA(suivante)}
-                  disabled={!etapeAccessible(suivante, etat, nb)}
-                  text="Suivant"
-                  menuIconProps={{ iconName: 'ChevronRight' }}
-                />
-              ) : (
-                <PrimaryButton
-                  onClick={() => dispatch({ type: 'OUVRIR_CONFIRMATION', nbDestinataires: nb })}
-                  disabled={!etapeAccessible('verifier', etat, nb) || verrouillee(etat)}
-                  text={`Envoyer à ${nb} collaborateur${nb > 1 ? 's' : ''}…`}
-                  iconProps={{ iconName: 'Send' }}
-                />
-              )}
-            </div>
-          </footer>
-        </>
+      {etat.envoi.statut === 'erreur' && etat.etape === 'edition' && (
+        <MessageBar messageBarType={MessageBarType.error} isMultiline styles={{ root: { marginBottom: 16 } }}>
+          <strong>Rien n’a été envoyé.</strong> {etat.envoi.message}
+        </MessageBar>
       )}
+      <div className={styles.disposition}>
+        <div className={styles.colonne}>
+          <SectionDestinataires
+            config={config}
+            etat={etat}
+            ciblage={ciblage}
+            compteParGrade={compteParGrade}
+            gradesHorsConfig={gradesHorsConfig}
+            cdms={cdms}
+            dispatch={dispatch}
+            onGererListe={() => setPanneauListe(true)}
+          />
+          <SectionMessage
+            config={config}
+            contenu={etat.contenu}
+            carte={carte}
+            cleEditeur={numeroCampagne}
+            onChange={contenu => dispatch({ type: 'MODIFIER_CONTENU', contenu })}
+          />
+        </div>
+        <Recapitulatif
+          nbDestinataires={nb}
+          criteres={criteres}
+          controles={controles}
+          pret={pret}
+          onVerifier={() => dispatch({ type: 'OUVRIR_VERIFICATION', nbDestinataires: nb, config })}
+        />
+      </div>
+
+      <PanneauDestinataires ouvert={panneauListe} ciblage={ciblage} dispatch={dispatch} onFermer={() => setPanneauListe(false)} />
+
+      <PanneauVerification
+        ouvert={etat.etape === 'verification'}
+        destinataires={ciblage.destinataires}
+        criteres={criteres}
+        carte={carte}
+        envoi={etat.envoi}
+        confirmationOuverte={etat.confirmationOuverte}
+        onModifier={() => dispatch({ type: 'FERMER_VERIFICATION' })}
+        onEnvoyer={() => dispatch({ type: 'OUVRIR_CONFIRMATION', nbDestinataires: nb, config })}
+      />
 
       <ConfirmationDialog
         ouverte={etat.confirmationOuverte}
         nbDestinataires={nb}
-        enCours={envoi.statut === 'enCours'}
+        enCours={etat.envoi.statut === 'enCours'}
         onRetour={() => dispatch({ type: 'FERMER_CONFIRMATION' })}
         onConfirmer={confirmer}
       />

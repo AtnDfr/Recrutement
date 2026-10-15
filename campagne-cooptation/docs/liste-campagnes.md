@@ -16,7 +16,7 @@ Créer une liste vide nommée **Campagnes cooptation**, puis ajouter les colonne
 | Nom (interne) | Type SharePoint | Contenu |
 |---|---|---|
 | `Title` | (colonne Titre existante) | « Campagne de cooptation — N destinataire(s) » |
-| `Payload` | Plusieurs lignes de texte, **texte brut** (pas de texte enrichi) | JSON `{ "destinataires": [...], "message": "<p>…</p>" }` |
+| `Payload` | Plusieurs lignes de texte, **texte brut** (pas de texte enrichi) | JSON `{ destinataires, titre, message, ctaLibelle, ctaUrl, modele, carte }` (voir `power-automate.md`) |
 | `NombreDestinataires` | Nombre | Nombre exact de destinataires confirmé par l'utilisateur |
 | `Criteres` | Plusieurs lignes de texte, texte brut | Critères utilisés (grades, critères complémentaires, retraits) |
 | `Statut` | Choix : `À envoyer`, `En cours`, `Envoyé`, `Envoyé avec erreurs`, `Erreur` | Créé à `À envoyer`, mis à jour par le flow |
@@ -39,3 +39,9 @@ mais aussi directement depuis la liste. Il faut donc :
 
 En complément, on peut ajouter dans le flow une condition de déclenchement qui restreint l'auteur à une liste
 d'emails autorisés (voir `power-automate.md`).
+
+## Bibliothèque du modèle de carte
+
+Le modèle unique `modeles/carte-cooptation.json` est déposé dans une bibliothèque du site, par exemple « Modeles cooptation ».
+Il doit être lisible par les utilisateurs de l'application, et modifiable uniquement par les personnes chargées de la présentation de la carte.
+Son adresse est `urlModeleCarte` dans la configuration.

@@ -8,6 +8,7 @@ import { configCampagne } from './config/campagne.config';
 import { Collaborateur, PayloadFlow } from './core/types';
 import { chargerCollaborateurs } from './services/acteursService';
 import { transmettreCampagne } from './services/campagneService';
+import { chargerModeleCarte } from './services/modeleService';
 
 /**
  * Point d'entrée SPFx : branche les services SharePoint sur l'interface.
@@ -15,11 +16,13 @@ import { transmettreCampagne } from './services/campagneService';
  */
 export default class CampagneCooptationWebPart extends BaseClientSideWebPart<Record<string, never>> {
   private _charger!: () => Promise<Collaborateur[]>;
+  private _chargerModele!: () => Promise<unknown>;
   private _transmettre!: (payload: PayloadFlow, criteres: string[]) => Promise<string>;
 
   protected onInit(): Promise<void> {
     const client = this.context.spHttpClient;
     this._charger = () => chargerCollaborateurs(client, configCampagne);
+    this._chargerModele = () => chargerModeleCarte(client, configCampagne.urlModeleCarte);
     this._transmettre = (payload, criteres) => transmettreCampagne(client, configCampagne, payload, criteres);
     return Promise.resolve();
   }
@@ -28,6 +31,7 @@ export default class CampagneCooptationWebPart extends BaseClientSideWebPart<Rec
     const element = React.createElement<CampagneAppProps>(CampagneApp, {
       config: configCampagne,
       chargerCollaborateurs: this._charger,
+      chargerModele: this._chargerModele,
       transmettre: this._transmettre
     });
     ReactDom.render(element, this.domElement);

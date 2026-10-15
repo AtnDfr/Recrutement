@@ -1,0 +1,38 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "x-modele": "carte-cooptation@1",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Cooptation · BU Data & IA",
+      "size": "Small",
+      "weight": "Bolder",
+      "color": "Accent",
+      "wrap": true
+    },
+    {
+      "type": "TextBlock",
+      "text": "${titre}",
+      "size": "Large",
+      "weight": "Bolder",
+      "wrap": true,
+      "spacing": "Small"
+    },
+    {
+      "type": "TextBlock",
+      "text": "${message}",
+      "wrap": true,
+      "spacing": "Medium"
+    }
+  ],
+  "actions": [
+    {
+      "$when": "${ctaUrl}",
+      "type": "Action.OpenUrl",
+      "title": "${ctaLibelle}",
+      "url": "${ctaUrl}"
+    }
+  ]
+}

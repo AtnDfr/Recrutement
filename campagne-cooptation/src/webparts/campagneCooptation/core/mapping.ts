@@ -1,5 +1,5 @@
 import { ConfigCampagne, ColonneSource } from '../config/types';
-import { Collaborateur } from './types';
+import { Collaborateur, Personne } from './types';
 
 /** Élément brut renvoyé par l'API REST SharePoint (odata=nometadata). */
 export type ElementSharePoint = Record<string, unknown>;
@@ -19,7 +19,7 @@ export function construireRequeteActeurs(config: ConfigCampagne, taillePage: num
   const expand = [personne];
   for (const colonne of config.colonnes) {
     if (colonne.type === 'personne') {
-      select.push(`${colonne.nomInterne}/Title`);
+      select.push(`${colonne.nomInterne}/Title`, `${colonne.nomInterne}/EMail`);
       expand.push(colonne.nomInterne);
     } else {
       select.push(colonne.nomInterne);
@@ -34,18 +34,21 @@ export function construireRequeteActeurs(config: ConfigCampagne, taillePage: num
  */
 export function versCollaborateurs(element: ElementSharePoint, config: ConfigCampagne): Collaborateur[] {
   const id = String(element.Id ?? '');
-  const personnes = enTableau(element[config.listeActeurs.colonnePersonne]) as PersonneSharePoint[];
+  const acteurs = lirePersonnes(element[config.listeActeurs.colonnePersonne]);
   const grade = texte(element[config.listeActeurs.colonneGrade]);
   const champs: Record<string, string | null> = {};
+  const personnes: Record<string, Personne[]> = {};
   for (const colonne of config.colonnes) {
     champs[colonne.cle] = lireValeur(element[colonne.nomInterne], colonne);
+    if (colonne.type === 'personne') personnes[colonne.cle] = lirePersonnes(element[colonne.nomInterne]);
   }
-  return personnes.map((personne, rang) => ({
-    id: personnes.length > 1 ? `${id}-${rang}` : id,
-    nom: texte(personne.Title) ?? '(sans nom)',
-    email: texte(personne.EMail),
+  return acteurs.map((acteur, rang) => ({
+    id: acteurs.length > 1 ? `${id}-${rang}` : id,
+    nom: acteur.nom,
+    email: acteur.email,
     grade,
-    champs
+    champs,
+    personnes
   }));
 }
 
@@ -53,7 +56,7 @@ export function lireValeur(brut: unknown, colonne: ColonneSource): string | null
   if (brut === null || brut === undefined) return null;
   switch (colonne.type) {
     case 'personne':
-      return joindre(enTableau(brut).map(p => texte((p as PersonneSharePoint).Title)));
+      return joindre(lirePersonnes(brut).map(p => p.nom));
     case 'choixMultiple':
       return joindre(enTableau(brut).map(texte));
     case 'booleen':
@@ -61,6 +64,13 @@ export function lireValeur(brut: unknown, colonne: ColonneSource): string | null
     case 'texte':
       return texte(brut);
   }
+}
+
+function lirePersonnes(brut: unknown): Personne[] {
+  return enTableau(brut).map(p => ({
+    nom: texte((p as PersonneSharePoint).Title) ?? '(sans nom)',
+    email: texte((p as PersonneSharePoint).EMail)
+  }));
 }
 
 function enTableau(valeur: unknown): unknown[] {

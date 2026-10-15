@@ -35,6 +35,11 @@ export interface RegleCritere {
 export interface CritereComplementaire {
   id: string;
   libelle: string;
+  /**
+   * Critères d'un même groupe : combinés en OU (ex. Maker OU Non-maker).
+   * Groupes différents, ou critères sans groupe : combinés en ET.
+   */
+  groupe?: string;
   /** null tant que la règle métier n'est pas connue : le critère est affiché mais inactif. */
   regle: RegleCritere | null;
 }
@@ -55,6 +60,12 @@ export interface ConfigCampagne {
   /** Grades proposés au ciblage, dans l'ordre d'affichage. Libellés identiques aux valeurs de la colonne Grade. */
   grades: string[];
   criteresComplementaires: CritereComplementaire[];
+  /**
+   * Clé logique de la colonne Person « CDM ». Sert à deux filtres explicites :
+   * « Est CDM » (l'email du collaborateur figure dans cette colonne pour au moins une ligne)
+   * et « Collaborateurs de… » (le CDM du collaborateur fait partie des CDM choisis).
+   */
+  colonneCdm: string;
   listeCampagnes: {
     titre: string;
     /** Noms internes des colonnes de la liste « Campagnes cooptation ». */
@@ -68,6 +79,13 @@ export interface ConfigCampagne {
     /** Valeur de Statut à la création : c'est elle que le flow attend. */
     statutInitial: string;
   };
+  /**
+   * Adresse du modèle unique de carte Teams (fichier JSON dans une bibliothèque du site).
+   * Il est lu à l'exécution : le remplacer change la carte sans redéployer la web part.
+   */
+  urlModeleCarte: string;
   /** Taille maximale du JSON transmis (colonne texte multiligne). */
   tailleMaxPayload: number;
+  /** Limites de saisie du contenu de la carte. */
+  limites: { titre: number; ctaLibelle: number };
 }

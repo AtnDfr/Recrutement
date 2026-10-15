@@ -1,5 +1,5 @@
 /**
- * Construit la démo navigable dans demo/dist (index.html + app.js).
+ * Construit la démo navigable dans demo/dist (index.html + app.js + carte-cooptation.json).
  * Prérequis : `heft build` (la démo réutilise lib/, sortie compilée de la web part).
  *   node demo/build.mjs           construit
  *   node demo/build.mjs --serve   construit et sert sur http://localhost:8080
@@ -23,7 +23,10 @@ const scssModules = {
       namespace: 'scss-module'
     }));
     build.onLoad({ filter: /.*/, namespace: 'scss-module' }, args => {
-      const css = fs.readFileSync(args.path, 'utf8').replace(/"\[theme:[^,\]]+,\s*default:\s*([^\]]+)\]"/g, '$1');
+      const css = fs.readFileSync(args.path, 'utf8').replace(/"\[theme:[^,\]]+,\s*default:\s*([^\]]+)\]"/g, '$1')
+        // Sélecteurs :global des modules CSS (gérés par webpack dans SPFx).
+        .replace(/:global\(([^)]+)\)/g, '$1')
+        .replace(/:global\s+/g, '');
       return {
         contents:
           `const s = document.createElement('style'); s.textContent = ${JSON.stringify(css)}; document.head.appendChild(s);\n` +
@@ -44,6 +47,9 @@ const options = {
   define: { 'process.env.NODE_ENV': '"production"' },
   logLevel: 'info'
 };
+
+// Le modèle unique de carte est publié à côté de la page et lu à l'exécution, comme dans SharePoint.
+fs.copyFileSync(path.join(ici, '..', 'modeles', 'carte-cooptation.json'), path.join(dist, 'carte-cooptation.json'));
 
 const page = fs.readFileSync(path.join(ici, 'index.html'), 'utf8');
 fs.writeFileSync(
