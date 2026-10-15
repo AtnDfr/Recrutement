@@ -77,6 +77,17 @@ npm run build     # lint + tests + bundle de production + sharepoint/solution/ca
 npm start         # serveur local, à ouvrir dans le workbench hébergé du site (config/serve.json)
 ```
 
+### Démo navigable (hors SharePoint)
+
+`demo/` affiche **la même interface** (mêmes composants, même logique) sur des données fictives,
+avec un faux flow qui montre le JSON qu'il recevrait. Elle sert à tester l'expérience et à itérer sur l'UI ;
+rien n'est à retranscrire ensuite, la web part utilise exactement ce code.
+
+```bash
+npm run demo:serve   # http://localhost:8080
+npm run demo         # construit demo/dist (index.html + app.js)
+```
+
 Premier essai réel conseillé : dans le workbench du site, cibler un grade, retirer tout le monde sauf soi-même,
 puis envoyer.
 
@@ -96,6 +107,7 @@ src/webparts/campagneCooptation/
   services/                      accès SharePoint (lecture paginée, création de l'élément)
   components/                    interface React (Fluent UI), sans règle métier
   tests/                         tests Jest du cœur métier
+demo/                            démo navigable : données fictives, faux flow (jamais utilisée par la web part)
 docs/                            liste Campagnes, adaptation du flow
 ```
 

@@ -15,7 +15,7 @@ export const configCampagne: ConfigCampagne = {
   siteUrl: 'https://digiplace.sharepoint.com/sites/WOFHR-RECRUITMENTACTIVITIES',
 
   listeActeurs: {
-    // À CONFIRMER : titre exact. L'URL de la liste contient « IA  Suivi des acteurs  Acteurs ».
+    // Titre affiché de la liste (confirmé). L'URL, elle, contient « IA  Suivi des acteurs  Acteurs ».
     titre: 'IA - Suivi des acteurs - Acteurs',
     // À CONFIRMER : nom interne de la colonne Person « Acteurs ».
     colonnePersonne: 'Acteurs',
@@ -24,11 +24,11 @@ export const configCampagne: ConfigCampagne = {
   },
 
   colonnes: [
-    // À CONFIRMER : nom interne ET type. Les valeurs (« NOM Prénom ») suggèrent une colonne Person.
-    { cle: 'cdm', libelle: 'CDM', nomInterne: 'CDM', type: 'texte', afficher: true },
-    // À CONFIRMER : nom interne.
+    // Colonne Person (confirmé par l'affichage de la liste). À CONFIRMER : nom interne.
+    { cle: 'cdm', libelle: 'CDM', nomInterne: 'CDM', type: 'personne', afficher: true },
+    // Colonne Choix. À CONFIRMER : nom interne.
     { cle: 'statut', libelle: 'Statut', nomInterne: 'statut', type: 'texte', afficher: true },
-    // À CONFIRMER : nom interne (l'espace devient en général « _x0020_ »).
+    // Colonne Choix. À CONFIRMER : nom interne (l'espace devient en général « _x0020_ »).
     { cle: 'typeEntretien', libelle: 'Type entretien', nomInterne: 'Type_x0020_Entretien', type: 'texte', afficher: true }
   ],
 

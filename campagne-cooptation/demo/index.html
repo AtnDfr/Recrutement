@@ -1,0 +1,55 @@
+<title>Campagne de cooptation</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Rendu de la web part dans une page SharePoint claire : un seul thème, volontairement. */
+  :root {
+    --fond: #ffffff;
+    --texte: #323130;
+    --texte-doux: #605e5c;
+    --bordure: #edebe9;
+    --demo: #fff4ce;
+    --demo-texte: #4f3a00;
+    --police: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    --mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+    color-scheme: light;
+  }
+  body {
+    background: var(--fond);
+    color: var(--texte);
+    font-family: var(--police);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 0 32px;
+  }
+  .demo-bandeau {
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 12px auto 20px;
+    padding: 8px 12px;
+    background: var(--demo);
+    color: var(--demo-texte);
+    border-radius: 2px;
+    font-size: 13px;
+  }
+  .demo-app { min-width: 0; }
+  .demo-outils {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    display: grid;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--texte-doux);
+  }
+  .demo-outils details { border: 1px solid var(--bordure); border-radius: 2px; padding: 8px 12px; }
+  .demo-outils summary { cursor: pointer; font-weight: 600; color: var(--texte); }
+  .demo-outils pre {
+    font-family: var(--mono);
+    font-size: 12px;
+    overflow-x: auto;
+    max-height: 360px;
+    margin: 8px 0 0;
+    color: var(--texte);
+  }
+</style>
+<div id="root"></div>
+<script src="app.js"></script>

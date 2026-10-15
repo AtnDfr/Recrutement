@@ -1,0 +1,95 @@
+/**
+ * Démo navigable : la VRAIE interface de la web part (components/ + core/), branchée sur des données
+ * fictives et un faux flow. Aucun appel SharePoint, aucun envoi.
+ */
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
+import { ChoiceGroup, registerIcons } from '@fluentui/react';
+import {
+  BlockedIcon, Blocked2Icon, BoldIcon, BulletedListIcon, CancelIcon, CheckMarkIcon, ChevronDownIcon, ChevronLeftIcon,
+  ChevronRightIcon, ChevronUpIcon, CircleRingIcon, ClearIcon, CompletedIcon, ErrorBadgeIcon, InfoIcon, ItalicIcon,
+  LinkIcon, NumberedListIcon, SearchIcon, SendIcon, StatusCircleCheckmarkIcon, UndoIcon, WarningIcon
+} from '@fluentui/react-icons-mdl2';
+
+import { CampagneApp } from '../lib/webparts/campagneCooptation/components/CampagneApp';
+import { configCampagne } from '../lib/webparts/campagneCooptation/config/campagne.config';
+import { versCollaborateurs } from '../lib/webparts/campagneCooptation/core/mapping';
+import { Collaborateur, PayloadFlow } from '../lib/webparts/campagneCooptation/core/types';
+import { elementsDemo } from './donneesDemo';
+
+// Icônes en SVG : la police d'icônes Microsoft n'est pas chargée hors SharePoint.
+registerIcons({
+  icons: {
+    Blocked: <BlockedIcon />, Blocked2: <Blocked2Icon />, Bold: <BoldIcon />, BulletedList: <BulletedListIcon />,
+    Cancel: <CancelIcon />, CheckMark: <CheckMarkIcon />, ChevronDown: <ChevronDownIcon />, ChevronLeft: <ChevronLeftIcon />,
+    ChevronRight: <ChevronRightIcon />, ChevronUp: <ChevronUpIcon />, CircleRing: <CircleRingIcon />, Clear: <ClearIcon />,
+    Completed: <CompletedIcon />, ErrorBadge: <ErrorBadgeIcon />, Info: <InfoIcon />, Italic: <ItalicIcon />, Link: <LinkIcon />,
+    NumberedList: <NumberedListIcon />, Search: <SearchIcon />, Send: <SendIcon />,
+    StatusCircleCheckmark: <StatusCircleCheckmarkIcon />, Undo: <UndoIcon />, Warning: <WarningIcon />
+  }
+});
+
+type Scenario = 'normal' | 'erreurSharePoint' | 'erreurFlow' | 'listeVide';
+
+const SCENARIOS = [
+  { key: 'normal', text: 'Tout fonctionne' },
+  { key: 'erreurSharePoint', text: 'Erreur de lecture SharePoint' },
+  { key: 'erreurFlow', text: 'Erreur au déclenchement du flow' },
+  { key: 'listeVide', text: 'Liste vide' }
+];
+
+const attendre = (ms: number): Promise<void> => new Promise(r => setTimeout(r, ms));
+
+function Demo(): JSX.Element {
+  const [scenario, setScenario] = React.useState<Scenario>('normal');
+  const [payload, setPayload] = React.useState<PayloadFlow | null>(null);
+
+  const charger = React.useCallback(async (): Promise<Collaborateur[]> => {
+    await attendre(600);
+    if (scenario === 'erreurSharePoint') {
+      throw new Error('Lecture de la liste des collaborateurs impossible (HTTP 404). Vérifier le titre de la liste dans la configuration.');
+    }
+    if (scenario === 'listeVide') return [];
+    const liste: Collaborateur[] = [];
+    for (const element of elementsDemo(configCampagne)) liste.push(...versCollaborateurs(element, configCampagne));
+    return liste;
+  }, [scenario]);
+
+  const transmettre = React.useCallback(async (p: PayloadFlow): Promise<string> => {
+    await attendre(900);
+    if (scenario === 'erreurFlow') {
+      throw new Error('La campagne n\'a pas pu être transmise au flow (HTTP 403). Vérifier vos droits sur la liste.');
+    }
+    setPayload(p);
+    return 'DEMO-1';
+  }, [scenario]);
+
+  return (
+    <>
+      <div className="demo-bandeau" role="note">
+        <strong>Démo</strong> — données fictives, aucun message n’est envoyé.
+      </div>
+      <main className="demo-app">
+        <CampagneApp key={scenario} config={configCampagne} chargerCollaborateurs={charger} transmettre={transmettre} />
+      </main>
+      <aside className="demo-outils">
+        <details>
+          <summary>Simuler une situation</summary>
+          <ChoiceGroup
+            selectedKey={scenario}
+            options={SCENARIOS}
+            onChange={(_, o) => { if (o) { setPayload(null); setScenario(o.key as Scenario); } }}
+          />
+        </details>
+        {payload !== null && (
+          <details open>
+            <summary>Ce que reçoit le flow Power Automate</summary>
+            <pre>{JSON.stringify(payload, null, 2)}</pre>
+          </details>
+        )}
+      </aside>
+    </>
+  );
+}
+
+ReactDom.render(<Demo />, document.getElementById('root'));
