@@ -7,7 +7,7 @@ describe('lecture de la liste SharePoint', () => {
   it('demande Title et EMail des colonnes Person, le Grade, et expand les colonnes Person', () => {
     const requete = construireRequeteActeurs(config, 500);
     expect(requete).toBe(
-      '$select=Id,Acteurs/Title,Acteurs/EMail,Grade,CDM/Title,CDM/EMail,statut,Type_x0020_Entretien&$expand=Acteurs,CDM&$top=500'
+      '$select=Id,Acteurs/Title,Acteurs/EMail,Grade,CDM/Title,CDM/EMail,statut,TypeEntretien&$expand=Acteurs,CDM&$top=500'
     );
     expect(requete).not.toContain('JobTitle');
   });
@@ -20,7 +20,7 @@ describe('lecture de la liste SharePoint', () => {
         Grade: 'Consultant',
         CDM: { Title: 'CDM X', EMail: 'cdm.x@exemple.com' },
         statut: 'Actif',
-        Type_x0020_Entretien: 'CS (maker)'
+        TypeEntretien: 'CS (maker)'
       },
       config
     );

@@ -9,7 +9,7 @@ export function configTest(partiel: Partial<ConfigCampagne> = {}): ConfigCampagn
     colonnes: [
       { cle: 'cdm', libelle: 'CDM', nomInterne: 'CDM', type: 'personne', afficher: true },
       { cle: 'statut', libelle: 'Statut', nomInterne: 'statut', type: 'texte', afficher: true },
-      { cle: 'typeEntretien', libelle: 'Type entretien', nomInterne: 'Type_x0020_Entretien', type: 'texte', afficher: true }
+      { cle: 'typeEntretien', libelle: 'Type entretien', nomInterne: 'TypeEntretien', type: 'texte', afficher: true }
     ],
     grades: ['Analyst', 'Consultant', 'Manager'],
     criteresComplementaires: [

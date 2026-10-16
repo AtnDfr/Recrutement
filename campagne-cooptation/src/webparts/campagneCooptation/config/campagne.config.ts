@@ -1,35 +1,30 @@
 import { ConfigCampagne } from './types';
 
 /**
- * ★ SEUL FICHIER À COMPLÉTER.
+ * ★ Configuration de l'application.
  *
- * Les valeurs marquées « À CONFIRMER » sont déduites de l'export CSV de la liste et n'ont pas pu
- * être vérifiées sur SharePoint. Pour obtenir les noms internes exacts des colonnes, ouvrir dans le
- * navigateur (connecté au tenant) :
- *
- *   https://digiplace.sharepoint.com/sites/WOFHR-RECRUITMENTACTIVITIES/_api/web/lists/getbytitle('IA - Suivi des acteurs - Acteurs')/fields?$select=Title,InternalName,TypeAsString&$filter=Hidden eq false
- *
- * (voir README, section « Compléter la configuration »).
+ * Les noms internes des colonnes de la liste Acteurs sont confirmés. Il reste « À CONFIRMER »
+ * les éléments propres à l'intégration (bibliothèque du modèle de carte, liste Campagnes).
  */
 export const configCampagne: ConfigCampagne = {
   siteUrl: 'https://digiplace.sharepoint.com/sites/WOFHR-RECRUITMENTACTIVITIES',
 
+  // Noms internes confirmés depuis les paramètres de la liste (Field=… dans l'adresse).
   listeActeurs: {
-    // Titre affiché de la liste (confirmé). L'URL, elle, contient « IA  Suivi des acteurs  Acteurs ».
     titre: 'IA - Suivi des acteurs - Acteurs',
-    // À CONFIRMER : nom interne de la colonne Person « Acteurs ».
+    // Identifiant de la liste (paramètres de la liste) : il ne change pas si la liste est renommée.
+    id: 'B77A91C1-6462-4F94-BFB6-FEDBBE6A9F74',
     colonnePersonne: 'Acteurs',
-    // À CONFIRMER : nom interne de la colonne « Grade ».
     colonneGrade: 'Grade'
   },
 
   colonnes: [
-    // Colonne Person (confirmé par l'affichage de la liste). À CONFIRMER : nom interne.
+    // Colonne Person.
     { cle: 'cdm', libelle: 'CDM', nomInterne: 'CDM', type: 'personne', afficher: true },
-    // Colonne Choix. À CONFIRMER : nom interne.
+    // Colonne Choix.
     { cle: 'statut', libelle: 'Statut', nomInterne: 'statut', type: 'texte', afficher: true },
-    // Colonne Choix. À CONFIRMER : nom interne (l'espace devient en général « _x0020_ »).
-    { cle: 'typeEntretien', libelle: 'Type entretien', nomInterne: 'Type_x0020_Entretien', type: 'texte', afficher: true }
+    // Colonne Choix (nom interne sans espace).
+    { cle: 'typeEntretien', libelle: 'Type entretien', nomInterne: 'TypeEntretien', type: 'texte', afficher: true }
   ],
 
   // Valeurs présentes dans la colonne Grade. D'autres valeurs existent dans la liste

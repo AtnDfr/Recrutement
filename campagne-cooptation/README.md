@@ -81,10 +81,7 @@ Tout ce qui reste inconnu est isolé dans
 [`src/webparts/campagneCooptation/config/campagne.config.ts`](src/webparts/campagneCooptation/config/campagne.config.ts),
 marqué **À CONFIRMER**.
 
-1. **Noms internes des colonnes** de la liste Acteurs. Connecté au tenant, ouvrir :
-   ```
-   https://digiplace.sharepoint.com/sites/WOFHR-RECRUITMENTACTIVITIES/_api/web/lists/getbytitle('IA - Suivi des acteurs - Acteurs')/fields?$select=Title,InternalName,TypeAsString&$filter=Hidden eq false
-   ```
+1. **Liste Acteurs** : noms internes des colonnes confirmés (`Acteurs`, `Grade`, `CDM`, `statut`, `TypeEntretien`). La liste est lue par son identifiant, qui ne change pas si elle est renommée.
 2. **Adresse du modèle de carte** (`urlModeleCarte`) : la bibliothèque qui accueille `modeles/carte-cooptation.json`.
 3. **Galerie d'images** (`galerieImages`) : visuels approuvés, hébergés à une adresse https lisible par tous les destinataires (voir [docs/power-automate.md](docs/power-automate.md#images-et-gif-dans-la-carte)).
 4. **Grades** : seules les valeurs listées sont ciblables (ex. « CS - Consulting » ne l'est pas).

@@ -1,14 +1,14 @@
 import { ConfigCampagne } from '../config/types';
 import { construireRequeteActeurs, ElementSharePoint, versCollaborateurs } from '../core/mapping';
 import { Collaborateur } from '../core/types';
-import { ENTETES, erreurSharePoint, SPHttpClient, urlListe } from './sharepoint';
+import { ENTETES, erreurSharePoint, SPHttpClient, urlListe, urlListeParId } from './sharepoint';
 
 const TAILLE_PAGE = 2000;
 
 /** Lit toute la liste des collaborateurs (pagination incluse), avec les droits de l'utilisateur connecté. */
 export async function chargerCollaborateurs(client: SPHttpClient, config: ConfigCampagne): Promise<Collaborateur[]> {
   let url: string | undefined =
-    `${urlListe(config.siteUrl, config.listeActeurs.titre)}/items?${construireRequeteActeurs(config, TAILLE_PAGE)}`;
+    `${config.listeActeurs.id ? urlListeParId(config.siteUrl, config.listeActeurs.id) : urlListe(config.siteUrl, config.listeActeurs.titre)}/items?${construireRequeteActeurs(config, TAILLE_PAGE)}`;
   const collaborateurs: Collaborateur[] = [];
 
   while (url !== undefined) {

@@ -48,8 +48,10 @@ export interface ConfigCampagne {
   /** Site qui porte les deux listes. */
   siteUrl: string;
   listeActeurs: {
-    /** Titre (nom affiché) de la liste source. */
+    /** Titre (nom affiché) de la liste source, utilisé dans les messages. */
     titre: string;
+    /** Identifiant (GUID) de la liste : prioritaire sur le titre pour la lecture. */
+    id?: string;
     /** Nom interne de la colonne Person des collaborateurs. Nom, email = sous-champs Title et EMail. */
     colonnePersonne: string;
     /** Nom interne de la colonne Grade. Le ciblage par grade utilise CETTE colonne, jamais JobTitle. */

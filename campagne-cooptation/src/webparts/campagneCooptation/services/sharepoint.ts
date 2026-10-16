@@ -6,6 +6,11 @@ export const ENTETES = {
   'odata-version': ''
 };
 
+/** Liste désignée par son identifiant (stable même si elle est renommée). */
+export function urlListeParId(siteUrl: string, id: string): string {
+  return `${siteUrl.replace(/\/$/, '')}/_api/web/lists(guid'${id.replace(/[{}]/g, '')}')`;
+}
+
 export function urlListe(siteUrl: string, titre: string): string {
   return `${siteUrl.replace(/\/$/, '')}/_api/web/lists/getbytitle('${encodeURIComponent(titre.replace(/'/g, "''"))}')`;
 }
